@@ -6,6 +6,9 @@
 <title>Eixo: concurso de 2018 — o painel (cldf)</title>
 <style>
 :root { color-scheme: light; }
+/* OS-099 — the link between a question page and its canvas, and back; it is in
+   BASE_CSS and not in CANVAS_CSS because both ends of that link use it. */
+.drill { font-size: 13px; margin: 16px 0 0; }
 body { margin: 0; padding: 0; background: #f6f4ef; color: #1a1a1a;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
 header.topo { background: #1a3a52; color: #fff; padding: 16px 24px; }
@@ -55,16 +58,28 @@ header.topo nav.nav-topo { display: flex; align-items: center; flex-wrap: wrap; 
 header.topo a.reportar-link.destaque { margin-left: auto; background: #fff; color: #c1121f;
   font-weight: 700; font-size: 17px; padding: 8px 16px; border: 2px solid #c1121f;
   border-radius: 4px; }
+header.topo nav.nav-topo { position: relative; }
+a.icone-home { font-size: 19px; line-height: 1; text-decoration: none; margin-right: 10px; }
+input.menu-alterna { position: absolute; width: 1px; height: 1px; opacity: 0;
+  pointer-events: none; }
+label.menu-hamburguer { cursor: pointer; font-size: 19px; line-height: 1;
+  margin-right: 12px; user-select: none; }
+nav.menu-principal { display: none; flex-direction: column; position: absolute;
+  top: 100%; left: 0; background: #14293a; border: 1px solid #2d5a7a; border-radius: 4px;
+  min-width: 210px; padding: 4px 0; z-index: 30; }
+nav.menu-principal a { display: block; padding: 8px 16px; white-space: nowrap; }
+input.menu-alterna:checked ~ nav.menu-principal { display: flex; }
 </style>
 </head>
 <body>
 <header class="topo">
-<nav class="nav-topo"><a href="../index.html">&larr; o painel</a><a href="https://github.com/maximusminus/cldf-painel">código-fonte e dados no GitHub</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
+<nav class="nav-topo"><a class="icone-home" href="../../index.html" aria-label="Página inicial">&#8962;</a><input type="checkbox" id="menu-alterna" class="menu-alterna"><label for="menu-alterna" class="menu-hamburguer" aria-label="Abrir menu">&#9776;</label><nav class="menu-principal" aria-label="Menu principal"><a href="../../index.html">Página inicial</a><a href="../index.html">O painel</a><a href="../explorador.html">O explorador</a><a href="../fontes-e-metodologia.html">Fontes e metodologia</a></nav><a href="../index.html">&larr; o painel</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
 <h1>Eixo: concurso de 2018</h1>
 </header>
 <main>
 <div class="pergunta-origem">eixo acrescentado — o concurso de 2018, do aprovado ao nomeado</div>
 <div class="janela" data-janela="arquivo">Legislatura anterior. Esta página não conta para nenhum número da legislatura atual (2023–2026): ela publica um registro inteiramente anterior a 2023, mantido porque continua sendo o registro público. o concurso é o de 2018, aberto e homologado na 7ª legislatura, e a tabela não tem eixo de tempo algum: cada linha é um cargo, nunca um ano. As nomeações que dele decorreram continuam publicadas em data/derived/, e esta página fica na seção de legislaturas anteriores.</div>
+<p class="drill">Os mesmos números, para filtrar: <a href="../paineis/a08-concurso.html">o painel interativo desta pergunta</a> — uma tela em que um clique refaz todos os quadros ao mesmo tempo. Esta página aqui não muda: os números dela foram calculados na construção e continuam os mesmos para todo leitor.</p>
 <div class="cartao">
 <div class="rotulo-cabecalho">número-chave — todas as linhas publicadas</div>
 <span class="taxa" data-n="632" data-d="1061">632 de 1.061 nomeados sobre aprovados — 59,6%</span>
@@ -105,8 +120,8 @@ conta no GitHub.</p>
 </form>
 </section>
 
-<p class="rodape">Código-fonte e dados publicados:
-<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a></p>
+<p class="rodape" data-versao-painel="b2.0">Código-fonte e dados publicados:
+<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a> &middot; painel b2.0</p>
 </main>
 <script src="../static/reportar.js"></script>
 </body>

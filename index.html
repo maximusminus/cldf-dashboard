@@ -45,11 +45,22 @@ header.topo nav.nav-topo { display: flex; align-items: center; flex-wrap: wrap; 
 header.topo a.reportar-link.destaque { margin-left: auto; background: #fff; color: #c1121f;
   font-weight: 700; font-size: 17px; padding: 8px 16px; border: 2px solid #c1121f;
   border-radius: 4px; }
+header.topo nav.nav-topo { position: relative; }
+a.icone-home { font-size: 19px; line-height: 1; text-decoration: none; margin-right: 10px; }
+input.menu-alterna { position: absolute; width: 1px; height: 1px; opacity: 0;
+  pointer-events: none; }
+label.menu-hamburguer { cursor: pointer; font-size: 19px; line-height: 1;
+  margin-right: 12px; user-select: none; }
+nav.menu-principal { display: none; flex-direction: column; position: absolute;
+  top: 100%; left: 0; background: #14293a; border: 1px solid #2d5a7a; border-radius: 4px;
+  min-width: 210px; padding: 4px 0; z-index: 30; }
+nav.menu-principal a { display: block; padding: 8px 16px; white-space: nowrap; }
+input.menu-alterna:checked ~ nav.menu-principal { display: flex; }
 </style>
 </head>
 <body>
 <header class="topo">
-<nav class="nav-topo"><a href="https://github.com/maximusminus/cldf-painel">código-fonte e dados no GitHub</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
+<nav class="nav-topo"><a class="icone-home" href="index.html" aria-label="Página inicial">&#8962;</a><input type="checkbox" id="menu-alterna" class="menu-alterna"><label for="menu-alterna" class="menu-hamburguer" aria-label="Abrir menu">&#9776;</label><nav class="menu-principal" aria-label="Menu principal"><a href="index.html">Página inicial</a><a href="painel/index.html">O painel</a><a href="painel/explorador.html">O explorador</a><a href="painel/fontes-e-metodologia.html">Fontes e metodologia</a></nav><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
 <h1>cldf — dados abertos da Câmara Legislativa do Distrito Federal</h1>
 <p>Os dados consolidados de accountability legislativo que a Casa declarou formalmente não
 possuir consolidados, montados a partir da sua própria API pública e dos seus portais.</p>
@@ -59,7 +70,7 @@ possuir consolidados, montados a partir da sua própria API pública e dos seus 
 <div class="cartao">
 <h2>Por onde começar</h2>
 <div class="porta"><a href="painel/index.html">O painel</a>
-<span>55 arquivos: uma tela por pergunta da missão, mais o perfil de cada
+<span>104 arquivos: uma tela por pergunta da missão, mais o perfil de cada
 deputado.</span></div>
 <div class="porta"><a href="painel/explorador.html">O explorador</a>
 <span>Filtre, agrupe e baixe qualquer uma das 102 tabelas, sem instalar nada.</span></div>
@@ -89,7 +100,7 @@ escolhida; onde a fonte é silenciosa, o silêncio é publicado como contagem.
 publique, inclusive comercialmente, citando a fonte e mantendo a mesma licença em qualquer
 adaptação. O código e a interface estão sob
 <a href="LICENSE">PolyForm Noncommercial 1.0.0</a> — uso não comercial.</p>
-<p class="fonte">versão 0.38.3</p>
+<p class="fonte">versão 0.40.0</p>
 </div>
 
 <section id="reportar" class="reportar">

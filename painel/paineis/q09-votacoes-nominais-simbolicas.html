@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Votações nominais x simbólicas — o painel (cldf)</title>
+<style>
+:root { color-scheme: light; }
+/* OS-099 — the link between a question page and its canvas, and back; it is in
+   BASE_CSS and not in CANVAS_CSS because both ends of that link use it. */
+.drill { font-size: 13px; margin: 16px 0 0; }
+body { margin: 0; padding: 0; background: #f6f4ef; color: #1a1a1a;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+header.topo { background: #1a3a52; color: #fff; padding: 16px 24px; }
+header.topo a { color: #cfe0ee; text-decoration: none; font-size: 13px; }
+header.topo nav.nav-topo a + a { margin-left: 12px; }
+header.topo h1 { margin: 4px 0 0 0; font-size: 20px; }
+main { max-width: 920px; margin: 0 auto; padding: 20px 24px 60px 24px; }
+.cartao { background: #fff; border: 1px solid #ddd6c8; border-radius: 6px;
+  padding: 16px 20px; margin: 16px 0; }
+.pergunta-origem { font-style: italic; color: #555; border-left: 3px solid #c7752f;
+  padding-left: 12px; margin: 12px 0; }
+.taxa, .numero { font-size: 28px; font-weight: 700; color: #1a3a52; display: inline-block; }
+.rotulo-cabecalho { font-size: 13px; color: #666; text-transform: uppercase;
+  letter-spacing: .04em; }
+.limite { background: #fdf3e7; border: 1px solid #e6c99a; border-radius: 6px;
+  padding: 12px 16px; margin: 16px 0; font-size: 14px; }
+.limite b { color: #a3612f; }
+.janela { background: #eaf1f6; border: 1px solid #b7cbd9; border-radius: 6px;
+  padding: 10px 16px; margin: 16px 0; font-size: 14px; color: #1a3a52; }
+.cartao.linha-de-base { background: #f4f1ea; border-style: dashed; }
+.cartao.linha-de-base .taxa, .cartao.linha-de-base .numero { color: #6b6257; font-size: 22px; }
+.cartao.arquivo { background: #f4f1ea; border-style: dashed; }
+.fonte { font-size: 12px; color: #777; margin-top: 8px; }
+table.tabela-simples { border-collapse: collapse; width: 100%; font-size: 13px; }
+table.tabela-simples th, table.tabela-simples td { border: 1px solid #ddd6c8;
+  padding: 4px 8px; text-align: left; }
+table.tabela-simples th { background: #efe9dc; }
+nav.indice ul { columns: 2; list-style: none; padding: 0; }
+nav.indice li { margin: 4px 0; }
+a { color: #1a3a52; }
+.rodape { font-size: 12px; color: #888; margin-top: 40px; border-top: 1px solid #ddd6c8;
+  padding-top: 12px; }
+.reportar { border: 1px solid #ddd6c8; border-radius: 6px; background: #fbf9f4;
+  padding: 16px; margin: 32px 0 8px; }
+.reportar h2 { font-size: 16px; margin: 0 0 8px; }
+.reportar p { font-size: 13px; color: #555; margin: 0 0 12px; }
+.reportar label { display: block; font-size: 12px; color: #444; margin: 10px 0 2px; }
+.reportar input, .reportar textarea { width: 100%; box-sizing: border-box; font: inherit;
+  font-size: 13px; padding: 6px 8px; border: 1px solid #ccc4b4; border-radius: 4px;
+  background: #fff; }
+.reportar button { margin-top: 12px; font: inherit; font-size: 13px; padding: 7px 14px;
+  border: 1px solid #1a3a52; border-radius: 4px; background: #1a3a52; color: #fff;
+  cursor: pointer; }
+.aviso-reportar { color: #a3612f; font-size: 12px; margin: 8px 0 0; }
+a.reportar-link { font-weight: 600; }
+header.topo nav.nav-topo { display: flex; align-items: center; flex-wrap: wrap; }
+header.topo a.reportar-link.destaque { margin-left: auto; background: #fff; color: #c1121f;
+  font-weight: 700; font-size: 17px; padding: 8px 16px; border: 2px solid #c1121f;
+  border-radius: 4px; }
+header.topo nav.nav-topo { position: relative; }
+a.icone-home { font-size: 19px; line-height: 1; text-decoration: none; margin-right: 10px; }
+input.menu-alterna { position: absolute; width: 1px; height: 1px; opacity: 0;
+  pointer-events: none; }
+label.menu-hamburguer { cursor: pointer; font-size: 19px; line-height: 1;
+  margin-right: 12px; user-select: none; }
+nav.menu-principal { display: none; flex-direction: column; position: absolute;
+  top: 100%; left: 0; background: #14293a; border: 1px solid #2d5a7a; border-radius: 4px;
+  min-width: 210px; padding: 4px 0; z-index: 30; }
+nav.menu-principal a { display: block; padding: 8px 16px; white-space: nowrap; }
+input.menu-alterna:checked ~ nav.menu-principal { display: flex; }
+
+.painel-contagem { display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: #fff; border: 1px solid #ddd6c8; border-radius: 6px; padding: 10px 16px;
+  margin: 16px 0; font-size: 14px; }
+.painel-contagem .taxa { font-weight: 700; color: #1a3a52; }
+.painel-contagem button.limpar { font: inherit; font-size: 13px; padding: 5px 12px;
+  border: 1px solid #1a3a52; border-radius: 4px; background: #1a3a52; color: #fff;
+  cursor: pointer; margin-left: auto; }
+.painel-contagem button.limpar[disabled] { background: #efe9dc; color: #8a8378;
+  border-color: #ddd6c8; cursor: default; }
+.painel-corpo { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 16px;
+  align-items: start; }
+.painel-fatias { display: flex; flex-direction: column; gap: 12px; }
+.fatia { background: #fff; border: 1px solid #ddd6c8; border-radius: 6px; padding: 10px; }
+.fatia-cabeca { display: flex; justify-content: space-between; align-items: baseline;
+  gap: 8px; margin-bottom: 6px; }
+.fatia-rotulo { font-size: 13px; font-weight: 700; color: #1a3a52; }
+.fatia-conta { font-size: 11px; color: #8a8378; }
+ul.fatia-valores { list-style: none; margin: 0; padding: 0; max-height: 210px;
+  overflow-y: auto; }
+ul.fatia-valores li { margin: 0; }
+button.valor { display: flex; justify-content: space-between; gap: 8px; width: 100%;
+  text-align: left; font: inherit; font-size: 12px; padding: 3px 6px; border: 0;
+  border-radius: 3px; background: transparent; color: #1a1a1a; cursor: pointer; }
+button.valor:hover { background: #eaf1f6; }
+button.valor.ligado { background: #1a3a52; color: #fff; font-weight: 700; }
+.valor-nome { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.valor-n { color: #8a8378; font-variant-numeric: tabular-nums; }
+button.valor.ligado .valor-n { color: #cfe0ee; }
+.painel-quadros { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px; align-content: start; }
+.quadro { background: #fff; border: 1px solid #ddd6c8; border-radius: 6px; padding: 12px; }
+.quadro-titulo { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em;
+  color: #8a8378; margin-bottom: 6px; }
+.quadro-barra, .quadro-linha, .quadro-grade { grid-column: 1 / -1; }
+.kpi-corpo .taxa { font-size: 17px; font-weight: 700; color: #1a3a52;
+  font-variant-numeric: tabular-nums; }
+svg.grafico { width: 100%; height: auto; display: block; }
+svg.grafico text { font-family: inherit; font-size: 11px; fill: #1a1a1a; }
+svg.grafico text.barra-rotulo.ligado { font-weight: 700; fill: #1a3a52; }
+svg.grafico text.barra-valor, svg.grafico text.ponto-valor,
+svg.grafico text.eixo-rotulo { fill: #6b6459; }
+svg.grafico g.barra-grupo, svg.grafico g.ponto-grupo { cursor: pointer; }
+svg.grafico g.barra-grupo:hover rect { fill-opacity: 0.75; }
+.grade-scroll { overflow-x: auto; }
+table.grade { border-collapse: collapse; width: 100%; font-size: 12px; }
+table.grade th, table.grade td { border: 1px solid #ddd6c8; padding: 3px 7px;
+  text-align: left; white-space: nowrap; }
+table.grade th { background: #efe9dc; }
+table.grade td.num, table.grade th.num { text-align: right;
+  font-variant-numeric: tabular-nums; }
+table.grade tr.ligado { background: #eaf1f6; }
+button.celula-fatia { font: inherit; font-size: 12px; padding: 0; border: 0;
+  background: transparent; color: #1a3a52; cursor: pointer; text-decoration: underline; }
+p.vazio { font-size: 12px; color: #8a8378; margin: 6px 0; }
+.aviso.erro { background: #fbe6e6; border: 1px solid #e6a3a3; border-radius: 6px;
+  padding: 10px 14px; font-size: 13px; }
+@media (max-width: 720px) {
+  .painel-corpo { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+</head>
+<body>
+<header class="topo">
+<nav class="nav-topo"><a class="icone-home" href="../../index.html" aria-label="Página inicial">&#8962;</a><input type="checkbox" id="menu-alterna" class="menu-alterna"><label for="menu-alterna" class="menu-hamburguer" aria-label="Abrir menu">&#9776;</label><nav class="menu-principal" aria-label="Menu principal"><a href="../../index.html">Página inicial</a><a href="../index.html">O painel</a><a href="../explorador.html">O explorador</a><a href="../fontes-e-metodologia.html">Fontes e metodologia</a></nav><a href="../index.html">&larr; o painel</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
+<h1>Votações nominais x simbólicas</h1>
+</header>
+<main>
+<div class="pergunta-origem">votações nominais x simbólicas/unânimes, por ano, com favoráveis, contrários e abstenções</div>
+<div class="janela" data-janela="legislatura">Janela: a 9ª legislatura, 2023–2026. Todo número desta página é contado só sobre esses quatro anos. 2022 — o último ano da legislatura anterior — aparece ao lado como linha de base, rotulado, e nunca é somado a um total de 2023–2026.</div>
+<p>Esta página precisa estar publicada num site: ela carrega os seus números de um arquivo ao lado (o cubo), e não abre corretamente se você apenas clicar duas vezes no arquivo no seu computador. Clique num valor de uma fatia, numa barra ou num ponto para filtrar TODOS os quadros desta tela ao mesmo tempo; clique de novo para soltar.</p>
+<div id="canvas-raiz" data-cubo="q09-votacoes-nominais-simbolicas"></div>
+<noscript><p>Este painel é interativo e precisa de JavaScript. Sem ele, os mesmos números estão na página da pergunta, calculados na construção.</p></noscript>
+<p class="drill">Aprofundar: <a href="../perguntas/q09-votacoes-nominais-simbolicas.html">a página da pergunta, com o seu limite e a sua fonte</a> &middot; <a href="../../data/derived/votacoes-por-ano-e-tipo.csv">a tabela inteira, como publicada</a></p>
+<div class="fonte">Tabela lida: <code>votacoes-por-ano-e-tipo.csv</code> — 8 linha(s) na janela, de 8 publicada(s). Nenhuma outra tabela é combinada aqui: um painel lê uma tabela.</div>
+<div class="fonte">Os números desta tela vêm de <a href="../cubos/q09-votacoes-nominais-simbolicas.json"><code>cubos/q09-votacoes-nominais-simbolicas.json</code></a>, que é esta tabela re-agregada na construção — contagens e somas, nunca um quociente. A divisão, quando existe, acontece na tela ao lado do seu próprio numerador e denominador.</div>
+<section id="reportar" class="reportar">
+<h2>Reportar um problema ou enviar sugestões de melhorias</h2>
+<p>Achou um número errado, um link quebrado, ou algo que não bate com a fonte? Escreva
+abaixo. Este é também o canal para <strong>enviar sugestões de melhorias</strong>. Ao enviar,
+o texto abre uma issue no repositório público do painel — para publicá-la é preciso ter uma
+conta no GitHub.</p>
+<form id="form-reportar" method="get" action="https://github.com/maximusminus/cldf-painel/issues/new" target="_blank" rel="noopener" data-acao="https://github.com/maximusminus/cldf-painel/issues/new" data-limite="6000">
+<label for="reportar-titulo">Título</label>
+<input id="reportar-titulo" name="title" type="text" maxlength="180" required>
+<label for="reportar-corpo">O que aconteceu</label>
+<textarea id="reportar-corpo" name="body" rows="6" maxlength="6000" required></textarea>
+<label for="reportar-pagina">URL relacionada</label>
+<input id="reportar-pagina" name="pagina" type="url" value="https://maximusminus.github.io/cldf-painel/painel/paineis/q09-votacoes-nominais-simbolicas.html">
+<p class="aviso-reportar" id="reportar-aviso"></p>
+<button type="submit">Abrir a issue no GitHub</button>
+</form>
+</section>
+
+<p class="rodape" data-versao-painel="b2.0">Código-fonte e dados publicados:
+<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a> &middot; painel b2.0</p>
+</main>
+<script src="../static/reportar.js"></script><script src="../static/dashboard.js"></script>
+</body>
+</html>

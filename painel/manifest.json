@@ -1,8 +1,123 @@
 {
+  "catorze": [
+    {
+      "canvas": "paineis/q01-proposicoes-apresentadas-aprovadas.html",
+      "indice": 1,
+      "pergunta_origem": "proposições apresentadas e aprovadas, por ano e por espécie (PL, PLC, PELO, PDL, PR, Moção, Indicação, Requerimento), com autoria (Executivo ou deputado, nominal)",
+      "servida": true,
+      "slug": "q01-proposicoes-apresentadas-aprovadas",
+      "titulo": "Proposições apresentadas e aprovadas, por ano e espécie, com autoria"
+    },
+    {
+      "canvas": "paineis/q02-honorificas-comemorativas-mocoes.html",
+      "indice": 2,
+      "pergunta_origem": "proposições honoríficas/comemorativas/moções — relação nominal com número, ano, autoria, ementa",
+      "servida": true,
+      "slug": "q02-honorificas-comemorativas-mocoes",
+      "titulo": "Proposições honoríficas, comemorativas e moções"
+    },
+    {
+      "canvas": "paineis/q03-parecer-inconstitucionalidade-ccj.html",
+      "indice": 3,
+      "pergunta_origem": "proposições com parecer pela inconstitucionalidade (CCJ ou órgão técnico), e quais foram aprovadas apesar do parecer",
+      "servida": true,
+      "slug": "q03-parecer-inconstitucionalidade-ccj",
+      "titulo": "Parecer pela inconstitucionalidade e aprovação apesar dele"
+    },
+    {
+      "canvas": "paineis/q04-aprovadas-contra-parecer-tecnico.html",
+      "indice": 4,
+      "pergunta_origem": "proposições aprovadas contrariando parecer técnico-legislativo, com sentido do parecer e resultado da votação",
+      "servida": true,
+      "slug": "q04-aprovadas-contra-parecer-tecnico",
+      "titulo": "Aprovadas contrariando o parecer técnico-legislativo"
+    },
+    {
+      "canvas": "paineis/q05-vetos-do-governador.html",
+      "indice": 5,
+      "pergunta_origem": "vetos do Governador (totais/parciais): projeto, ano, data de apreciação, mantido ou derrubado",
+      "servida": true,
+      "slug": "q05-vetos-do-governador",
+      "titulo": "Vetos do Governador"
+    },
+    {
+      "canvas": "paineis/q06-iniciativa-do-executivo.html",
+      "indice": 6,
+      "pergunta_origem": "proposições de iniciativa do Executivo: aprovadas no texto original / com emenda de mérito (quantas acatadas) / rejeitadas",
+      "servida": true,
+      "slug": "q06-iniciativa-do-executivo",
+      "titulo": "Proposições de iniciativa do Executivo"
+    },
+    {
+      "canvas": "paineis/q07-regime-de-urgencia.html",
+      "indice": 7,
+      "pergunta_origem": "tramitação em regime de urgência: autoria do requerimento, prazo observado, houve emenda de mérito",
+      "servida": true,
+      "slug": "q07-regime-de-urgencia",
+      "titulo": "Tramitação em regime de urgência"
+    },
+    {
+      "canvas": "paineis/q08-emendas-parlamentares-loa.html",
+      "indice": 8,
+      "pergunta_origem": "emendas parlamentares a PLOA, LDO e PPA por deputado e partido/bloco: acatadas, rejeitadas, prejudicadas",
+      "servida": true,
+      "slug": "q08-emendas-parlamentares-loa",
+      "titulo": "Emendas parlamentares a PLOA, LDO e PPA"
+    },
+    {
+      "canvas": "paineis/q09-votacoes-nominais-simbolicas.html",
+      "indice": 9,
+      "pergunta_origem": "votações nominais × simbólicas/unânimes, por ano, com favoráveis, contrários e abstenções",
+      "servida": true,
+      "slug": "q09-votacoes-nominais-simbolicas",
+      "titulo": "Votações nominais x simbólicas"
+    },
+    {
+      "canvas": "paineis/q10-convocacao-de-secretarios.html",
+      "indice": 10,
+      "pergunta_origem": "requerimentos de convocação de Secretários de Estado: autoria, aprovação, comparecimento e data",
+      "servida": true,
+      "slug": "q10-convocacao-de-secretarios",
+      "titulo": "Convocação de Secretários de Estado"
+    },
+    {
+      "canvas": "paineis/q11-cpis.html",
+      "indice": 11,
+      "pergunta_origem": "CPIs: requerimentos, assinaturas regimentais, instalação e data, relatório final votado",
+      "servida": true,
+      "slug": "q11-cpis",
+      "titulo": "CPIs — Comissões Parlamentares de Inquérito"
+    },
+    {
+      "canvas": "paineis/q12-tempo-de-tramitacao.html",
+      "indice": 12,
+      "pergunta_origem": "tempo médio de tramitação, proposições sem deliberação final há mais de 2 anos, arquivadas por decurso de prazo ou fim de legislatura",
+      "servida": true,
+      "slug": "q12-tempo-de-tramitacao",
+      "titulo": "Tempo de tramitação e proposições sem deliberação"
+    },
+    {
+      "canvas": "paineis/q13-sessoes-ordinarias.html",
+      "indice": 13,
+      "pergunta_origem": "sessões ordinárias e extraordinárias previstas, realizadas, canceladas por falta de quórum",
+      "servida": true,
+      "slug": "q13-sessoes-ordinarias",
+      "titulo": "Sessões ordinárias previstas, realizadas e sem quórum"
+    },
+    {
+      "canvas": "paineis/q14-frequencia-dos-deputados.html",
+      "indice": 14,
+      "pergunta_origem": "frequência dos deputados distritais em plenário e comissões, por ano, individualizada",
+      "servida": true,
+      "slug": "q14-frequencia-dos-deputados",
+      "titulo": "Frequência dos deputados em plenário"
+    }
+  ],
   "contagem_tabelas": 102,
   "explorador": {
     "arquivo": "explorador.html",
-    "linha_limite": 200000
+    "linha_limite": 200000,
+    "tabela_pesada_bytes": 5242880
   },
   "gerado_por": "cldf.painel_estatico",
   "perfis": {
@@ -207,6 +322,7 @@
   "tabelas": {
     "aprovadas-contra-parecer-agregado": {
       "arquivo": "aprovadas-contra-parecer-agregado.csv",
+      "bytes": 219,
       "cabecalho": [
         "ano",
         "base",
@@ -242,6 +358,7 @@
     },
     "aprovadas-contra-parecer-da-ccj": {
       "arquivo": "aprovadas-contra-parecer-da-ccj.csv",
+      "bytes": 221341,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -281,6 +398,7 @@
     },
     "ausencias-e-afastamento-autorizado": {
       "arquivo": "ausencias-e-afastamento-autorizado.csv",
+      "bytes": 8542,
       "cabecalho": [
         "deputado",
         "chave",
@@ -330,6 +448,7 @@
     },
     "ausencias-em-votacoes-nominais": {
       "arquivo": "ausencias-em-votacoes-nominais.csv",
+      "bytes": 5779,
       "cabecalho": [
         "deputado",
         "sessao_legislativa",
@@ -373,6 +492,7 @@
     },
     "ausencias-por-votacao-nominal": {
       "arquivo": "ausencias-por-votacao-nominal.csv",
+      "bytes": 44947,
       "cabecalho": [
         "sessao_legislativa",
         "ano",
@@ -418,6 +538,7 @@
     },
     "comissoes-parlamentares-de-inquerito": {
       "arquivo": "comissoes-parlamentares-de-inquerito.csv",
+      "bytes": 3574,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -465,6 +586,7 @@
     },
     "comissoes-parlamentares-de-inquerito-assinaturas": {
       "arquivo": "comissoes-parlamentares-de-inquerito-assinaturas.csv",
+      "bytes": 3047,
       "cabecalho": [
         "ano",
         "numero",
@@ -496,6 +618,7 @@
     },
     "compras-por-modalidade-e-ano": {
       "arquivo": "compras-por-modalidade-e-ano.csv",
+      "bytes": 1599,
       "cabecalho": [
         "origem",
         "ano",
@@ -533,6 +656,7 @@
     },
     "concurso-2018-aprovados-por-cargo-e-categoria": {
       "arquivo": "concurso-2018-aprovados-por-cargo-e-categoria.csv",
+      "bytes": 5334,
       "cabecalho": [
         "cargo",
         "cargo_na_fonte",
@@ -568,6 +692,7 @@
     },
     "concurso-2018-funil": {
       "arquivo": "concurso-2018-funil.csv",
+      "bytes": 6503,
       "cabecalho": [
         "cargo",
         "categoria",
@@ -607,6 +732,7 @@
     },
     "concurso-2018-nomeados": {
       "arquivo": "concurso-2018-nomeados.csv",
+      "bytes": 158972,
       "cabecalho": [
         "nome",
         "cargo",
@@ -648,6 +774,7 @@
     },
     "conferencia-classificacao-x-total": {
       "arquivo": "conferencia-classificacao-x-total.csv",
+      "bytes": 8739,
       "cabecalho": [
         "ano",
         "mes",
@@ -695,6 +822,7 @@
     },
     "conferencia-contratacao-x-pagamento": {
       "arquivo": "conferencia-contratacao-x-pagamento.csv",
+      "bytes": 34810,
       "cabecalho": [
         "cnpj",
         "empresa",
@@ -734,6 +862,7 @@
     },
     "conferencia-da-cadeia-da-despesa": {
       "arquivo": "conferencia-da-cadeia-da-despesa.csv",
+      "bytes": 962,
       "cabecalho": [
         "ano",
         "repasse_recebido",
@@ -777,6 +906,7 @@
     },
     "conferencia-diarias-planilha-x-portal-de-dados": {
       "arquivo": "conferencia-diarias-planilha-x-portal-de-dados.csv",
+      "bytes": 903,
       "cabecalho": [
         "ano",
         "mes",
@@ -818,6 +948,7 @@
     },
     "conferencia-emendas-painel-x-portal": {
       "arquivo": "conferencia-emendas-painel-x-portal.csv",
+      "bytes": 739046,
       "cabecalho": [
         "id_emenda",
         "ano",
@@ -865,6 +996,7 @@
     },
     "conferencia-folha-x-natureza": {
       "arquivo": "conferencia-folha-x-natureza.csv",
+      "bytes": 16862,
       "cabecalho": [
         "ano",
         "mes",
@@ -914,6 +1046,7 @@
     },
     "conferencia-loa-x-creditos": {
       "arquivo": "conferencia-loa-x-creditos.csv",
+      "bytes": 2862568,
       "cabecalho": [
         "ano",
         "unidade_orcamentaria",
@@ -957,6 +1090,7 @@
     },
     "conferencia-presenca-pdf-x-painel": {
       "arquivo": "conferencia-presenca-pdf-x-painel.csv",
+      "bytes": 973,
       "cabecalho": [
         "data",
         "deputado",
@@ -986,6 +1120,7 @@
     },
     "conferencia-quadro-mensal-x-consolidado": {
       "arquivo": "conferencia-quadro-mensal-x-consolidado.csv",
+      "bytes": 18541,
       "cabecalho": [
         "ano",
         "mes",
@@ -1027,6 +1162,7 @@
     },
     "conferencia-teletrabalho-x-folha": {
       "arquivo": "conferencia-teletrabalho-x-folha.csv",
+      "bytes": 37039,
       "cabecalho": [
         "matricula",
         "servidor",
@@ -1062,6 +1198,7 @@
     },
     "conferencia-terceirizados-x-contratos": {
       "arquivo": "conferencia-terceirizados-x-contratos.csv",
+      "bytes": 2069,
       "cabecalho": [
         "cnpj",
         "empresa",
@@ -1105,6 +1242,7 @@
     },
     "conferencia-transferencias-enviadas-x-recebidas": {
       "arquivo": "conferencia-transferencias-enviadas-x-recebidas.csv",
+      "bytes": 4908,
       "cabecalho": [
         "ano",
         "mes",
@@ -1144,6 +1282,7 @@
     },
     "conferencia-verba-comprovantes-x-quadro": {
       "arquivo": "conferencia-verba-comprovantes-x-quadro.csv",
+      "bytes": 91708,
       "cabecalho": [
         "deputado",
         "chave",
@@ -1185,6 +1324,7 @@
     },
     "contratos-vigentes": {
       "arquivo": "contratos-vigentes.csv",
+      "bytes": 202046,
       "cabecalho": [
         "numero",
         "empresa",
@@ -1238,6 +1378,7 @@
     },
     "convocacoes-de-autoridades": {
       "arquivo": "convocacoes-de-autoridades.csv",
+      "bytes": 14273,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -1297,6 +1438,7 @@
     },
     "creditos-adicionais-por-emenda": {
       "arquivo": "creditos-adicionais-por-emenda.csv",
+      "bytes": 9134822,
       "cabecalho": [
         "lei",
         "ano",
@@ -1380,6 +1522,7 @@
     },
     "creditos-adicionais-por-lei": {
       "arquivo": "creditos-adicionais-por-lei.csv",
+      "bytes": 9163,
       "cabecalho": [
         "lei",
         "ano",
@@ -1413,6 +1556,7 @@
     },
     "deputados-chave": {
       "arquivo": "deputados-chave.csv",
+      "bytes": 3422,
       "cabecalho": [
         "chave",
         "nome_na_api",
@@ -1448,6 +1592,7 @@
     },
     "despesa-por-classificacao-orcamentaria": {
       "arquivo": "despesa-por-classificacao-orcamentaria.csv",
+      "bytes": 375503,
       "cabecalho": [
         "ano",
         "mes",
@@ -1511,6 +1656,7 @@
     },
     "despesa-por-estagio-e-mes": {
       "arquivo": "despesa-por-estagio-e-mes.csv",
+      "bytes": 5796,
       "cabecalho": [
         "ano",
         "mes",
@@ -1550,6 +1696,7 @@
     },
     "despesa-por-funcao-e-subfuncao": {
       "arquivo": "despesa-por-funcao-e-subfuncao.csv",
+      "bytes": 3506,
       "cabecalho": [
         "ano",
         "funcao",
@@ -1589,6 +1736,7 @@
     },
     "despesa-por-natureza-e-ano": {
       "arquivo": "despesa-por-natureza-e-ano.csv",
+      "bytes": 21785,
       "cabecalho": [
         "ano",
         "natureza",
@@ -1636,6 +1784,7 @@
     },
     "diarias-por-beneficiario": {
       "arquivo": "diarias-por-beneficiario.csv",
+      "bytes": 83011,
       "cabecalho": [
         "ano_do_pagamento",
         "mes_do_pagamento",
@@ -1695,6 +1844,7 @@
     },
     "emendas-loa-cobertura": {
       "arquivo": "emendas-loa-cobertura.csv",
+      "bytes": 222,
       "cabecalho": [
         "ano_exercicio",
         "emendas_no_painel",
@@ -1722,6 +1872,7 @@
     },
     "emendas-loa-execucao-2021-2022": {
       "arquivo": "emendas-loa-execucao-2021-2022.csv",
+      "bytes": 487322,
       "cabecalho": [
         "ano",
         "data_da_emenda",
@@ -1779,6 +1930,7 @@
     },
     "emendas-loa-execucao-2023-2025": {
       "arquivo": "emendas-loa-execucao-2023-2025.csv",
+      "bytes": 876355,
       "cabecalho": [
         "ano",
         "data_da_emenda",
@@ -1850,6 +2002,7 @@
     },
     "emendas-loa-por-deputado": {
       "arquivo": "emendas-loa-por-deputado.csv",
+      "bytes": 440815,
       "cabecalho": [
         "ano_exercicio",
         "lei",
@@ -1897,6 +2050,7 @@
     },
     "emendas-loa-por-deputado-e-ano": {
       "arquivo": "emendas-loa-por-deputado-e-ano.csv",
+      "bytes": 9401,
       "cabecalho": [
         "ano_exercicio",
         "parlamentar",
@@ -1938,6 +2092,7 @@
     },
     "emendas-loa-por-unidade-orcamentaria": {
       "arquivo": "emendas-loa-por-unidade-orcamentaria.csv",
+      "bytes": 58379,
       "cabecalho": [
         "cod_unidade_orcamentaria",
         "unidade_orcamentaria",
@@ -1981,6 +2136,7 @@
     },
     "empenhos-detalhados": {
       "arquivo": "empenhos-detalhados.csv",
+      "bytes": 2211574,
       "cabecalho": [
         "ano",
         "mes_numero",
@@ -2022,6 +2178,7 @@
     },
     "empresas-sancionadas": {
       "arquivo": "empresas-sancionadas.csv",
+      "bytes": 3696,
       "cabecalho": [
         "empresa",
         "cnpj",
@@ -2065,6 +2222,7 @@
     },
     "estagiarios-por-periodo": {
       "arquivo": "estagiarios-por-periodo.csv",
+      "bytes": 133192,
       "cabecalho": [
         "periodo",
         "matricula",
@@ -2096,6 +2254,7 @@
     },
     "folha-de-pagamento-por-pessoa-e-mes-2012-2016": {
       "arquivo": "folha-de-pagamento-por-pessoa-e-mes-2012-2016.csv",
+      "bytes": 29349140,
       "cabecalho": [
         "ano",
         "mes",
@@ -2183,6 +2342,7 @@
     },
     "folha-de-pagamento-por-pessoa-e-mes-2017-2018": {
       "arquivo": "folha-de-pagamento-por-pessoa-e-mes-2017-2018.csv",
+      "bytes": 12885257,
       "cabecalho": [
         "ano",
         "mes",
@@ -2270,6 +2430,7 @@
     },
     "folha-de-pagamento-por-pessoa-e-mes-2019-2022": {
       "arquivo": "folha-de-pagamento-por-pessoa-e-mes-2019-2022.csv",
+      "bytes": 60613776,
       "cabecalho": [
         "ano",
         "mes",
@@ -2357,6 +2518,7 @@
     },
     "folha-de-pagamento-por-pessoa-e-mes-2023-2026": {
       "arquivo": "folha-de-pagamento-por-pessoa-e-mes-2023-2026.csv",
+      "bytes": 72732831,
       "cabecalho": [
         "ano",
         "mes",
@@ -2444,6 +2606,7 @@
     },
     "folha-por-cargo-e-ano": {
       "arquivo": "folha-por-cargo-e-ano.csv",
+      "bytes": 191638,
       "cabecalho": [
         "ano",
         "cargo_efetivo",
@@ -2483,6 +2646,7 @@
     },
     "folha-por-lotacao-e-mes": {
       "arquivo": "folha-por-lotacao-e-mes.csv",
+      "bytes": 2759507,
       "cabecalho": [
         "ano",
         "mes",
@@ -2526,6 +2690,7 @@
     },
     "folha-por-pessoa-e-ano": {
       "arquivo": "folha-por-pessoa-e-ano.csv",
+      "bytes": 7120976,
       "cabecalho": [
         "ano",
         "matricula",
@@ -2585,6 +2750,7 @@
     },
     "folha-por-tipo-e-mes": {
       "arquivo": "folha-por-tipo-e-mes.csv",
+      "bytes": 97834,
       "cabecalho": [
         "ano",
         "mes",
@@ -2624,6 +2790,7 @@
     },
     "fornecedores-do-contrato-central": {
       "arquivo": "fornecedores-do-contrato-central.csv",
+      "bytes": 69940,
       "cabecalho": [
         "cnpj",
         "fornecedor",
@@ -2665,6 +2832,7 @@
     },
     "frequencia-deputados-em-plenario-por-ano": {
       "arquivo": "frequencia-deputados-em-plenario-por-ano.csv",
+      "bytes": 14105,
       "cabecalho": [
         "ano",
         "deputado",
@@ -2708,6 +2876,7 @@
     },
     "frequencia-em-sessoes-ordinarias": {
       "arquivo": "frequencia-em-sessoes-ordinarias.csv",
+      "bytes": 6298,
       "cabecalho": [
         "deputado",
         "sessao_legislativa",
@@ -2757,6 +2926,7 @@
     },
     "informacoes-classificadas": {
       "arquivo": "informacoes-classificadas.csv",
+      "bytes": 49037,
       "cabecalho": [
         "exercicio",
         "tipo_de_processo",
@@ -2800,6 +2970,7 @@
     },
     "informacoes-classificadas-por-unidade-e-ano": {
       "arquivo": "informacoes-classificadas-por-unidade-e-ano.csv",
+      "bytes": 2096,
       "cabecalho": [
         "unidade_produtora",
         "exercicio",
@@ -2841,6 +3012,7 @@
     },
     "informacoes-desclassificadas": {
       "arquivo": "informacoes-desclassificadas.csv",
+      "bytes": 191,
       "cabecalho": [
         "ano_de_producao",
         "tipo_de_processo",
@@ -2882,6 +3054,7 @@
     },
     "juizo-de-admissibilidade-por-comissao": {
       "arquivo": "juizo-de-admissibilidade-por-comissao.csv",
+      "bytes": 2847,
       "cabecalho": [
         "comissao",
         "pareceres",
@@ -2913,6 +3086,7 @@
     },
     "leis-orcamentarias-dotacao": {
       "arquivo": "leis-orcamentarias-dotacao.csv",
+      "bytes": 22226441,
       "cabecalho": [
         "loa_ano",
         "tipo_documento",
@@ -2986,6 +3160,7 @@
     },
     "licitacoes-e-dispensas": {
       "arquivo": "licitacoes-e-dispensas.csv",
+      "bytes": 75781,
       "cabecalho": [
         "fonte",
         "processo",
@@ -3039,6 +3214,7 @@
     },
     "obras": {
       "arquivo": "obras.csv",
+      "bytes": 3859,
       "cabecalho": [
         "ano",
         "contrato",
@@ -3088,6 +3264,7 @@
     },
     "ordinarias-em-afastamento-autorizado": {
       "arquivo": "ordinarias-em-afastamento-autorizado.csv",
+      "bytes": 23986,
       "cabecalho": [
         "deputado",
         "chave",
@@ -3131,6 +3308,7 @@
     },
     "pagamentos-em-ordem-cronologica": {
       "arquivo": "pagamentos-em-ordem-cronologica.csv",
+      "bytes": 1447154,
       "cabecalho": [
         "ano",
         "data_da_liquidacao",
@@ -3178,6 +3356,7 @@
     },
     "pareceres-ccj-admissibilidade": {
       "arquivo": "pareceres-ccj-admissibilidade.csv",
+      "bytes": 257203,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3223,6 +3402,7 @@
     },
     "presencas-em-plenario-por-sessao": {
       "arquivo": "presencas-em-plenario-por-sessao.csv",
+      "bytes": 1471703,
       "cabecalho": [
         "ano",
         "data",
@@ -3262,6 +3442,7 @@
     },
     "producao-por-deputado": {
       "arquivo": "producao-por-deputado.csv",
+      "bytes": 6097,
       "cabecalho": [
         "deputado",
         "partidos_no_periodo",
@@ -3367,6 +3548,7 @@
     },
     "proposicoes-apresentadas-e-aprovadas-por-ano-e-especie": {
       "arquivo": "proposicoes-apresentadas-e-aprovadas-por-ano-e-especie.csv",
+      "bytes": 2079,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3404,6 +3586,7 @@
     },
     "proposicoes-apresentadas-e-aprovadas-por-autor": {
       "arquivo": "proposicoes-apresentadas-e-aprovadas-por-autor.csv",
+      "bytes": 60321,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3443,6 +3626,7 @@
     },
     "proposicoes-apresentadas-por-ano-e-especie": {
       "arquivo": "proposicoes-apresentadas-por-ano-e-especie.csv",
+      "bytes": 1420,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3468,6 +3652,7 @@
     },
     "proposicoes-apresentadas-por-autor": {
       "arquivo": "proposicoes-apresentadas-por-autor.csv",
+      "bytes": 50015,
       "cabecalho": [
         "ano",
         "autor",
@@ -3497,6 +3682,7 @@
     },
     "proposicoes-do-executivo": {
       "arquivo": "proposicoes-do-executivo.csv",
+      "bytes": 144835,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3538,6 +3724,7 @@
     },
     "proposicoes-do-executivo-por-ano-e-especie": {
       "arquivo": "proposicoes-do-executivo-por-ano-e-especie.csv",
+      "bytes": 946,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3577,6 +3764,7 @@
     },
     "proposicoes-em-regime-de-urgencia": {
       "arquivo": "proposicoes-em-regime-de-urgencia.csv",
+      "bytes": 2653,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3626,6 +3814,7 @@
     },
     "proposicoes-honorificas-comemorativas-e-mocoes": {
       "arquivo": "proposicoes-honorificas-comemorativas-e-mocoes.csv",
+      "bytes": 1175741,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3669,6 +3858,7 @@
     },
     "proposicoes-painel-autoria": {
       "arquivo": "proposicoes-painel-autoria.csv",
+      "bytes": 1706520,
       "cabecalho": [
         "ano",
         "sigla",
@@ -3706,6 +3896,7 @@
     },
     "proposicoes-painel-conferencia": {
       "arquivo": "proposicoes-painel-conferencia.csv",
+      "bytes": 2629,
       "cabecalho": [
         "ano",
         "sigla",
@@ -3749,6 +3940,7 @@
     },
     "proposicoes-painel-tema": {
       "arquivo": "proposicoes-painel-tema.csv",
+      "bytes": 1251894,
       "cabecalho": [
         "ano",
         "sigla",
@@ -3782,6 +3974,7 @@
     },
     "proposicoes-por-autor-e-ano": {
       "arquivo": "proposicoes-por-autor-e-ano.csv",
+      "bytes": 9084,
       "cabecalho": [
         "ano",
         "autor_id",
@@ -3819,6 +4012,7 @@
     },
     "proposicoes-sem-deliberacao": {
       "arquivo": "proposicoes-sem-deliberacao.csv",
+      "bytes": 6315583,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -3858,6 +4052,7 @@
     },
     "repasse-duodecimo-por-mes": {
       "arquivo": "repasse-duodecimo-por-mes.csv",
+      "bytes": 7359,
       "cabecalho": [
         "ano",
         "mes",
@@ -3899,6 +4094,7 @@
     },
     "servidores-em-teletrabalho-nominal-por-mes": {
       "arquivo": "servidores-em-teletrabalho-nominal-por-mes.csv",
+      "bytes": 702186,
       "cabecalho": [
         "competencia",
         "ano",
@@ -3932,6 +4128,7 @@
     },
     "servidores-em-teletrabalho-por-mes": {
       "arquivo": "servidores-em-teletrabalho-por-mes.csv",
+      "bytes": 1039504,
       "cabecalho": [
         "competencia",
         "ano",
@@ -3995,6 +4192,7 @@
     },
     "sessoes-ordinarias-por-dia-da-semana": {
       "arquivo": "sessoes-ordinarias-por-dia-da-semana.csv",
+      "bytes": 671,
       "cabecalho": [
         "sessao_legislativa",
         "ano",
@@ -4036,6 +4234,7 @@
     },
     "sessoes-plenarias-por-sessao": {
       "arquivo": "sessoes-plenarias-por-sessao.csv",
+      "bytes": 98270,
       "cabecalho": [
         "ano",
         "data",
@@ -4081,6 +4280,7 @@
     },
     "sessoes-plenarias-quorum": {
       "arquivo": "sessoes-plenarias-quorum.csv",
+      "bytes": 311,
       "cabecalho": [
         "ano",
         "numero_sessao",
@@ -4114,6 +4314,7 @@
     },
     "tabela-de-remuneracao-vigente": {
       "arquivo": "tabela-de-remuneracao-vigente.csv",
+      "bytes": 505058,
       "cabecalho": [
         "competencia",
         "tipo_tabela",
@@ -4151,6 +4352,7 @@
     },
     "teletrabalho-por-unidade-e-mes": {
       "arquivo": "teletrabalho-por-unidade-e-mes.csv",
+      "bytes": 110061,
       "cabecalho": [
         "unidade_normalizada",
         "competencia",
@@ -4188,6 +4390,7 @@
     },
     "tempo-de-tramitacao-por-ano-e-especie": {
       "arquivo": "tempo-de-tramitacao-por-ano-e-especie.csv",
+      "bytes": 2971,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -4231,6 +4434,7 @@
     },
     "terceirizados-por-cargo-e-mes": {
       "arquivo": "terceirizados-por-cargo-e-mes.csv",
+      "bytes": 45275,
       "cabecalho": [
         "competencia",
         "cargo",
@@ -4256,6 +4460,7 @@
     },
     "terceirizados-por-empresa-e-mes": {
       "arquivo": "terceirizados-por-empresa-e-mes.csv",
+      "bytes": 18766,
       "cabecalho": [
         "competencia",
         "empresa",
@@ -4283,6 +4488,7 @@
     },
     "terceirizados-por-mes": {
       "arquivo": "terceirizados-por-mes.csv",
+      "bytes": 969865,
       "cabecalho": [
         "mes",
         "competencia",
@@ -4318,6 +4524,7 @@
     },
     "transferencias-e-repasses-enviados-por-mes": {
       "arquivo": "transferencias-e-repasses-enviados-por-mes.csv",
+      "bytes": 3439,
       "cabecalho": [
         "ano",
         "mes",
@@ -4349,6 +4556,7 @@
     },
     "transferencias-voluntarias-recebidas": {
       "arquivo": "transferencias-voluntarias-recebidas.csv",
+      "bytes": 2959,
       "cabecalho": [
         "ano",
         "mes",
@@ -4378,6 +4586,7 @@
     },
     "verba-indenizatoria-fornecedores": {
       "arquivo": "verba-indenizatoria-fornecedores.csv",
+      "bytes": 31475,
       "cabecalho": [
         "cnpj_fornecedor",
         "fornecedor_na_fonte",
@@ -4413,6 +4622,7 @@
     },
     "verba-indenizatoria-por-comprovante": {
       "arquivo": "verba-indenizatoria-por-comprovante.csv",
+      "bytes": 398133,
       "cabecalho": [
         "ano",
         "mes",
@@ -4458,6 +4668,7 @@
     },
     "verba-indenizatoria-por-deputado-e-mes": {
       "arquivo": "verba-indenizatoria-por-deputado-e-mes.csv",
+      "bytes": 140061,
       "cabecalho": [
         "deputado",
         "chave",
@@ -4519,6 +4730,7 @@
     },
     "vetos-cobertura": {
       "arquivo": "vetos-cobertura.csv",
+      "bytes": 392,
       "cabecalho": [
         "medida",
         "proposicoes"
@@ -4542,6 +4754,7 @@
     },
     "vetos-do-governador": {
       "arquivo": "vetos-do-governador.csv",
+      "bytes": 69633,
       "cabecalho": [
         "ano",
         "tipoProposicao",
@@ -4597,6 +4810,7 @@
     },
     "vinculos-de-pessoal": {
       "arquivo": "vinculos-de-pessoal.csv",
+      "bytes": 1285908,
       "cabecalho": [
         "matricula",
         "nome",
@@ -4642,6 +4856,7 @@
     },
     "votacoes-detalhe": {
       "arquivo": "votacoes-detalhe.csv",
+      "bytes": 961818,
       "cabecalho": [
         "ano",
         "tipo_votacao",
@@ -4685,6 +4900,7 @@
     },
     "votacoes-por-ano-e-tipo": {
       "arquivo": "votacoes-por-ano-e-tipo.csv",
+      "bytes": 466,
       "cabecalho": [
         "ano",
         "tipo_votacao",
@@ -4724,6 +4940,7 @@
     },
     "votos-nominais-por-deputado": {
       "arquivo": "votos-nominais-por-deputado.csv",
+      "bytes": 496144,
       "cabecalho": [
         "ano",
         "tipo_votacao",

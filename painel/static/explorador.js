@@ -20,10 +20,30 @@
   var ROW_CAP = 200000; // signal 35c/BRIEF: declared cap, shown on screen when hit — never a
                          // silent truncation.
 
+  // OS-082 — sinal 35m: o invariante de renderização de taxa vive em `render.js`, carregado
+  // antes deste arquivo na página (browser) ou por `require` relativo (node, S2's mesmo
+  // padrão). Puro: nenhum estado, nenhuma leitura de DOM.
+  var PainelRender = (typeof module !== "undefined" && module.exports)
+    ? require("./render.js")
+    : (typeof window !== "undefined" ? window.PainelRender : null);
+
+  // OS-082 — RISCO 1 do BRIEF: o limite acima do qual o explorador anuncia o tamanho de uma
+  // tabela ANTES de buscá-la, em vez de simplesmente baixá-la. Nenhuma é recusada — só
+  // anunciada. Espelha `build.py`'s `TABELA_PESADA_BYTES`; um teste relê os dois literais e
+  // confere que nunca divergem.
+  var TABELA_PESADA_LIMITE = 5 * 1024 * 1024;
+
+  // OS-082 — as mesmas quatro grafias de coluna de ano que `build.py`'s
+  // `_COLUNAS_DE_ANO_CONHECIDAS` já usa para as 23 receitas; um teste confere que as duas
+  // listas concordam. Usado só para IMPRIMIR a janela das linhas filtradas (RISCO 3) —
+  // nunca para cortar nada: o explorador continua abrindo a tabela publicada inteira.
+  var COLUNAS_DE_ANO_CONHECIDAS = ["ano", "exercicio", "ano_exercicio", "ano_do_pagamento"];
+  var ANO_4 = /^\d{4}$/;
+
   var raiz = document.getElementById("explorador-raiz");
   var manifest = null;
   var deputadosChave = null; // loaded lazily, once, ONLY for the "ver perfil" name match
-  var TABELA_ATUAL = null;   // { nome, header, rows, truncada }
+  var TABELA_ATUAL = null;   // { nome, header, rows, truncada, linhasCruas, headerCru }
 
   var estado = {
     tabela: null,
@@ -147,6 +167,15 @@
     var pendente = ""; // a `"` that ended a chunk while inside quotes: only the NEXT chunk
                        // says whether it closed the field or was the first half of a `""`.
 
+    // OS-082 \u2014 acceptance (e): the RAW text of the current row, byte for byte as the
+    // source wrote it (commas, quotes and escapes included), accumulated in parallel to
+    // the per-field parsing above. `linhasCruas[i]` is the exact line that produced
+    // `rows[i]` \u2014 what `montarCsvSelecao` writes back, never a `join(",")`
+    // reconstruction, which could pick a different quoting style than the source did.
+    var linhaCrua = "";
+    var linhasCruas = [];
+    var headerCru = null;
+
     function fecharCampo() {
       if (primeiroCampo && header === null && linha.length === 0) {
         campo = campo.replace(/^\uFEFF/, "");
@@ -160,8 +189,16 @@
       fecharCampo();
       var atual = linha;
       linha = [];
+      // a `\r` is only part of the line TERMINATOR when it is the last character before
+      // the `\n` that closed this line \u2014 never a `\r` in the middle of a field, which
+      // stays in the middle of the string.
+      var crua = linhaCrua.charAt(linhaCrua.length - 1) === "\r"
+        ? linhaCrua.slice(0, -1)
+        : linhaCrua;
+      linhaCrua = "";
       if (header === null) {
         header = atual;
+        headerCru = crua.replace(/^\uFEFF/, "");
         return;
       }
       if (atual.length === 1 && atual[0] === "") return;
@@ -174,6 +211,7 @@
         obj[header[c]] = atual[c] !== undefined ? atual[c] : "";
       }
       rows.push(obj);
+      linhasCruas.push(crua);
     }
 
     return {
@@ -186,23 +224,26 @@
           if (dentroAspas) {
             if (c === '"') {
               if (i + 1 === n) { pendente = '"'; i++; break; }
-              if (texto[i + 1] === '"') { campo += '"'; i += 2; continue; }
-              dentroAspas = false; i++; continue;
+              if (texto[i + 1] === '"') { campo += '"'; linhaCrua += '""'; i += 2; continue; }
+              dentroAspas = false; linhaCrua += '"'; i++; continue;
             }
-            campo += c; i++; continue;
+            campo += c; linhaCrua += c; i++; continue;
           }
-          if (c === '"') { dentroAspas = true; i++; continue; }
-          if (c === ",") { fecharCampo(); i++; continue; }
-          if (c === "\r") { i++; continue; }
+          if (c === '"') { dentroAspas = true; linhaCrua += c; i++; continue; }
+          if (c === ",") { fecharCampo(); linhaCrua += c; i++; continue; }
+          if (c === "\r") { linhaCrua += c; i++; continue; }
           if (c === "\n") { fecharLinha(); i++; continue; }
-          campo += c; i++;
+          campo += c; linhaCrua += c; i++;
         }
       },
       cheio: function () { return truncada; },
       finalizar: function () {
         if (pendente) { pendente = ""; dentroAspas = false; } // um `"` final fecha o campo
         if (campo.length > 0 || linha.length > 0) fecharLinha();
-        return { header: header || [], rows: rows, truncada: truncada };
+        return {
+          header: header || [], rows: rows, truncada: truncada,
+          linhasCruas: linhasCruas, headerCru: headerCru || "",
+        };
       },
     };
   }
@@ -340,7 +381,10 @@
       }
       return passo();
     }).then(function (parsed) {
-      return { nome: nome, header: parsed.header, rows: parsed.rows, truncada: parsed.truncada };
+      return {
+        nome: nome, header: parsed.header, rows: parsed.rows, truncada: parsed.truncada,
+        linhasCruas: parsed.linhasCruas, headerCru: parsed.headerCru,
+      };
     });
   }
 
@@ -364,30 +408,55 @@
   // ------------------------------------------------------------------------------------
   // Filter / group / aggregate / pivot / sort — all over ONE table's already-loaded rows.
   // ------------------------------------------------------------------------------------
-  function aplicarFiltros(rows) {
-    var out = rows;
-    estado.filtros.forEach(function (f) {
-      if (!f.coluna) return;
-      out = out.filter(function (r) {
-        var v = r[f.coluna];
-        if (f.operador === "contem") {
-          return String(v || "").toLowerCase().indexOf(String(f.valor || "").toLowerCase()) !== -1;
-        }
-        if (f.operador === "igual") {
-          return String(v || "") === String(f.valor || "");
-        }
-        if (f.operador === "maior_que") {
-          var n1 = parseNumero(v);
-          return n1 !== null && n1 > parseFloat(f.valor);
-        }
-        if (f.operador === "menor_que") {
-          var n2 = parseNumero(v);
-          return n2 !== null && n2 < parseFloat(f.valor);
-        }
-        return true;
-      });
+
+  // OS-082 — the one predicate both `aplicarFiltros` (used by the group/aggregate
+  // pipeline, unchanged) and `filtrarComIndices` (new: acceptance (b)/(e), row-level
+  // filtering that must also track each surviving row's ORIGINAL index, to pair it back
+  // to its exact raw CSV line for the export) test a row against — written once so the
+  // two never drift into testing a row two different ways.
+  function linhaPassaFiltro(v, f) {
+    if (f.operador === "contem") {
+      return String(v || "").toLowerCase().indexOf(String(f.valor || "").toLowerCase()) !== -1;
+    }
+    if (f.operador === "igual") {
+      return String(v || "") === String(f.valor || "");
+    }
+    if (f.operador === "maior_que") {
+      var n1 = parseNumero(v);
+      return n1 !== null && n1 > parseFloat(f.valor);
+    }
+    if (f.operador === "menor_que") {
+      var n2 = parseNumero(v);
+      return n2 !== null && n2 < parseFloat(f.valor);
+    }
+    return true;
+  }
+
+  function linhaPassaFiltros(row) {
+    return estado.filtros.every(function (f) {
+      if (!f.coluna) return true;
+      return linhaPassaFiltro(row[f.coluna], f);
     });
-    return out;
+  }
+
+  function aplicarFiltros(rows) {
+    return rows.filter(linhaPassaFiltros);
+  }
+
+  // OS-082 — acceptance (b)/(e): the SAME filtering as `aplicarFiltros`, but also
+  // returning each surviving row's index in the ORIGINAL, unfiltered array — the index
+  // that lines up with `TABELA_ATUAL.linhasCruas`, so the export can hand back the exact
+  // source bytes of exactly the rows kept, never a re-serialization.
+  function filtrarComIndices(rows) {
+    var linhas = [];
+    var indices = [];
+    rows.forEach(function (r, i) {
+      if (linhaPassaFiltros(r)) {
+        linhas.push(r);
+        indices.push(i);
+      }
+    });
+    return { linhas: linhas, indices: indices };
   }
 
   function agregar(valores, tipo) {
@@ -545,6 +614,76 @@
   }
 
   // ------------------------------------------------------------------------------------
+  // OS-082 — RISCO 3 do BRIEF / acceptance (d): a janela das linhas que produziram um
+  // resultado, impressa toda vez — nunca cortada, só relatada. Lê o mesmo conjunto de
+  // colunas de ano que as 23 receitas já declaram (`COLUNAS_DE_ANO_CONHECIDAS`, espelhando
+  // `build.py`), sobre as linhas JÁ FILTRADAS — nunca sobre a tabela inteira.
+  // ------------------------------------------------------------------------------------
+  function calcularJanela(linhas) {
+    var header = TABELA_ATUAL ? TABELA_ATUAL.header : [];
+    var colunaAno = COLUNAS_DE_ANO_CONHECIDAS.filter(function (c) {
+      return header.indexOf(c) !== -1;
+    })[0];
+    if (!colunaAno) {
+      return "esta tabela não tem coluna de ano reconhecida (" +
+        COLUNAS_DE_ANO_CONHECIDAS.join(", ") + ") — nenhum corte de janela se aplica.";
+    }
+    var anos = linhas
+      .map(function (r) { return String(r[colunaAno] || "").trim(); })
+      .filter(function (v) { return ANO_4.test(v); })
+      .map(function (v) { return parseInt(v, 10); });
+    if (!anos.length) {
+      return "coluna de ano " + colunaAno + ": nenhuma linha selecionada tem um ano de " +
+        "quatro dígitos legível.";
+    }
+    var min = Math.min.apply(null, anos);
+    var max = Math.max.apply(null, anos);
+    return min === max
+      ? ("janela dos resultados (" + colunaAno + "): ano " + min + ".")
+      : ("janela dos resultados (" + colunaAno + "): entre " + min + " e " + max + ".");
+  }
+
+  // ------------------------------------------------------------------------------------
+  // OS-082 — entrega (3): a extração. Acceptance (e): o texto retorna com um cabeçalho
+  // comentado (tabela de origem, janela, filtros aplicados, data) seguido de linhas que
+  // são um SUBCONJUNTO EXATO, byte a byte, das linhas da tabela publicada — nunca uma
+  // reconstrução via `join(",")`, que poderia escolher uma grafia de aspas diferente da
+  // fonte. `montarCsvSelecao` é puro (só monta a string); `baixarSelecaoCSV` é quem cria
+  // o Blob e dispara o download.
+  // ------------------------------------------------------------------------------------
+  function montarCsvSelecao(info) {
+    var linhasCruas = info.indices.map(function (i) { return TABELA_ATUAL.linhasCruas[i]; });
+    var cabecalho = TABELA_ATUAL.headerCru || TABELA_ATUAL.header.join(",");
+    var filtrosAtivos = estado.filtros.filter(function (f) { return f.coluna; });
+    var filtrosTexto = filtrosAtivos.length
+      ? filtrosAtivos.map(function (f) {
+          return f.coluna + " " + f.operador + " " + JSON.stringify(f.valor || "");
+        }).join("; ")
+      : "nenhum";
+    var comentario = [
+      "# tabela de origem: " + TABELA_ATUAL.nome + ".csv",
+      "# " + calcularJanela(info.linhas),
+      "# filtros aplicados: " + filtrosTexto,
+      "# extraído em: " + new Date().toISOString(),
+      "# " + info.linhas.length + " de " + TABELA_ATUAL.rows.length + " linhas — " +
+        "subconjunto exato da tabela publicada, sem recálculo",
+    ].join("\n");
+    return comentario + "\n" + [cabecalho].concat(linhasCruas).join("\n") + "\n";
+  }
+
+  function baixarSelecaoCSV(info) {
+    var blob = new Blob([montarCsvSelecao(info)], { type: "text/csv;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = (TABELA_ATUAL ? TABELA_ATUAL.nome : "analise") + "-selecao.csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+
+  // ------------------------------------------------------------------------------------
   // "ver perfil" — the ONE sanctioned cross-table operation: a name match against
   // deputados-chave.csv, never a merge of two arbitrary tables.
   // ------------------------------------------------------------------------------------
@@ -581,6 +720,108 @@
     }).join("");
     return '<div class="linha-filtro"><span class="rotulo">tabela</span>' +
       '<select id="sel-tabela"><option value="">— escolha —</option>' + opts + '</select></div>';
+  }
+
+  // ------------------------------------------------------------------------------------
+  // OS-082 — entrega (2): a filtragem interativa (acceptance (b)/(c)). OS-093 achado A:
+  // até aqui `estado.filtros` era escrito por controle NENHUM. Cada linha abaixo escreve
+  // exatamente um `{coluna, operador, valor}`, e QUALQUER mudança nela re-processa
+  // imediatamente — o filtro é a única parte deste explorador que não espera "aplicar".
+  // ------------------------------------------------------------------------------------
+  var OPERADORES_FILTRO = [
+    { valor: "contem", rotulo: "contém" },
+    { valor: "igual", rotulo: "é igual a" },
+    { valor: "maior_que", rotulo: "maior que" },
+    { valor: "menor_que", rotulo: "menor que" },
+  ];
+
+  function renderFiltros() {
+    if (!TABELA_ATUAL) return "";
+    var header = TABELA_ATUAL.header;
+    var linhas = estado.filtros.map(function (f, i) {
+      var opColuna = header.map(function (c) {
+        return '<option value="' + esc(c) + '"' + (c === f.coluna ? " selected" : "") + '>' + esc(c) + '</option>';
+      }).join("");
+      var opOperador = OPERADORES_FILTRO.map(function (o) {
+        return '<option value="' + o.valor + '"' + (o.valor === f.operador ? " selected" : "") + '>' + esc(o.rotulo) + '</option>';
+      }).join("");
+      return '<div class="filtro-linha" data-i="' + i + '">' +
+        '<select class="filtro-coluna" data-i="' + i + '"><option value="">— coluna —</option>' + opColuna + '</select>' +
+        '<select class="filtro-operador" data-i="' + i + '">' + opOperador + '</select>' +
+        '<input class="filtro-valor" data-i="' + i + '" type="text" value="' + esc(f.valor || "") + '" placeholder="valor">' +
+        '<button type="button" class="secundario filtro-remover" data-i="' + i + '">remover</button>' +
+        '</div>';
+    }).join("");
+    return '<div id="filtros-raiz" class="cartao">' +
+      '<div class="linha-filtro"><span class="rotulo">filtros (por linha)</span>' +
+      '<button type="button" id="btn-add-filtro" class="secundario">+ adicionar filtro</button></div>' +
+      '<div class="filtros-lista">' + linhas + '</div></div>';
+  }
+
+  function ligarFiltros() {
+    var raizFiltros = document.getElementById("filtros-raiz");
+    if (!raizFiltros) return;
+    var btnAdd = document.getElementById("btn-add-filtro");
+    if (btnAdd) {
+      btnAdd.addEventListener("click", function () {
+        estado.filtros.push({ coluna: "", operador: "contem", valor: "" });
+        reRenderFiltros();
+      });
+    }
+    raizFiltros.querySelectorAll(".filtro-coluna").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        estado.filtros[parseInt(sel.getAttribute("data-i"), 10)].coluna = sel.value;
+        processarEExibir();
+      });
+    });
+    raizFiltros.querySelectorAll(".filtro-operador").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        estado.filtros[parseInt(sel.getAttribute("data-i"), 10)].operador = sel.value;
+        processarEExibir();
+      });
+    });
+    raizFiltros.querySelectorAll(".filtro-valor").forEach(function (inp) {
+      inp.addEventListener("input", function () {
+        estado.filtros[parseInt(inp.getAttribute("data-i"), 10)].valor = inp.value;
+        processarEExibir();
+      });
+    });
+    raizFiltros.querySelectorAll(".filtro-remover").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        estado.filtros.splice(parseInt(btn.getAttribute("data-i"), 10), 1);
+        reRenderFiltros();
+      });
+    });
+  }
+
+  function reRenderFiltros() {
+    var raizFiltros = document.getElementById("filtros-raiz");
+    if (!raizFiltros) return;
+    raizFiltros.outerHTML = renderFiltros();
+    ligarFiltros();
+    processarEExibir();
+  }
+
+  // ------------------------------------------------------------------------------------
+  // OS-082 — RISCO 2 do BRIEF / sinal 35m: a cifra recalculada (quantas linhas passaram no
+  // filtro, de quantas a tabela publicada tem) é uma TAXA — e vive num DOM que nenhuma
+  // guarda de build enxerga. `PainelRender.renderizarTaxa` é o único lugar que a escreve,
+  // sempre com o seu numerador e o seu denominador no mesmo elemento.
+  // ------------------------------------------------------------------------------------
+  function renderResumoSelecao(filtradasInfo) {
+    var alvo = document.getElementById("resumo-selecao");
+    if (!alvo) return;
+    var taxa = PainelRender.renderizarTaxa(
+      filtradasInfo.linhas.length, TABELA_ATUAL.rows.length,
+      { sufixo: " linhas selecionadas" }
+    );
+    alvo.innerHTML = '<div class="janela">' + taxa + '<br>' +
+      esc(calcularJanela(filtradasInfo.linhas).replace(/^./, function (c) { return c.toUpperCase(); })) +
+      '</div><div class="linha-filtro">' +
+      '<button type="button" id="btn-baixar-selecao" class="secundario">baixar CSV desta ' +
+      'seleção (linhas originais)</button></div>';
+    var btn = document.getElementById("btn-baixar-selecao");
+    if (btn) btn.addEventListener("click", function () { baixarSelecaoCSV(filtradasInfo); });
   }
 
   function montarPainelControles() {
@@ -665,10 +906,12 @@
   }
 
   function processarEExibir() {
-    var filtradas = aplicarFiltros(TABELA_ATUAL.rows);
+    var filtradasInfo = filtrarComIndices(TABELA_ATUAL.rows);
+    var filtradas = filtradasInfo.linhas;
     var agregada = agruparEAgregar(filtradas);
     agregada = pivotar(agregada);
     agregada = ordenarLinhas(agregada);
+    renderResumoSelecao(filtradasInfo);
     var temPerfil = COLUNAS_NOME_DEPUTADO.some(function (c) { return TABELA_ATUAL.header.indexOf(c) !== -1; });
     var alvo = document.getElementById("resultado");
     if (!alvo) return;
@@ -725,8 +968,31 @@
     });
   }
 
+  // OS-082 — RISCO 1 do BRIEF / acceptance (b): antes de buscar uma tabela acima do
+  // limite, anunciar o tamanho e deixar o leitor escolher — nenhuma é recusada.
   function selecionarTabela(nome) {
     estado.tabela = nome;
+    var info = manifest && manifest.tabelas ? manifest.tabelas[nome] : null;
+    if (info && typeof info.bytes === "number" && info.bytes > TABELA_PESADA_LIMITE) {
+      raiz.innerHTML = renderAvisoTabelaPesada(nome, info);
+      ligarSeletor();
+      var btn = document.getElementById("btn-carregar-mesmo-assim");
+      if (btn) btn.addEventListener("click", function () { carregarEExibirTabela(nome); });
+      return;
+    }
+    carregarEExibirTabela(nome);
+  }
+
+  function renderAvisoTabelaPesada(nome, info) {
+    var mb = (info.bytes / (1024 * 1024)).toFixed(1).replace(".", ",");
+    return renderSeletorTabela() +
+      '<div class="aviso tabela-pesada"><p><strong>' + esc(nome) + '</strong> tem ' + mb +
+      ' MB — é a tabela publicada inteira. Nenhuma linha é recusada aqui; o download só ' +
+      'pode demorar mais.</p>' +
+      '<button type="button" id="btn-carregar-mesmo-assim">carregar mesmo assim</button></div>';
+  }
+
+  function carregarEExibirTabela(nome) {
     raiz.innerHTML = '<p class="aviso">carregando ' + esc(nome) + '…</p>';
     carregarTabela(nome).then(function (t) {
       TABELA_ATUAL = t;
@@ -740,10 +1006,13 @@
 
   function renderTudo() {
     raiz.innerHTML = renderSeletorTabela() +
+      renderFiltros() +
       '<div id="controles">' + montarPainelControles() + '</div>' +
+      '<div id="resumo-selecao"></div>' +
       '<div id="resultado"></div>';
     ligarSeletor();
     if (TABELA_ATUAL) {
+      ligarFiltros();
       ligarControles();
       var selOrdenar = document.getElementById("sel-ordenar");
       TABELA_ATUAL.header.concat(["valor"]).forEach(function (c) {
@@ -766,6 +1035,13 @@
   function iniciar() {
     carregarManifest().then(function (m) {
       manifest = m;
+      // OS-082 — entrega (1): as catorze perguntas fundadoras, já conferidas contra as
+      // telas de canvas na construção (`build_catorze`) e publicadas em `manifest.catorze`.
+      // `filtros.js` só desenha; guardado (não quebra uma construção antiga sem esta chave).
+      if (typeof window !== "undefined" && window.PainelFiltros &&
+          typeof window.PainelFiltros.montar === "function") {
+        window.PainelFiltros.montar(document.getElementById("catorze-raiz"), m.catorze);
+      }
       var fragmento = null;
       try {
         fragmento = decodificarFragmento();
@@ -799,6 +1075,14 @@
       __definirTabelaAtual: function (t) { TABELA_ATUAL = t; },
       __definirEstado: function (e) { estado = Object.assign(estado, e); },
       __deputadosChaveCarregado: function () { return deputadosChave !== null; },
+      // OS-082 — entrega (2)/(3), exportado para que os testes EXECUTEM o filtro/janela/
+      // extração em vez de reimplementá-los em Python.
+      filtrarComIndices: filtrarComIndices,
+      aplicarFiltros: aplicarFiltros,
+      calcularJanela: calcularJanela,
+      montarCsvSelecao: montarCsvSelecao,
+      TABELA_PESADA_LIMITE: TABELA_PESADA_LIMITE,
+      COLUNAS_DE_ANO_CONHECIDAS: COLUNAS_DE_ANO_CONHECIDAS,
     };
   } else {
     iniciar();

@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="topo">
-<nav class="nav-topo"><a href="index.html">&larr; o painel</a><a href="https://github.com/maximusminus/cldf-painel">código-fonte e dados no GitHub</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
+<nav class="nav-topo"><a class="icone-home" href="../index.html" aria-label="Página inicial">&#8962;</a><input type="checkbox" id="menu-alterna" class="menu-alterna"><label for="menu-alterna" class="menu-hamburguer" aria-label="Abrir menu">&#9776;</label><nav class="menu-principal" aria-label="Menu principal"><a href="../index.html">Página inicial</a><a href="index.html">O painel</a><a href="explorador.html">O explorador</a><a href="fontes-e-metodologia.html">Fontes e metodologia</a></nav><a href="index.html">&larr; o painel</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
 <h1>Explorador de tabelas</h1>
 </header>
 <main id="app">
@@ -16,7 +16,11 @@
 <p>Esta página só funciona publicada num site — ela não abre corretamente se você apenas
 clicar duas vezes no arquivo no seu computador, porque carrega uma tabela de cada vez, sob
 demanda. Nenhuma tabela é combinada com outra aqui; a única forma de ir de uma tabela para
-outra é o link "ver perfil", que segue o nome do deputado até <code>deputados-chave.csv</code>.</p>
+outra é o link "ver perfil", que segue o nome do deputado até <code>deputados-chave.csv</code>.
+Você pode <strong>filtrar linha a linha</strong> qualquer uma das tabelas publicadas e
+<strong>baixar exatamente as linhas selecionadas</strong>, sem recálculo — um subconjunto
+exato do mesmo arquivo que está em <code>data/derived/</code>.</p>
+<div id="catorze-raiz"></div>
 <div id="explorador-raiz"></div>
 <section id="reportar" class="reportar">
 <h2>Reportar um problema ou enviar sugestões de melhorias</h2>
@@ -37,8 +41,10 @@ conta no GitHub.</p>
 </section>
 
 </main>
-<p class="rodape">Código-fonte e dados publicados:
-<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a></p>
+<p class="rodape" data-versao-painel="b2.0">Código-fonte e dados publicados:
+<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a> &middot; painel b2.0</p>
+<script src="static/filtros.js"></script>
+<script src="static/render.js"></script>
 <script src="static/explorador.js"></script>
 <script src="static/reportar.js"></script>
 </body>

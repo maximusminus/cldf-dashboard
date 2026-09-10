@@ -48,3 +48,40 @@ header.topo nav.nav-topo { display: flex; align-items: center; flex-wrap: wrap; 
 header.topo a.reportar-link.destaque { margin-left: auto; background: #fff; color: #c1121f;
   font-weight: 700; font-size: 17px; padding: 8px 16px; border: 2px solid #c1121f;
   border-radius: 4px; }
+
+/* OS-092 (cldf-painel#3, itens 1 e 2) — o menu de traços e o ícone HOME, mãos
+   espelhadas de `MENU_CSS` em src/cldf/painel_estatico/build.py, exatamente como as
+   regras de `.reportar` acima já são mãos espelhadas de `REPORTAR_CSS`: esta é a única
+   página que carrega uma folha de estilo externa em vez de CSS embutido. */
+header.topo nav.nav-topo { position: relative; }
+a.icone-home { font-size: 19px; line-height: 1; text-decoration: none; margin-right: 10px; }
+input.menu-alterna { position: absolute; width: 1px; height: 1px; opacity: 0;
+  pointer-events: none; }
+label.menu-hamburguer { cursor: pointer; font-size: 19px; line-height: 1;
+  margin-right: 12px; user-select: none; }
+nav.menu-principal { display: none; flex-direction: column; position: absolute;
+  top: 100%; left: 0; background: #14293a; border: 1px solid #2d5a7a; border-radius: 4px;
+  min-width: 210px; padding: 4px 0; z-index: 30; }
+nav.menu-principal a { display: block; padding: 8px 16px; white-space: nowrap; }
+input.menu-alterna:checked ~ nav.menu-principal { display: flex; }
+/* OS-082 — sinal 35m: o invariante de `render.js`, o mesmo par de classes que
+   `painel_estatico/build.py`'s BASE_CSS já usa para o painel estático, repetido aqui porque
+   o explorador tem a sua própria folha de estilo. */
+.taxa, .numero { font-weight: 700; color: #1a3a52; }
+.taxa-vazia { color: #8a8378; font-weight: 400; }
+.nota-vazia { font-size: 12px; font-weight: 400; }
+
+/* OS-082 — entrega (2): os filtros por linha (OS-093 achado A) e o resumo recalculado. */
+.filtros-lista { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.filtro-linha { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.filtro-valor { min-width: 140px; }
+
+/* OS-082 — RISCO 1: o aviso de tabela pesada, anunciado antes da busca e nunca uma recusa. */
+.aviso.tabela-pesada { display: flex; flex-direction: column; gap: 8px;
+  align-items: flex-start; }
+
+/* OS-082 — entrega (1): as catorze perguntas fundadoras, cada uma já servida por uma tela
+   de canvas ou (se algum dia deixar de ser) nomeada como ainda não. */
+ol.catorze { padding-left: 20px; margin: 8px 0 0; }
+ol.catorze li { margin: 6px 0; }
+.pergunta-origem-mini { font-size: 12px; color: #666; font-style: italic; }

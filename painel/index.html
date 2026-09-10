@@ -6,6 +6,9 @@
 <title>o painel — o painel (cldf)</title>
 <style>
 :root { color-scheme: light; }
+/* OS-099 — the link between a question page and its canvas, and back; it is in
+   BASE_CSS and not in CANVAS_CSS because both ends of that link use it. */
+.drill { font-size: 13px; margin: 16px 0 0; }
 body { margin: 0; padding: 0; background: #f6f4ef; color: #1a1a1a;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
 header.topo { background: #1a3a52; color: #fff; padding: 16px 24px; }
@@ -55,11 +58,22 @@ header.topo nav.nav-topo { display: flex; align-items: center; flex-wrap: wrap; 
 header.topo a.reportar-link.destaque { margin-left: auto; background: #fff; color: #c1121f;
   font-weight: 700; font-size: 17px; padding: 8px 16px; border: 2px solid #c1121f;
   border-radius: 4px; }
+header.topo nav.nav-topo { position: relative; }
+a.icone-home { font-size: 19px; line-height: 1; text-decoration: none; margin-right: 10px; }
+input.menu-alterna { position: absolute; width: 1px; height: 1px; opacity: 0;
+  pointer-events: none; }
+label.menu-hamburguer { cursor: pointer; font-size: 19px; line-height: 1;
+  margin-right: 12px; user-select: none; }
+nav.menu-principal { display: none; flex-direction: column; position: absolute;
+  top: 100%; left: 0; background: #14293a; border: 1px solid #2d5a7a; border-radius: 4px;
+  min-width: 210px; padding: 4px 0; z-index: 30; }
+nav.menu-principal a { display: block; padding: 8px 16px; white-space: nowrap; }
+input.menu-alterna:checked ~ nav.menu-principal { display: flex; }
 </style>
 </head>
 <body>
 <header class="topo">
-<nav class="nav-topo"><a href="https://github.com/maximusminus/cldf-painel">código-fonte e dados no GitHub</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
+<nav class="nav-topo"><a class="icone-home" href="../index.html" aria-label="Página inicial">&#8962;</a><input type="checkbox" id="menu-alterna" class="menu-alterna"><label for="menu-alterna" class="menu-hamburguer" aria-label="Abrir menu">&#9776;</label><nav class="menu-principal" aria-label="Menu principal"><a href="../index.html">Página inicial</a><a href="index.html">O painel</a><a href="explorador.html">O explorador</a><a href="fontes-e-metodologia.html">Fontes e metodologia</a></nav><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
 <h1>o painel</h1>
 </header>
 <main>
@@ -74,6 +88,15 @@ que cada tabela é e de onde cada número veio.</p>
 <p>O <a href="explorador.html">explorador</a> abre qualquer uma das 102
 tabelas, uma de cada vez, mas só funciona quando esta página está publicada num site — não
 abre corretamente se você apenas clicar duas vezes no arquivo no seu computador.</p>
+</div>
+<div class="cartao">
+<h2>Painéis interativos</h2>
+<p>23 telas em que você filtra: clique num valor de uma fatia, numa barra ou num
+ponto e TODOS os quadros da tela se refazem ao mesmo tempo, sem recarregar a página e sem
+buscar nada além do arquivo de números daquela tela. Cada painel lê uma tabela só, na janela
+que a sua página declara, e leva de volta à pergunta e à tabela inteira. Como o explorador,
+estas telas só funcionam quando esta pasta está publicada num site.</p>
+<nav class="indice"><ul><li><a href="paineis/a01-despesa.html">Eixo: despesa — empenhado, liquidado e pago</a></li><li><a href="paineis/a02-folha.html">Eixo: folha de pagamento</a></li><li><a href="paineis/a03-contratacao.html">Eixo: contratação — licitações e dispensas</a></li><li><a href="paineis/a04-orcamento.html">Eixo: orçamento — LOA e créditos adicionais</a></li><li><a href="paineis/a05-diarias.html">Eixo: diárias</a></li><li><a href="paineis/a06-verba-indenizatoria.html">Eixo: verba indenizatória</a></li><li><a href="paineis/a07-teletrabalho.html">Eixo: teletrabalho</a></li><li><a href="paineis/a08-concurso.html">Eixo: concurso de 2018</a></li><li><a href="paineis/a09-sigilo.html">Eixo: sigilo — informações classificadas</a></li><li><a href="paineis/q01-proposicoes-apresentadas-aprovadas.html">Proposições apresentadas e aprovadas, por ano e espécie, com autoria</a></li><li><a href="paineis/q02-honorificas-comemorativas-mocoes.html">Proposições honoríficas, comemorativas e moções</a></li><li><a href="paineis/q03-parecer-inconstitucionalidade-ccj.html">Parecer pela inconstitucionalidade e aprovação apesar dele</a></li><li><a href="paineis/q04-aprovadas-contra-parecer-tecnico.html">Aprovadas contrariando o parecer técnico-legislativo</a></li><li><a href="paineis/q05-vetos-do-governador.html">Vetos do Governador</a></li><li><a href="paineis/q06-iniciativa-do-executivo.html">Proposições de iniciativa do Executivo</a></li><li><a href="paineis/q07-regime-de-urgencia.html">Tramitação em regime de urgência</a></li><li><a href="paineis/q08-emendas-parlamentares-loa.html">Emendas parlamentares a PLOA, LDO e PPA</a></li><li><a href="paineis/q09-votacoes-nominais-simbolicas.html">Votações nominais x simbólicas</a></li><li><a href="paineis/q10-convocacao-de-secretarios.html">Convocação de Secretários de Estado</a></li><li><a href="paineis/q11-cpis.html">CPIs — Comissões Parlamentares de Inquérito</a></li><li><a href="paineis/q12-tempo-de-tramitacao.html">Tempo de tramitação e proposições sem deliberação</a></li><li><a href="paineis/q13-sessoes-ordinarias.html">Sessões ordinárias previstas, realizadas e sem quórum</a></li><li><a href="paineis/q14-frequencia-dos-deputados.html">Frequência dos deputados em plenário</a></li></ul></nav>
 </div>
 <div class="cartao">
 <h2>As catorze perguntas fundadoras, e os eixos acrescentados</h2>
@@ -112,8 +135,8 @@ conta no GitHub.</p>
 </form>
 </section>
 
-<p class="rodape">Código-fonte e dados publicados:
-<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a></p>
+<p class="rodape" data-versao-painel="b2.0">Código-fonte e dados publicados:
+<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a> &middot; painel b2.0</p>
 </main>
 <script src="static/reportar.js"></script>
 </body>
