@@ -9,6 +9,9 @@
 /* OS-099 — the link between a question page and its canvas, and back; it is in
    BASE_CSS and not in CANVAS_CSS because both ends of that link use it. */
 .drill { font-size: 13px; margin: 16px 0 0; }
+.baixar { font-size: 13px; margin: 0 0 16px; padding: 10px 12px;
+  border: 1px solid #d9d9d9; border-left: 4px solid #c1121f; background: #fafafa; }
+.baixar a { font-weight: 600; }
 body { margin: 0; padding: 0; background: #f6f4ef; color: #1a1a1a;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
 header.topo { background: #1a3a52; color: #fff; padding: 16px 24px; }
@@ -77,6 +80,7 @@ input.menu-alterna:checked ~ nav.menu-principal { display: flex; }
 <h1>o painel</h1>
 </header>
 <main>
+
 
 <div class="janela" data-janela="sem_eixo">Janela: esta página lê uma tabela sem eixo de tempo. Os números desta página são contagens de arquivos e de páginas, não da legislatura. O painel conta a 9ª legislatura, 2023–2026; 2022 aparece nas páginas de pergunta como linha de base rotulada, e as tabelas inteiramente anteriores a 2023 estão na seção “legislaturas anteriores”, fora de toda manchete.</div>
 <div class="cartao">

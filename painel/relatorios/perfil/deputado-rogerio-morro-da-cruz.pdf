@@ -1,0 +1,94 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 4525 >>
+stream
+BT /F2 17 Tf 1 0 0 1 56 769 Tm (Deputado Rogério Morro da Cruz) Tj ET
+1.5 w 56 748 m 56 760 l S
+BT /F1 10 Tf 1 0 0 1 66 748 Tm (Janela: esta página lê uma tabela sem eixo de tempo. producao-por-deputado.csv não tem coluna de ano:) Tj ET
+1.5 w 56 735 m 56 747 l S
+BT /F1 10 Tf 1 0 0 1 66 735 Tm (cada coluna já é uma re-soma da 9ª legislatura \(2023–2026\), feita na exportação e declarada em) Tj ET
+1.5 w 56 722 m 56 734 l S
+BT /F1 10 Tf 1 0 0 1 66 722 Tm (provenance.json. O painel não re-janela esta tabela — ele confere que ela já está na janela.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 705.5 Tm (Nomes na fonte: ROGERIO MORRO DA CRUZ \(painel de votação\), ROGÉRIO MORRO DA CRUZ \(painel de emendas\)) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 689 Tm (sessões presentes) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 673 Tm (394 de 547 — 72,0%) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 655 Tm (proposições apresentadas) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 639 Tm (692) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 621 Tm (aprovadas) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 605 Tm (29 de 692 — 4,2%) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 587 Tm (emendas de gabinete à LOA) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 571 Tm (187) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 553 Tm (emendas aprovadas) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 537 Tm (98 de 187 — 52,4%) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 519 Tm (pareceres da CCJ sobre autoria própria) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 503 Tm (32) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 485 Tm (pareceres admissíveis) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 469 Tm (17 de 32 — 53,1%) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 440 Tm (Também informa) Tj ET
+1.5 w 56 424 m 56 436 l S
+BT /F1 10 Tf 1 0 0 1 66 424 Tm (Também informa — a presença é frequencia-em-sessoes-ordinarias re-somada, e o acervo não tem) Tj ET
+1.5 w 56 411 m 56 423 l S
+BT /F1 10 Tf 1 0 0 1 66 411 Tm (calendário de mandato: nenhum teste pode dizer se uma sessão ausente é falta ou licença \(caminho de) Tj ET
+1.5 w 56 398 m 56 410 l S
+BT /F1 10 Tf 1 0 0 1 66 398 Tm (cobertura 22\). Os pareceres da CCJ são contagens sobre verdict_prosa , e o sinal 20d recusa publicar) Tj ET
+1.5 w 56 385 m 56 397 l S
+BT /F1 10 Tf 1 0 0 1 66 385 Tm (essa razão como COLUNA — aqui ela aparece na tela, com numerador e denominador ao lado, e nunca é) Tj ET
+1.5 w 56 372 m 56 384 l S
+BT /F1 10 Tf 1 0 0 1 66 372 Tm (escrita em data/derived/ \(sinal 35c\). As emendas são as do painel de emendas, cujo status_execucao é) Tj ET
+1.5 w 56 359 m 56 371 l S
+BT /F1 10 Tf 1 0 0 1 66 359 Tm (ATIVO ou CANCELADO, nunca acatada ou rejeitada.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 342.5 Tm (Todos os números deste documento vêm de uma única linha de producao-por-deputado.csv, identificada pelo nome do) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 331.5 Tm (deputado. Nenhuma outra tabela é combinada aqui.) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 304 Tm (Fonte, janela e data) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 288 Tm (tabela publicada) Tj ET
+BT /F2 10 Tf 1 0 0 1 261.42 288 Tm (linhas) Tj ET
+BT /F2 10 Tf 1 0 0 1 371.46 288 Tm (sha256 \(16\)) Tj ET
+0.8 w 56 288 m 539 288 l S
+BT /F1 10 Tf 1 0 0 1 58 272 Tm (producao-por-deputado.csv) Tj ET
+BT /F1 10 Tf 1 0 0 1 261.42 272 Tm (25) Tj ET
+BT /F1 10 Tf 1 0 0 1 371.46 272 Tm (9e9d5723b6a5bcdd) Tj ET
+0.4 w 56 273 m 539 273 l S
+BT /F1 8.5 Tf 1 0 0 1 56 252.5 Tm (Coleta das proposições realizada a partir de 21 de agosto de 2026; das votações, em 26–28 de agosto de 2026. Fontes: a API) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 241.5 Tm (pública da Câmara Legislativa do Distrito Federal e o Painel de Votação do seu Portal da Transparência. Licença dos dados:) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 230.5 Tm (CC BY-SA 4.0 \([../../LICENSE-data]\(../../LICENSE-data\)\) — re-escolhida na OS-083 para seguir a mesma licença que a maioria) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 219.5 Tm (dos pacotes de dados.cl.df.gov.br já declara.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 203.5 Tm (Dados: CC BY-SA 4.0. Código e interface: PolyForm Noncommercial 1.0.0. Você pode redistribuir e transformar estes números,) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 192.5 Tm (citando a fonte e mantendo a mesma licença.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 176.5 Tm (Esta página no site: https://maximusminus.github.io/cldf-dashboard/painel/perfil/deputado-rogerio-morro-da-cruz.html — o) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 165.5 Tm (número desta página é reproduzível: a tabela acima está publicada inteira, com o seu sha256, e qualquer pessoa pode) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 154.5 Tm (re-somá-la.) Tj ET
+0.4 w 56 70 m 539 70 l S
+BT /F1 8 Tf 1 0 0 1 56 60 Tm (Deputado Rogério Morro da Cruz) Tj ET
+BT /F1 8 Tf 1 0 0 1 490.52 60 Tm (página 1 de 1) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+5033
+%%EOF

@@ -1,0 +1,90 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 3917 >>
+stream
+BT /F2 17 Tf 1 0 0 1 56 769 Tm (Eixo: concurso de 2018) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 748 Tm (eixo acrescentado — o concurso de 2018, do aprovado ao nomeado) Tj ET
+1.5 w 56 730 m 56 742 l S
+BT /F1 10 Tf 1 0 0 1 66 730 Tm (Legislatura anterior. Esta página não conta para nenhum número da legislatura atual \(2023–2026\): ela) Tj ET
+1.5 w 56 717 m 56 729 l S
+BT /F1 10 Tf 1 0 0 1 66 717 Tm (publica um registro inteiramente anterior a 2023, mantido porque continua sendo o registro público. o) Tj ET
+1.5 w 56 704 m 56 716 l S
+BT /F1 10 Tf 1 0 0 1 66 704 Tm (concurso é o de 2018, aberto e homologado na 7ª legislatura, e a tabela não tem eixo de tempo algum:) Tj ET
+1.5 w 56 691 m 56 703 l S
+BT /F1 10 Tf 1 0 0 1 66 691 Tm (cada linha é um cargo, nunca um ano. As nomeações que dele decorreram continuam publicadas em) Tj ET
+1.5 w 56 678 m 56 690 l S
+BT /F1 10 Tf 1 0 0 1 66 678 Tm (data/derived/, e esta página fica na seção de legislaturas anteriores.) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 661 Tm (número-chave — todas as linhas publicadas) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 645 Tm (632 de 1.061 nomeados sobre aprovados — 59,6%) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 616 Tm (O funil do concurso) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 600 Tm (rótulo) Tj ET
+BT /F2 10 Tf 1 0 0 1 312.62 600 Tm (valor) Tj ET
+0.8 w 56 600 m 539 600 l S
+BT /F1 10 Tf 1 0 0 1 58 584 Tm (aprovados) Tj ET
+BT /F1 10 Tf 1 0 0 1 312.62 584 Tm (1.061) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 571 Tm (nomeados) Tj ET
+BT /F1 10 Tf 1 0 0 1 312.62 571 Tm (632) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 558 Tm (com posse) Tj ET
+BT /F1 10 Tf 1 0 0 1 312.62 558 Tm (560) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 545 Tm (exonerados) Tj ET
+BT /F1 10 Tf 1 0 0 1 312.62 545 Tm (65) Tj ET
+0.4 w 56 546 m 539 546 l S
+BT /F2 12 Tf 1 0 0 1 56 514 Tm (Também informa) Tj ET
+1.5 w 56 498 m 56 510 l S
+BT /F1 10 Tf 1 0 0 1 66 498 Tm (signal 34 também informa que nenhum nome da lista de aprovados alcança publicação — a tabela não) Tj ET
+1.5 w 56 485 m 56 497 l S
+BT /F1 10 Tf 1 0 0 1 66 485 Tm (tem coluna de nome, por desenho — e que 26 dos 596 nomes nomeados não batem com a lista de) Tj ET
+1.5 w 56 472 m 56 484 l S
+BT /F1 10 Tf 1 0 0 1 66 472 Tm (aprovados por chave.) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 444 Tm (Fonte, janela e data) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 428 Tm (tabela publicada) Tj ET
+BT /F2 10 Tf 1 0 0 1 251.96 428 Tm (linhas) Tj ET
+BT /F2 10 Tf 1 0 0 1 369.23 428 Tm (sha256 \(16\)) Tj ET
+0.8 w 56 428 m 539 428 l S
+BT /F1 10 Tf 1 0 0 1 58 412 Tm (concurso-2018-funil.csv) Tj ET
+BT /F1 10 Tf 1 0 0 1 251.96 412 Tm (66) Tj ET
+BT /F1 10 Tf 1 0 0 1 369.23 412 Tm (097bef7f1071505d) Tj ET
+0.4 w 56 413 m 539 413 l S
+BT /F1 8.5 Tf 1 0 0 1 56 392.5 Tm (Coleta das proposições realizada a partir de 21 de agosto de 2026; das votações, em 26–28 de agosto de 2026. Fontes: a API) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 381.5 Tm (pública da Câmara Legislativa do Distrito Federal e o Painel de Votação do seu Portal da Transparência. Licença dos dados:) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 370.5 Tm (CC BY-SA 4.0 \([../../LICENSE-data]\(../../LICENSE-data\)\) — re-escolhida na OS-083 para seguir a mesma licença que a maioria) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 359.5 Tm (dos pacotes de dados.cl.df.gov.br já declara.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 343.5 Tm (Dados: CC BY-SA 4.0. Código e interface: PolyForm Noncommercial 1.0.0. Você pode redistribuir e transformar estes números,) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 332.5 Tm (citando a fonte e mantendo a mesma licença.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 316.5 Tm (Esta página no site: https://maximusminus.github.io/cldf-dashboard/painel/perguntas/a08-concurso.html — o número desta) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 305.5 Tm (página é reproduzível: a tabela acima está publicada inteira, com o seu sha256, e qualquer pessoa pode re-somá-la.) Tj ET
+0.4 w 56 70 m 539 70 l S
+BT /F1 8 Tf 1 0 0 1 56 60 Tm (Eixo: concurso de 2018) Tj ET
+BT /F1 8 Tf 1 0 0 1 490.52 60 Tm (página 1 de 1) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4425
+%%EOF

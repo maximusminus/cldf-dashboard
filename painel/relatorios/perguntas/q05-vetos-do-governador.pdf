@@ -1,0 +1,88 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 3816 >>
+stream
+BT /F2 17 Tf 1 0 0 1 56 769 Tm (Vetos do Governador) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 748 Tm (vetos do Governador \(totais/parciais\): projeto, ano, data de apreciação, mantido ou derrubado) Tj ET
+1.5 w 56 730 m 56 742 l S
+BT /F1 10 Tf 1 0 0 1 66 730 Tm (Janela: a 9ª legislatura, 2023–2026. Todo número desta página é contado só sobre esses quatro anos.) Tj ET
+1.5 w 56 717 m 56 729 l S
+BT /F1 10 Tf 1 0 0 1 66 717 Tm (2022 — o último ano da legislatura anterior — aparece ao lado como linha de base, rotulado, e nunca é) Tj ET
+1.5 w 56 704 m 56 716 l S
+BT /F1 10 Tf 1 0 0 1 66 704 Tm (somado a um total de 2023–2026.) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 687 Tm (número-chave — 2023–2026) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 671 Tm (22 de 118 vetos derrubados \(aprovados apesar do veto\) — 18,6%) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 653 Tm (linha de base — 2022, último ano da legislatura anterior \(não somado acima\)) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 637 Tm (24 de 40 vetos derrubados \(aprovados apesar do veto\) — 60,0%) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 608 Tm (Resultado da apreciação) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 592 Tm (rótulo) Tj ET
+BT /F2 10 Tf 1 0 0 1 324.57 592 Tm (valor) Tj ET
+0.8 w 56 592 m 539 592 l S
+BT /F1 10 Tf 1 0 0 1 58 576 Tm (REPROVADO) Tj ET
+BT /F1 10 Tf 1 0 0 1 324.57 576 Tm (46) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 563 Tm (REJEITADA) Tj ET
+BT /F1 10 Tf 1 0 0 1 324.57 563 Tm (31) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 550 Tm (APROVADA) Tj ET
+BT /F1 10 Tf 1 0 0 1 324.57 550 Tm (22) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 537 Tm (sem_deliberacao) Tj ET
+BT /F1 10 Tf 1 0 0 1 324.57 537 Tm (17) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 524 Tm (REJEITADAS) Tj ET
+BT /F1 10 Tf 1 0 0 1 324.57 524 Tm (2) Tj ET
+0.4 w 56 525 m 539 525 l S
+BT /F2 12 Tf 1 0 0 1 56 493 Tm (Também informa) Tj ET
+1.5 w 56 477 m 56 489 l S
+BT /F1 10 Tf 1 0 0 1 66 477 Tm (signal 14 \(dataset 5\) também informa 24 vetos que só o relatório final registra, 2 casos de má) Tj ET
+1.5 w 56 464 m 56 476 l S
+BT /F1 10 Tf 1 0 0 1 66 464 Tm (classificação e 4 auto-contradições na fonte — publicados, nunca corrigidos por inferência.) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 436 Tm (Fonte, janela e data) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 420 Tm (tabela publicada) Tj ET
+BT /F2 10 Tf 1 0 0 1 254 420 Tm (linhas) Tj ET
+BT /F2 10 Tf 1 0 0 1 368.86 420 Tm (sha256 \(16\)) Tj ET
+0.8 w 56 420 m 539 420 l S
+BT /F1 10 Tf 1 0 0 1 58 404 Tm (vetos-do-governador.csv) Tj ET
+BT /F1 10 Tf 1 0 0 1 254 404 Tm (325) Tj ET
+BT /F1 10 Tf 1 0 0 1 368.86 404 Tm (4061071568d516f6) Tj ET
+0.4 w 56 405 m 539 405 l S
+BT /F1 8.5 Tf 1 0 0 1 56 384.5 Tm (Coleta das proposições realizada a partir de 21 de agosto de 2026; das votações, em 26–28 de agosto de 2026. Fontes: a API) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 373.5 Tm (pública da Câmara Legislativa do Distrito Federal e o Painel de Votação do seu Portal da Transparência. Licença dos dados:) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 362.5 Tm (CC BY-SA 4.0 \([../../LICENSE-data]\(../../LICENSE-data\)\) — re-escolhida na OS-083 para seguir a mesma licença que a maioria) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 351.5 Tm (dos pacotes de dados.cl.df.gov.br já declara.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 335.5 Tm (Dados: CC BY-SA 4.0. Código e interface: PolyForm Noncommercial 1.0.0. Você pode redistribuir e transformar estes números,) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 324.5 Tm (citando a fonte e mantendo a mesma licença.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 308.5 Tm (Esta página no site: https://maximusminus.github.io/cldf-dashboard/painel/perguntas/q05-vetos-do-governador.html — o número) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 297.5 Tm (desta página é reproduzível: a tabela acima está publicada inteira, com o seu sha256, e qualquer pessoa pode re-somá-la.) Tj ET
+0.4 w 56 70 m 539 70 l S
+BT /F1 8 Tf 1 0 0 1 56 60 Tm (Vetos do Governador) Tj ET
+BT /F1 8 Tf 1 0 0 1 490.52 60 Tm (página 1 de 1) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4324
+%%EOF
