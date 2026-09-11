@@ -1,0 +1,62 @@
+/* OS-103 — o construtor de relatórios (layout A · Relatório): campos à esquerda, fatias em
+   linha, poços à direita, indicadores + um gráfico + uma grade de UMA agregação. */
+.construtor-avisos { display: flex; flex-direction: column; gap: 6px; }
+.construtor-topo { margin-bottom: 12px; }
+.construtor-descricao { margin: 8px 0 0; color: #555; font-size: 13px; }
+.construtor-corpo { display: grid; grid-template-columns: 230px minmax(0, 1fr) 230px; gap: 12px;
+  align-items: start; }
+.construtor-campos, .construtor-pocos { position: sticky; top: 8px; max-height: calc(100vh - 16px);
+  overflow: auto; }
+.construtor-campos h2, .construtor-pocos h2 { margin: 0 0 8px; font-size: 15px; }
+.construtor-campos h3 { margin: 10px 0 4px; font-size: 12px; text-transform: uppercase;
+  letter-spacing: .04em; color: #666; }
+ul.campos-lista { list-style: none; margin: 0; padding: 0; }
+li.campo { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 4px 0;
+  border-bottom: 1px solid #efe9dc; font-size: 13px; }
+.campo-nome { flex: 1 1 100%; word-break: break-all; }
+.campo-tipo { font-size: 11px; color: #8a8378; }
+button.mini { padding: 1px 6px; font-size: 11px; }
+button.mini.ativo { background: #1a3a52; color: #fff; }
+.construtor-pocos .grupo-campo { display: flex; flex-direction: column; gap: 2px;
+  margin-bottom: 8px; }
+.construtor-pocos select { width: 100%; }
+.construtor-acoes { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.construtor-link { font-size: 12px; }
+.construtor-centro { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.construtor-fatias { display: flex; flex-wrap: wrap; gap: 6px; }
+details.fatia { border: 1px solid #ddd6c8; border-radius: 4px; background: #fff;
+  font-size: 13px; max-width: 100%; }
+details.fatia summary { cursor: pointer; padding: 4px 10px; display: flex; gap: 8px;
+  align-items: baseline; white-space: nowrap; }
+details.fatia[open] { flex: 1 1 100%; }
+.fatia-nome { font-weight: 600; }
+.fatia-estado { color: #8a8378; font-size: 12px; }
+.fatia-corpo { padding: 6px 10px 8px; border-top: 1px solid #efe9dc; }
+.fatia-corpo input[type=search] { width: 100%; margin-bottom: 6px; }
+.fatia-aviso { font-size: 11px; color: #8a8378; margin-bottom: 4px; }
+.fatia-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2px 12px; max-height: 260px; overflow: auto; }
+label.fatia-valor { display: flex; align-items: center; gap: 6px; font-size: 12px;
+  cursor: pointer; }
+label.fatia-valor.zero { color: #aaa; }
+.fatia-texto { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fatia-n { color: #1a3a52; font-weight: 700; }
+.construtor-resumo { display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  font-size: 14px; }
+.construtor-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px; }
+.kpi { padding: 10px 14px; }
+.kpi-rotulo { font-size: 12px; color: #666; }
+.kpi-valor { font-size: 22px; }
+.construtor-grafico h2, .construtor-grade h2 { margin: 0 0 8px; font-size: 15px; }
+.construtor-grafico svg.grafico { width: 100%; height: auto; display: block; }
+.construtor-nota, .construtor-vazio { font-size: 12px; color: #8a8378; margin: 6px 0 0; }
+.legenda { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; font-size: 12px; }
+.legenda-item { display: inline-flex; align-items: center; gap: 4px; }
+.legenda-cor { width: 12px; height: 12px; display: inline-block; border-radius: 2px; }
+.construtor-grade td.num { text-align: right; }
+.tabela-scroll { overflow-x: auto; }
+@media (max-width: 900px) {
+  .construtor-corpo { grid-template-columns: 1fr; }
+  .construtor-campos, .construtor-pocos { position: static; max-height: none; }
+}

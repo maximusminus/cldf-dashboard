@@ -3,25 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Explorador — o painel (cldf)</title>
+<title>Explorador — construtor de relatórios (cldf)</title>
 <link rel="stylesheet" href="static/painel.css">
+<link rel="stylesheet" href="static/construtor.css">
 </head>
 <body>
 <header class="topo">
 <nav class="nav-topo"><a class="icone-home" href="../index.html" aria-label="Página inicial">&#8962;</a><input type="checkbox" id="menu-alterna" class="menu-alterna"><label for="menu-alterna" class="menu-hamburguer" aria-label="Abrir menu">&#9776;</label><nav class="menu-principal" aria-label="Menu principal"><a href="../index.html">Página inicial</a><a href="index.html">O painel</a><a href="explorador.html">O explorador</a><a href="fontes-e-metodologia.html">Fontes e metodologia</a></nav><a href="index.html">&larr; o painel</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
-<h1>Explorador de tabelas</h1>
+<h1>Explorador — construtor de relatórios</h1>
 </header>
 <main id="app">
 <div class="janela" data-janela="sem_eixo">Janela: esta página lê uma tabela sem eixo de tempo. O explorador abre a tabela publicada inteira, sem corte de ano — inclusive as tabelas anteriores a 2023. É de propósito: o corte da legislatura vale para o que o painel CONTA, e nenhuma linha foi retirada de data/derived/. Quem quer o número da legislatura atual (2023–2026) lê as páginas de pergunta; quem quer o registro inteiro lê aqui.</div>
 <p>Esta página só funciona publicada num site — ela não abre corretamente se você apenas
 clicar duas vezes no arquivo no seu computador, porque carrega uma tabela de cada vez, sob
-demanda. Nenhuma tabela é combinada com outra aqui; a única forma de ir de uma tabela para
+demanda. Escolha uma tabela; os seus campos aparecem à esquerda, tipados em
+<strong>dimensões</strong> e <strong>medidas</strong>. Escolha um <strong>eixo</strong>, uma
+<strong>série</strong>, uma <strong>medida</strong> e um <strong>visual</strong> à direita, e
+<strong>fatie</strong> por qualquer dimensão: os indicadores, o gráfico e a grade saem de uma
+única agregação, feita no seu navegador, sem botão "aplicar". Valores em reais aparecem sem
+centavos. Nenhuma tabela é combinada com outra aqui; a única forma de ir de uma tabela para
 outra é o link "ver perfil", que segue o nome do deputado até <code>deputados-chave.csv</code>.
-Você pode <strong>filtrar linha a linha</strong> qualquer uma das tabelas publicadas e
-<strong>baixar exatamente as linhas selecionadas</strong>, sem recálculo — um subconjunto
-exato do mesmo arquivo que está em <code>data/derived/</code>.</p>
+O relatório que está na tela pode ser <strong>baixado como .pdf ou .docx</strong>, com os
+filtros em vigor e a proveniência da tabela — o mesmo arquivo que está em
+<code>data/derived/</code>.</p>
 <div id="catorze-raiz"></div>
-<div id="explorador-raiz"></div>
+<div id="construtor-raiz"></div>
 <section id="reportar" class="reportar">
 <h2>Reportar um problema ou enviar sugestões de melhorias</h2>
 <p>Achou um número errado, um link quebrado, ou algo que não bate com a fonte? Escreva
@@ -41,11 +47,11 @@ conta no GitHub.</p>
 </section>
 
 </main>
-<p class="rodape" data-versao-painel="b2.0">Código-fonte e dados publicados:
-<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a> &middot; painel b2.0</p>
+<p class="rodape" data-versao-painel="b2.1">Código-fonte e dados publicados:
+<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a> &middot; painel b2.1</p>
 <script src="static/filtros.js"></script>
-<script src="static/render.js"></script>
-<script src="static/explorador.js"></script>
+<script src="static/exportar.js"></script>
+<script src="static/construtor.js"></script>
 <script src="static/reportar.js"></script>
 </body>
 </html>
