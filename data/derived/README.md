@@ -86,8 +86,9 @@ licença que a maioria dos pacotes de `dados.cl.df.gov.br` já declara.
 | `creditos-adicionais-por-lei.csv` / `.xlsx` | 127 | **os créditos adicionais**, um por lei — acréscimos, decréscimos e o total movimentado; os dois lados fecham a zero nas 127 |
 | `creditos-adicionais-por-emenda.csv` | 25.443 | o detalhe: uma linha por emenda de cada crédito, com a classificação de origem e a de destino. **Só `.csv`**, por consistência com a tabela acima — o `.xlsx` tem 62 MB, acima dos 50 MB que o GitHub recomenda |
 | `conferencia-loa-x-creditos.csv` / `.xlsx` | 51.764 | a dotação votada ao lado do que os créditos moveram, por classificação — **só 1.996 chaves (3,9 %) aparecem nas duas fontes**, e isso é o achado, não uma falha |
-| `campos-atomicos.csv` / `.xlsx` | 2.591 | **o mapa de campos**: cada campo atômico que o acervo bruto guarda, com o tipo, o rótulo e a descrição que a fonte escreveu (ou `n/d`), o arquivo de origem, o módulo e as colunas publicadas que alimenta — OS-104 |
-| `colunas-publicadas.csv` / `.xlsx` | 1.287 | cada coluna das outras 102 tabelas, com o campo atômico que carrega ou as referências de que foi computada, declarados em código pelo módulo produtor — OS-104 |
+| `campos-atomicos.csv` / `.xlsx` | 2.591 | **o mapa de campos**: cada campo atômico que o acervo bruto guarda, com o tipo, o rótulo e a descrição que a fonte escreveu (ou `n/d`), o arquivo de origem, o módulo e as colunas publicadas que alimenta — OS-104; e, desde a OS-106, `campo_normalizado`, a chave que ESTE projeto computa a partir da grafia (caixa, acentos e separadores dobrados), ao lado dela |
+| `colunas-publicadas.csv` / `.xlsx` | 1.287 | cada coluna das outras 102 tabelas, com o campo atômico que carrega ou as referências de que foi computada, declarados em código pelo módulo produtor — OS-104; `campo_normalizado` desde a OS-106 |
+| `campos-unicos.csv` / `.xlsx` | 2.550 | **o mapa de campos, um campo por linha**: uma linha por (fonte, entidade, `campo_normalizado`), com as grafias que a fonte usa, os arquivos, os tipos, rótulos e descrições originais e as colunas publicadas, unidos por `;` — uma dobra de `campos-atomicos`, não uma leitura nova — OS-106 |
 | `provenance.json` | — | a regra de cada tabela e a lista das consultas que as originaram |
 
 > **Duas tabelas desta versão são publicadas só em `.csv`, e isto é uma decisão registrada, não um arquivo que faltou.** O `.xlsx` deste projeto é escrito sem compressão desde a versão 0.3.0, para que os mesmos dados produzam sempre os mesmos bytes e qualquer pessoa possa reconferir o arquivo. O preço é o tamanho: `leis-orcamentarias-dotacao` tem 22 MB em `.csv` e teria 208 MB em `.xlsx`, acima do limite rígido de 100 MB por arquivo do GitHub — o envio foi de fato recusado. `creditos-adicionais-por-emenda` tem 9 MB e 62 MB, abaixo do limite rígido e acima do recomendado, e acompanha a primeira por consistência. **Nenhuma linha e nenhuma coluna ficam de fora**: o `.csv` publicado é a tabela inteira. Quem usa planilha precisa importar o `.csv` em vez de abrir o `.xlsx` — no LibreOffice e no Excel, *Dados → De texto/CSV*, com UTF-8 e vírgula como separador.
@@ -2273,7 +2274,7 @@ Uma linha da lista de aprovados traz `Consulktor` onde toda outra linha do mesmo
 
 ## O mapa de campos (OS-104) — o que cada coluna é, e de onde veio
 
-Duas tabelas que falam das outras 102. **`campos-atomicos`** tem uma linha por campo atômico
+Três tabelas que falam das outras 102 (a terceira desde a OS-106, abaixo). **`campos-atomicos`** tem uma linha por campo atômico
 que o acervo bruto (`data/raw/`) guarda — 2.591 campos, de sete fontes: as declarações de
 campo do datastore CKAN de `https://dados.cl.df.gov.br` (para os recursos que o portal guarda
 como arquivo, `origem_arquivo` é a URL do próprio recurso), as chaves dos JSON que o portal publica (LOA e
@@ -2318,3 +2319,29 @@ no acervo, com `modulo = n/d` e `não publicado`. **E o que não rendeu linha ne
 contado**, não omitido: `provenance.json["campos"]` traz `arquivos_lidos` (49.588),
 `arquivos_nao_lidos` (47 — páginas HTML, respostas vazias, JSON que não parseia)
 e `entidades_sem_campo` (3 diretórios sem campo algum: `os011-scratch`, `probe-spa`, `probe-veto-portal`).
+
+**`campo_normalizado` e `campos-unicos` (OS-106, 2026-09-12).** A mesma fonte grafa o mesmo campo
+de modos diferentes entre os seus próprios arquivos — `Nome`/`nome`, `Lotação`/`Lotacao`/
+`lotacao`, `Mês`/`MES`, `Cargo Efetivo`/`cargo_efetivo`: 22 grupos, 49 linhas, todos do datastore
+CKAN; dentro de um mesmo arquivo, nenhum campo se repete. Por isso as duas tabelas ganham, logo
+depois de `campo_original`, a coluna **`campo_normalizado`** — **uma chave que ESTE projeto
+computa, não um dado da fonte**: acentos retirados (NFKD), tudo em minúsculas, toda sequência de
+espaços e hifens virada num `_`, e nada mais (`.`, `[]` e `_` ficam, porque uma regra mais larga
+fundiria 15 pares de campos diferentes, como `idsProposicoes` e `idsProposicoes[]`). A grafia
+original fica intacta ao lado, e é ela — nunca a chave — que aparece em `campo_atomico`,
+`derivada_de` e `publicado_em`. A chave vale dentro de uma (fonte, entidade): `ANO` da contratação
+e `ANO` da despesa têm a mesma chave e distinguem-se pelas duas colunas anteriores. **Ela não é
+única em `campos-atomicos`** — cada arquivo de origem mantém a sua linha, então um campo que a
+fonte grafa igual em vários arquivos repete a chave uma vez por arquivo. Para quem quer cada campo
+uma vez só há a terceira tabela, **`campos-unicos`**: uma linha por (fonte, entidade,
+`campo_normalizado`) — 2.550 —, com as grafias (`grafias`), quantos e quais arquivos a carregam
+(`n_arquivos`, `origem_arquivos`), os tipos, rótulos e descrições que a fonte escreveu (valores
+distintos unidos por `;`, ou `n/d`), o módulo e a união das colunas publicadas. O sinal **37f**
+prova que toda chave é a função aplicada à sua própria grafia, que nenhuma se repete dentro de um
+arquivo (dois campos diferentes dobrados no mesmo nome param a exportação) e que `campos-unicos` é
+exatamente o conjunto das triplas distintas da primeira tabela, com as grafias e as origens de
+cada linha sendo exatamente as das linhas dobradas e `n_arquivos` igual ao número de itens de
+`origem_arquivos` — a célula ao lado, que qualquer leitor reconta. O que a tabela **não** afirma é
+o produto das duas listas: uma grafia aparece em alguma das origens listadas, não em todas. O que ele não prova é que a regra
+está certa — que `Lotacao` e `Lotação` são o mesmo campo é uma leitura, aplicada por regra, e a
+grafia verbatim ao lado é o que permite discordar dela.

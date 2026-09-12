@@ -1,6 +1,6 @@
 # cldf — dados abertos de accountability legislativo do Distrito Federal
 
-Versão 0.44.0 · 104 tabelas · 249 arquivos de painel
+Versão 0.45.0 · 105 tabelas · 249 arquivos de painel
 
 Os dados consolidados de accountability legislativo do Distrito Federal que a Câmara
 Legislativa declarou formalmente não possuir consolidados, montados a partir da API
@@ -17,7 +17,7 @@ cidadão pode rederivar ou contestar em vez de simplesmente acreditar.
 
 ## Os dados
 
-`data/derived/` traz 104 arquivos `.csv` em UTF-8, com BOM para abrirem direto no
+`data/derived/` traz 105 arquivos `.csv` em UTF-8, com BOM para abrirem direto no
 Excel. As mesmas tabelas em `.xlsx` ficam no repositório de trabalho e não neste site, por
 tamanho.
 

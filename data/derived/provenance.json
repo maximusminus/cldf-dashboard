@@ -17,7 +17,9 @@
     "37d_atomicas": 438,
     "37d_chaves": 10,
     "37d_derivadas": 839,
-    "37e_celulas": 50397,
+    "37e_celulas": 82325,
+    "37f_campos_unicos": 2550,
+    "37f_chaves_conferidas": 3029,
     "arquivos_lidos": 49588,
     "arquivos_nao_lidos": 47,
     "campos_atomicos": 2591,
@@ -47972,18 +47974,28 @@
       "regra": "Uma linha por votação nominal. `presentes_no_dia` é o número de deputados que o painel de presença registrou na sessão daquela data; `votantes` é quantos registraram voto naquela votação; a diferença é `presentes_que_nao_votaram`. Nenhum voto foi emitido por deputado sem registro de presença no dia (verificado a cada exportação), então a diferença nunca é negativa. Não é um juízo: uma abstenção É um voto e está em `abstencoes`; deixar de registrar não é abstenção."
     },
     "campos-atomicos": {
-      "campos-atomicos.csv": "sha256:3413aaab5d9f0e384aca241274d562846ceaaa7895e259ba0bcc208a3ae77b4a",
-      "campos-atomicos.xlsx": "sha256:268815579c84972a8229c738c350737b9f24672af0c468f5a3f1e3dbef6e3aa2",
+      "campos-atomicos.csv": "sha256:bfef8910773df63494486b68cd79d047cea07cf082e2139ffd99d6845148f23d",
+      "campos-atomicos.xlsx": "sha256:aba5580a3e2ffe21ae3567d106e8322f7d6667065e101c129bc53f38a431ae09",
       "formatos": [
         "csv",
         "xlsx"
       ],
       "linhas": 2591,
-      "regra": "Uma linha por campo atômico que o acervo bruto (data/raw/) guarda, lido mecanicamente das próprias respostas armazenadas: campo como a fonte o escreve, tipo que a fonte declara (ou n/d), rótulo e descrição que a FONTE escreveu (ou n/d) — nenhuma descrição foi escrita por este projeto, e o sinal 37c prova cada uma como substring byte a byte do arquivo em origem_registro. publicado_em lista as colunas publicadas que o campo alimenta, segundo as declarações ORIGEM dos módulos; 'não publicado' quando nenhuma."
+      "regra": "Uma linha por campo atômico que o acervo bruto (data/raw/) guarda, lido mecanicamente das próprias respostas armazenadas: campo como a fonte o escreve, tipo que a fonte declara (ou n/d), rótulo e descrição que a FONTE escreveu (ou n/d) — nenhuma descrição foi escrita por este projeto, e o sinal 37c prova cada uma como substring byte a byte do arquivo em origem_registro. publicado_em lista as colunas publicadas que o campo alimenta, segundo as declarações ORIGEM dos módulos; 'não publicado' quando nenhuma. campo_normalizado (OS-106) é uma chave que ESTE PROJETO calcula a partir de campo_original — minúsculas, sem acentos, qualquer espaço em branco (inclusive quebra de linha e tabulação) e o hífen viram '_', e nada mais — para agrupar as grafias que a mesma fonte usa em arquivos diferentes (Nome/nome, Lotação/Lotacao); não é um fato da fonte, e a chave é única por arquivo de origem, não na tabela (sinal 37f)."
+    },
+    "campos-unicos": {
+      "campos-unicos.csv": "sha256:6566d0621f1352bd6ad36b6cba1af8da8fb6db6729a4e6438daf187dedbb7bc2",
+      "campos-unicos.xlsx": "sha256:9f5221ca2759b79b756ef088140d4483033e0d2b6f9b5ca2bf20599e9fd47b30",
+      "formatos": [
+        "csv",
+        "xlsx"
+      ],
+      "linhas": 2550,
+      "regra": "Uma linha por (fonte, entidade, campo_normalizado) de campos-atomicos — a mesma tabela dobrada sobre a chave que este projeto calcula, para que cada campo apareça UMA vez, ordenada por (fonte, entidade, campo_normalizado): grafias lista as formas que a fonte escreveu, origem_arquivos os arquivos em que aparece, n_arquivos conta EXATAMENTE os itens de origem_arquivos (o leitor reconta a célula ao lado), e tipo, rótulo, descrição e publicado_em são a união dos valores das linhas dobradas ('; ' entre eles). Nenhuma célula nasce aqui: o sinal 37f prova que as grafias e as origens listadas são EXATAMENTE as das linhas dobradas de campos-atomicos — nenhuma a mais, nenhuma a menos — e que nenhuma chave se repete. A tabela NÃO afirma o produto das duas listas: uma grafia aparece em ALGUMA das origens listadas, não necessariamente em todas."
     },
     "colunas-publicadas": {
-      "colunas-publicadas.csv": "sha256:0adfab69d252cd101d04360e0217e7cd13274922b26e4cc71f2ec72b3fc96a5a",
-      "colunas-publicadas.xlsx": "sha256:892d4fdfba287f60bcc91bac0d38376e0961ba307368c384358baf7655dc8e71",
+      "colunas-publicadas.csv": "sha256:4a7f0b32a1b41d14da8f68a7bfba38dc373834464e5a07e47c05fe2ad3d672aa",
+      "colunas-publicadas.xlsx": "sha256:ed935e34e8845f1f355cc9908c4f40c262bf7dd0fc3d251709252a634ca8f2b0",
       "formatos": [
         "csv",
         "xlsx"
