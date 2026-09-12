@@ -86,6 +86,8 @@ licença que a maioria dos pacotes de `dados.cl.df.gov.br` já declara.
 | `creditos-adicionais-por-lei.csv` / `.xlsx` | 127 | **os créditos adicionais**, um por lei — acréscimos, decréscimos e o total movimentado; os dois lados fecham a zero nas 127 |
 | `creditos-adicionais-por-emenda.csv` | 25.443 | o detalhe: uma linha por emenda de cada crédito, com a classificação de origem e a de destino. **Só `.csv`**, por consistência com a tabela acima — o `.xlsx` tem 62 MB, acima dos 50 MB que o GitHub recomenda |
 | `conferencia-loa-x-creditos.csv` / `.xlsx` | 51.764 | a dotação votada ao lado do que os créditos moveram, por classificação — **só 1.996 chaves (3,9 %) aparecem nas duas fontes**, e isso é o achado, não uma falha |
+| `campos-atomicos.csv` / `.xlsx` | 2.591 | **o mapa de campos**: cada campo atômico que o acervo bruto guarda, com o tipo, o rótulo e a descrição que a fonte escreveu (ou `n/d`), o arquivo de origem, o módulo e as colunas publicadas que alimenta — OS-104 |
+| `colunas-publicadas.csv` / `.xlsx` | 1.287 | cada coluna das outras 102 tabelas, com o campo atômico que carrega ou as referências de que foi computada, declarados em código pelo módulo produtor — OS-104 |
 | `provenance.json` | — | a regra de cada tabela e a lista das consultas que as originaram |
 
 > **Duas tabelas desta versão são publicadas só em `.csv`, e isto é uma decisão registrada, não um arquivo que faltou.** O `.xlsx` deste projeto é escrito sem compressão desde a versão 0.3.0, para que os mesmos dados produzam sempre os mesmos bytes e qualquer pessoa possa reconferir o arquivo. O preço é o tamanho: `leis-orcamentarias-dotacao` tem 22 MB em `.csv` e teria 208 MB em `.xlsx`, acima do limite rígido de 100 MB por arquivo do GitHub — o envio foi de fato recusado. `creditos-adicionais-por-emenda` tem 9 MB e 62 MB, abaixo do limite rígido e acima do recomendado, e acompanha a primeira por consistência. **Nenhuma linha e nenhuma coluna ficam de fora**: o `.csv` publicado é a tabela inteira. Quem usa planilha precisa importar o `.csv` em vez de abrir o `.xlsx` — no LibreOffice e no Excel, *Dados → De texto/CSV*, com UTF-8 e vírgula como separador.
@@ -2268,3 +2270,51 @@ Uma linha da lista de aprovados traz `Consulktor` onde toda outra linha do mesmo
 - **Nenhum identificador pessoal** (CPF, RG) — nenhum existe no pacote de origem, e o guard
   prova isso.
 - **Nada sobre se um encontro de nome contra a folha é a mesma pessoa.**
+
+## O mapa de campos (OS-104) — o que cada coluna é, e de onde veio
+
+Duas tabelas que falam das outras 102. **`campos-atomicos`** tem uma linha por campo atômico
+que o acervo bruto (`data/raw/`) guarda — 2.591 campos, de sete fontes: as declarações de
+campo do datastore CKAN de `https://dados.cl.df.gov.br` (para os recursos que o portal guarda
+como arquivo, `origem_arquivo` é a URL do próprio recurso), as chaves dos JSON que o portal publica (LOA e
+créditos), os cabeçalhos dos `.csv` e das planilhas, os rótulos dos PDFs da folha, os caminhos
+de chave das respostas da API `pleservico` (`https://ple.cl.df.gov.br/pleservico/api/public` —
+para essas linhas, `origem_arquivo` é a própria consulta registrada, verbo e URL, e
+`origem_registro` o arquivo em `data/raw/` que guarda a resposta), e as propriedades do esquema
+dos painéis Power BI.
+Cada linha traz o `tipo_original`, o `rotulo_original` e a `descricao_original` **como a fonte
+os escreveu** — e `n/d` quando ela não escreveu nada, que é o caso da maioria: só o datastore
+CKAN documenta os seus campos (28 linhas têm descrição, 52 têm rótulo). Traz
+também o arquivo concreto de onde a linha foi lida (`origem_registro`), a descrição do conjunto
+de dados que o portal publica (`descricao_do_conjunto_original`), o módulo deste projeto que lê
+o campo, e em `publicado_em` as colunas publicadas que ele alimenta — ou `não publicado`, para
+os 2.238 campos que o acervo guarda e nenhuma tabela usa.
+
+**`colunas-publicadas`** tem uma linha por (tabela, coluna) das 102 tabelas — 1.287 linhas. A
+`natureza` diz se a coluna É um campo atômico (`atomica`), se foi computada (`derivada`: uma
+soma, uma contagem, uma parte de um campo, um rótulo de norma, uma conferência) ou se é uma
+chave que este projeto forma (`chave`); `campo_atomico` ou `derivada_de` dizem de quê, e a
+`nota` diz, em uma frase, o que a computação é. **Nada disso foi deduzido do nome da coluna**:
+cada linha é uma declaração escrita no código do módulo que produz a tabela (`ORIGEM`), e o
+sinal 37 recusa a tabela inteira se uma coluna ficar sem declaração, se um arquivo de origem
+não carregar o campo, se uma descrição não for substring byte a byte do arquivo, ou se uma
+referência não resolver. A única célula inferida é `tipo_publicado` — o tipo que o painel
+atribui à coluna por amostragem — e por isso ela fica numa coluna própria, rotulada *"(inferido
+pelo painel)"*, ao lado do `tipo_original` que a fonte declarou.
+
+**O que estas duas tabelas NÃO dizem.** Que a declaração está certa: o guarda prova que a
+referência existe no acervo, não que é a certa entre duas vizinhas — essa parte confere-se
+contra o código do módulo, que é público. E nenhuma célula delas é um valor: são cabeçalhos,
+rótulos e descrições, nunca uma linha de dado, e o 37e recusa qualquer forma de CPF ou RG.
+
+**Onde `origem_registro` aponta.** Para dentro de `data/raw/`, o acervo bruto que este
+repositório NÃO versiona (é `.gitignore`d): o caminho confere-se na máquina que colheu, ou por
+quem recolher com a mesma consulta — `data/queries/` é versionado, e o nome do arquivo é o
+resumo da própria consulta — e não a partir da árvore pública. O sinal 37b corre onde o acervo
+está. **Quatro linhas `pleservico:probe-*:error`** (`probe-emendas`, `probe-parecer`,
+`probe-urgencia`, `probe-veto`) são sondagens que receberam um corpo de erro e o guardaram:
+`error` é uma chave que esse corpo carrega, não um campo da API — estão no mapa porque estão
+no acervo, com `modulo = n/d` e `não publicado`. **E o que não rendeu linha nenhuma é
+contado**, não omitido: `provenance.json["campos"]` traz `arquivos_lidos` (49.588),
+`arquivos_nao_lidos` (47 — páginas HTML, respostas vazias, JSON que não parseia)
+e `entidades_sem_campo` (3 diretórios sem campo algum: `os011-scratch`, `probe-spa`, `probe-veto-portal`).

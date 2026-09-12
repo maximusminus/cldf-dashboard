@@ -9,6 +9,27 @@
     ],
     "regra": "Toda célula de uma coluna nomeada como data é uma data ISO (AAAA-MM-DD), está vazia, ou pertence a uma coluna que a tabela declara publicar verbatim da fonte. Uma segunda grafia não declarada interrompe a exportação."
   },
+  "campos": {
+    "37a_colunas_publicadas": 1287,
+    "37b_registros_conferidos": 2591,
+    "37c_celulas_publicadas_conferidas": 912,
+    "37c_descricoes_conferidas": 507,
+    "37d_atomicas": 438,
+    "37d_chaves": 10,
+    "37d_derivadas": 839,
+    "37e_celulas": 50397,
+    "arquivos_lidos": 49588,
+    "arquivos_nao_lidos": 47,
+    "campos_atomicos": 2591,
+    "campos_nao_publicados": 2238,
+    "descricoes_originais": 28,
+    "entidades_sem_campo": [
+      "os011-scratch",
+      "probe-spa",
+      "probe-veto-portal"
+    ],
+    "rotulos_originais": 52
+  },
   "concursos": {
     "aprovados": {
       "aprovados": 1061,
@@ -47949,6 +47970,26 @@
       ],
       "linhas": 482,
       "regra": "Uma linha por votação nominal. `presentes_no_dia` é o número de deputados que o painel de presença registrou na sessão daquela data; `votantes` é quantos registraram voto naquela votação; a diferença é `presentes_que_nao_votaram`. Nenhum voto foi emitido por deputado sem registro de presença no dia (verificado a cada exportação), então a diferença nunca é negativa. Não é um juízo: uma abstenção É um voto e está em `abstencoes`; deixar de registrar não é abstenção."
+    },
+    "campos-atomicos": {
+      "campos-atomicos.csv": "sha256:3413aaab5d9f0e384aca241274d562846ceaaa7895e259ba0bcc208a3ae77b4a",
+      "campos-atomicos.xlsx": "sha256:268815579c84972a8229c738c350737b9f24672af0c468f5a3f1e3dbef6e3aa2",
+      "formatos": [
+        "csv",
+        "xlsx"
+      ],
+      "linhas": 2591,
+      "regra": "Uma linha por campo atômico que o acervo bruto (data/raw/) guarda, lido mecanicamente das próprias respostas armazenadas: campo como a fonte o escreve, tipo que a fonte declara (ou n/d), rótulo e descrição que a FONTE escreveu (ou n/d) — nenhuma descrição foi escrita por este projeto, e o sinal 37c prova cada uma como substring byte a byte do arquivo em origem_registro. publicado_em lista as colunas publicadas que o campo alimenta, segundo as declarações ORIGEM dos módulos; 'não publicado' quando nenhuma."
+    },
+    "colunas-publicadas": {
+      "colunas-publicadas.csv": "sha256:0adfab69d252cd101d04360e0217e7cd13274922b26e4cc71f2ec72b3fc96a5a",
+      "colunas-publicadas.xlsx": "sha256:892d4fdfba287f60bcc91bac0d38376e0961ba307368c384358baf7655dc8e71",
+      "formatos": [
+        "csv",
+        "xlsx"
+      ],
+      "linhas": 1287,
+      "regra": "Uma linha por (tabela, coluna) de toda tabela publicada — provado igual à união dos cabeçalhos. natureza = atomica (a coluna carrega um campo da fonte, sem transformação além de renomear/normalizar), chave (um identificador que este projeto forma a partir de campos da fonte) ou derivada (contagem, soma, conferência ou leitura calculada). A origem é a que o módulo produtor DECLARA no seu dicionário ORIGEM, nunca inferida do nome da coluna; o sinal 37 recusa uma coluna sem declaração e uma declaração que aponte para um campo que o acervo não guarda. tipo_publicado é o tipo que o painel INFERE por regex sobre 50 linhas de amostra (cldf.painel_estatico.build.infer_kind) — rotulado como inferido e mantido separado de tipo_original, que é o da fonte."
     },
     "comissoes-parlamentares-de-inquerito": {
       "comissoes-parlamentares-de-inquerito.csv": "sha256:306c9ac05e7a6610348fbcd91c2d92d0e8f0f2335a1c4850b418d8a7db04206e",
