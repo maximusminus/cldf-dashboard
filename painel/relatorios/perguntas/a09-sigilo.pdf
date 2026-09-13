@@ -16,7 +16,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 4203 >>
+<< /Length 4526 >>
 stream
 BT /F2 17 Tf 1 0 0 1 56 769 Tm (Eixo: sigilo — informações classificadas) Tj ET
 BT /F1 10 Tf 1 0 0 1 56 748 Tm (eixo acrescentado — o rol de informações classificadas, por unidade e por ano) Tj ET
@@ -51,28 +51,32 @@ BT /F1 10 Tf 1 0 0 1 317.9 498 Tm (118) Tj ET
 0.4 w 56 499 m 539 499 l S
 BT /F2 12 Tf 1 0 0 1 56 467 Tm (Também informa) Tj ET
 1.5 w 56 451 m 56 463 l S
-BT /F1 10 Tf 1 0 0 1 66 451 Tm (signal 31 também informa que a Casa classifica muito mais do que rotula — o grau fica vazio em 149 das) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 451 Tm (signal 31 também informa, sobre o arquivo-fonte inteiro \(2021–2025, 177 linhas\) — não a janela da) Tj ET
 1.5 w 56 438 m 56 450 l S
-BT /F1 10 Tf 1 0 0 1 66 438 Tm (177 linhas — e que o rol de desclassificados publica 118 linhas sem nenhum conteúdo.) Tj ET
-BT /F1 9 Tf 1 0 0 1 56 421 Tm (reconciliação — do bruto buscado ao publicado nesta janela) Tj ET
-BT /F2 13 Tf 1 0 0 1 56 405 Tm (118 de 146 classificados sem grau publicado — 80,8%) Tj ET
-BT /F2 12 Tf 1 0 0 1 56 376 Tm (Fonte, janela e data) Tj ET
-BT /F2 10 Tf 1 0 0 1 58 360 Tm (tabela publicada) Tj ET
-BT /F2 10 Tf 1 0 0 1 326.05 360 Tm (linhas) Tj ET
-BT /F2 10 Tf 1 0 0 1 405.17 360 Tm (sha256 \(16\)) Tj ET
-0.8 w 56 360 m 539 360 l S
-BT /F1 10 Tf 1 0 0 1 58 344 Tm (informacoes-classificadas-por-unidade-e-ano.csv) Tj ET
-BT /F1 10 Tf 1 0 0 1 326.05 344 Tm (65) Tj ET
-BT /F1 10 Tf 1 0 0 1 405.17 344 Tm (75a53dd65769fbc3) Tj ET
-0.4 w 56 345 m 539 345 l S
-BT /F1 8.5 Tf 1 0 0 1 56 324.5 Tm (Coleta das proposições realizada a partir de 21 de agosto de 2026; das votações, em 26–28 de agosto de 2026. Fontes: a API) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 56 313.5 Tm (pública da Câmara Legislativa do Distrito Federal e o Painel de Votação do seu Portal da Transparência. Licença dos dados:) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 56 302.5 Tm (CC BY-SA 4.0 \([../../LICENSE-data]\(../../LICENSE-data\)\) — re-escolhida na OS-083 para seguir a mesma licença que a maioria) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 56 291.5 Tm (dos pacotes de dados.cl.df.gov.br já declara.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 56 275.5 Tm (Dados: CC BY-SA 4.0. Código e interface: PolyForm Noncommercial 1.0.0. Você pode redistribuir e transformar estes números,) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 56 264.5 Tm (citando a fonte e mantendo a mesma licença.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 56 248.5 Tm (Esta página no site: https://maximusminus.github.io/cldf-dashboard/painel/perguntas/a09-sigilo.html — o número desta página é) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 56 237.5 Tm (reproduzível: a tabela acima está publicada inteira, com o seu sha256, e qualquer pessoa pode re-somá-la.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 438 Tm (legislatura que o cabeçalho acima conta \(2023–2026, excluídas as 2 linhas desalinhadas na fonte\) — que) Tj ET
+1.5 w 56 425 m 56 437 l S
+BT /F1 10 Tf 1 0 0 1 66 425 Tm (a Casa classifica muito mais do que rotula: o grau fica vazio em 149 das 177 linhas do arquivo inteiro. E) Tj ET
+1.5 w 56 412 m 56 424 l S
+BT /F1 10 Tf 1 0 0 1 66 412 Tm (que o rol de desclassificados publica 118 linhas sem nenhum conteúdo.) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 395 Tm (reconciliação — do bruto buscado ao publicado nesta janela) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 379 Tm (118 de 146 classificados sem grau publicado — 80,8%) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 350 Tm (Fonte, janela e data) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 334 Tm (tabela publicada) Tj ET
+BT /F2 10 Tf 1 0 0 1 326.05 334 Tm (linhas) Tj ET
+BT /F2 10 Tf 1 0 0 1 405.17 334 Tm (sha256 \(16\)) Tj ET
+0.8 w 56 334 m 539 334 l S
+BT /F1 10 Tf 1 0 0 1 58 318 Tm (informacoes-classificadas-por-unidade-e-ano.csv) Tj ET
+BT /F1 10 Tf 1 0 0 1 326.05 318 Tm (65) Tj ET
+BT /F1 10 Tf 1 0 0 1 405.17 318 Tm (75a53dd65769fbc3) Tj ET
+0.4 w 56 319 m 539 319 l S
+BT /F1 8.5 Tf 1 0 0 1 56 298.5 Tm (Coleta das proposições realizada a partir de 21 de agosto de 2026; das votações, em 26–28 de agosto de 2026. Fontes: a API) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 287.5 Tm (pública da Câmara Legislativa do Distrito Federal e o Painel de Votação do seu Portal da Transparência. Licença dos dados:) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 276.5 Tm (CC BY-SA 4.0 \([../../LICENSE-data]\(../../LICENSE-data\)\) — re-escolhida na OS-083 para seguir a mesma licença que a maioria) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 265.5 Tm (dos pacotes de dados.cl.df.gov.br já declara.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 249.5 Tm (Dados: CC BY-SA 4.0. Código e interface: PolyForm Noncommercial 1.0.0. Você pode redistribuir e transformar estes números,) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 238.5 Tm (citando a fonte e mantendo a mesma licença.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 222.5 Tm (Esta página no site: https://maximusminus.github.io/cldf-dashboard/painel/perguntas/a09-sigilo.html — o número desta página é) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 211.5 Tm (reproduzível: a tabela acima está publicada inteira, com o seu sha256, e qualquer pessoa pode re-somá-la.) Tj ET
 0.4 w 56 70 m 539 70 l S
 BT /F1 8 Tf 1 0 0 1 56 60 Tm (Eixo: sigilo — informações classificadas) Tj ET
 BT /F1 8 Tf 1 0 0 1 490.52 60 Tm (página 1 de 1) Tj ET
@@ -90,5 +94,5 @@ xref
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-4711
+5034
 %%EOF
