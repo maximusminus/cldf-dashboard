@@ -2345,3 +2345,31 @@ cada linha sendo exatamente as das linhas dobradas e `n_arquivos` igual ao núme
 o produto das duas listas: uma grafia aparece em alguma das origens listadas, não em todas. O que ele não prova é que a regra
 está certa — que `Lotacao` e `Lotação` são o mesmo campo é uma leitura, aplicada por regra, e a
 grafia verbatim ao lado é o que permite discordar dela.
+
+## A região administrativa, nomeada dos dois lados (OS-118)
+
+`regioes-administrativas` é a primeira tabela **mão-escrita** deste projeto, não colhida: uma
+linha por grafia distinta de região administrativa, ligando o nome que a API das proposições usa
+(`regiaoAdministrativaNome`) ao código e ao nome que o orçamento usa (`localizacao` /
+`nome_localizacao`, em `creditos-adicionais-por-emenda` e `leis-orcamentarias-dotacao`) —
+a junção que "o que o meu deputado fez pela minha região" precisa e que nenhuma tabela publicada
+até aqui provia. **Nenhuma junção é executada aqui**: esta tabela só nomeia a correspondência,
+mão-escrita e citada em `data/norms/PROVENANCE.md` com o sha256 do arquivo.
+
+**52 linhas**: 38 trazem `grafia_api` (uma por átomo de RA que a API carrega hoje, nenhum átomo
+repetido) e 51 trazem `grafia_orcamento` (uma por grafia orçamentária, nenhuma repetida) — todo
+valor distinto das duas fontes, medidas na OS-121 (`docs/specs/MEDIDAS-modelo.md` § (3)), aparece
+em exatamente uma linha. `codigo_ra` traz o numeral romano oficial da RA (`I` a `XXXV`) para as
+38 linhas que ligam uma região administrativa de verdade, e o literal `não-geográfica` para as 14
+linhas que ligam uma agregada que o orçamento classifica fora das RAs numeradas (o Distrito
+Federal inteiro, as macrorregiões `DF - REGIÃO …`, `ENTORNO`, `OUTROS ESTADOS`). `nome_canonico`
+é a grafia que este projeto escolhe como referência — a da API quando ela cobre a localização
+(é a voltada ao cidadão), a do orçamento quando não cobre. A RA XXXV (`ÁGUA QUENTE`, criada em
+2022) não tem código orçamentário ainda e é a única linha com `codigo_localizacao` e
+`grafia_orcamento` vazios — a lacuna é o achado, declarado em vez de escondido.
+
+**O sinal 38** recusa a exportação se qualquer valor VIVO de uma das duas fontes — lido de novo a
+cada exportação, não apenas o que a OS-121 mediu — não tiver linha: uma RA nova ou uma grafia
+orçamentária renomeada param o build em vez de ficar sem mapa. O sinal 26f, já existente, passa a
+reconferir o sha256 deste arquivo a cada exportação porque a linha dele entrou na tabela de
+`data/norms/PROVENANCE.md`.

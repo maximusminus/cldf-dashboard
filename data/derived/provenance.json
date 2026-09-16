@@ -10,18 +10,18 @@
     "regra": "Toda célula de uma coluna nomeada como data é uma data ISO (AAAA-MM-DD), está vazia, ou pertence a uma coluna que a tabela declara publicar verbatim da fonte. Uma segunda grafia não declarada interrompe a exportação."
   },
   "campos": {
-    "37a_colunas_publicadas": 1287,
+    "37a_colunas_publicadas": 1292,
     "37b_registros_conferidos": 2591,
     "37c_celulas_publicadas_conferidas": 912,
     "37c_descricoes_conferidas": 507,
     "37d_atomicas": 438,
     "37d_chaves": 10,
-    "37d_derivadas": 839,
-    "37e_celulas": 82325,
+    "37d_derivadas": 844,
+    "37e_celulas": 82405,
     "37f_campos_unicos": 2550,
     "37f_chaves_conferidas": 3029,
-    "arquivos_lidos": 49588,
-    "arquivos_nao_lidos": 47,
+    "arquivos_lidos": 49590,
+    "arquivos_nao_lidos": 48,
     "campos_atomicos": 2591,
     "campos_nao_publicados": 2238,
     "descricoes_originais": 28,
@@ -34304,6 +34304,7 @@
     "bb563119d228f7c1",
     "bb570b550f456e48",
     "bb59847d64c156dc",
+    "bb5a8de241b96d22",
     "bb5a9324d7e9c098",
     "bb5aae809653ca7b",
     "bb5ab85a9de69573",
@@ -46958,8 +46959,8 @@
     "28b_leis_conferidas": 127,
     "28c_celulas_de_rotulo_vazias": 527240,
     "28c_rotulos_publicados": 0,
-    "28c_tabelas_de_norma_registradas": 0,
-    "28c_tabelas_de_norma_verificadas": 0,
+    "28c_tabelas_de_norma_registradas": 1,
+    "28c_tabelas_de_norma_verificadas": 1,
     "28d_chaves": 51764,
     "28d_chaves_com_as_duas": 1996,
     "28d_chaves_declaradas_por_uma_superficie": 49768,
@@ -47865,8 +47866,8 @@
     "26e_meses": 55,
     "26e_meses_com_as_duas": 55,
     "26e_meses_declarados_por_uma_superficie": 0,
-    "26f_tabelas_de_norma_registradas": 0,
-    "26f_tabelas_de_norma_verificadas": 0,
+    "26f_tabelas_de_norma_registradas": 1,
+    "26f_tabelas_de_norma_verificadas": 1,
     "26g_larguras_da_natureza": [
       6,
       8
@@ -47880,6 +47881,20 @@
     "naturezas": 72,
     "subfuncoes": 8,
     "transferencias_em_zero": 60
+  },
+  "regioes": {
+    "38a_linhas": 52,
+    "38b_grafias_api": 38,
+    "38b_grafias_orcamento": 51,
+    "38d_atomos_sem_linha": 0,
+    "38d_atomos_vivos_da_api": 38,
+    "38e_grafias_sem_linha": 0,
+    "38e_grafias_vivas_do_orcamento": 51,
+    "tabela": {
+      "com_grafia_api": 38,
+      "com_grafia_orcamento": 51,
+      "linhas": 52
+    }
   },
   "registros_no_acervo": 22748,
   "sigilo": {
@@ -47994,13 +48009,13 @@
       "regra": "Uma linha por (fonte, entidade, campo_normalizado) de campos-atomicos — a mesma tabela dobrada sobre a chave que este projeto calcula, para que cada campo apareça UMA vez, ordenada por (fonte, entidade, campo_normalizado): grafias lista as formas que a fonte escreveu, origem_arquivos os arquivos em que aparece, n_arquivos conta EXATAMENTE os itens de origem_arquivos (o leitor reconta a célula ao lado), e tipo, rótulo, descrição e publicado_em são a união dos valores das linhas dobradas ('; ' entre eles). Nenhuma célula nasce aqui: o sinal 37f prova que as grafias e as origens listadas são EXATAMENTE as das linhas dobradas de campos-atomicos — nenhuma a mais, nenhuma a menos — e que nenhuma chave se repete. A tabela NÃO afirma o produto das duas listas: uma grafia aparece em ALGUMA das origens listadas, não necessariamente em todas."
     },
     "colunas-publicadas": {
-      "colunas-publicadas.csv": "sha256:4a7f0b32a1b41d14da8f68a7bfba38dc373834464e5a07e47c05fe2ad3d672aa",
-      "colunas-publicadas.xlsx": "sha256:ed935e34e8845f1f355cc9908c4f40c262bf7dd0fc3d251709252a634ca8f2b0",
+      "colunas-publicadas.csv": "sha256:f5b14b3dc19a5b20d9f4d83849da65b2b75444ff85216221fc227ef03131ac47",
+      "colunas-publicadas.xlsx": "sha256:0c9e36df4af010ed1af6ece785d076b0b41b94a1719dc4fa7fe956b7f4045f5e",
       "formatos": [
         "csv",
         "xlsx"
       ],
-      "linhas": 1287,
+      "linhas": 1292,
       "regra": "Uma linha por (tabela, coluna) de toda tabela publicada — provado igual à união dos cabeçalhos. natureza = atomica (a coluna carrega um campo da fonte, sem transformação além de renomear/normalizar), chave (um identificador que este projeto forma a partir de campos da fonte) ou derivada (contagem, soma, conferência ou leitura calculada). A origem é a que o módulo produtor DECLARA no seu dicionário ORIGEM, nunca inferida do nome da coluna; o sinal 37 recusa uma coluna sem declaração e uma declaração que aponte para um campo que o acervo não guarda. tipo_publicado é o tipo que o painel INFERE por regex sobre 50 linhas de amostra (cldf.painel_estatico.build.infer_kind) — rotulado como inferido e mantido separado de tipo_original, que é o da fonte."
     },
     "comissoes-parlamentares-de-inquerito": {
@@ -48730,6 +48745,16 @@
       "proposicoes-sem-deliberacao.csv": "sha256:526a3729fb4561564c5ce622503e908e9880b3aa94a6f5d676191c354e7711a5",
       "proposicoes-sem-deliberacao.xlsx": "sha256:882f5ca9e1127c1ce2a3003c980c04ad73410559db7c479742d4789594147961",
       "regra": "Dataset 12, segunda tabela: a relação nominal das proposições que NUNCA foram deliberadas — uma linha por proposição, não uma contagem. `dias_em_aberto` é o número de dias entre a `dataLeitura` e a data em `as_of`, e `as_of` viaja em TODA linha justamente para que o número não possa ser lido como se fosse atemporal. `as_of` é a data do evento de tramitação mais recente que este acervo contém — ou seja, 'o registro até onde esta cópia dele vai', e não 'hoje': um `hoje` faria os arquivos publicados mudarem de bytes todo dia e quebraria a reprodutibilidade que é a única coisa que este projeto pede que você não tenha de acreditar. A coluna `conjunto` diz de qual dos dois conjuntos a linha é: `estrito` quando o veredito é `pendente` (a Casa deve uma decisão), `amplo_apenas` quando a espécie é uma para a qual o sistema do CLDF não registra veredito nenhum. Toda linha tem exatamente um dos dois rótulos, e a soma dos dois bate com as duas colunas da tabela por ano e espécie, célula a célula — a exportação falha se não bater. ATENÇÃO, e este é o mal-entendido mais provável desta tabela: 'sem deliberação' NÃO quer dizer 'ainda em movimento'. 18.759 destas linhas têm no seu histórico um evento `ENCERRAR_PROPOSICAO` — o sistema encerrou o registro sem que a Casa decidisse nada, e esse encerramento é reversível (3.478 proposições do acervo têm `REABRIR_PROPOSICAO`). Encerrado e decidido são fatos diferentes nesta fonte. Ordenação: (ano, tipoProposicao, numero), em ordem de bytes UTF-8."
+    },
+    "regioes-administrativas": {
+      "formatos": [
+        "csv",
+        "xlsx"
+      ],
+      "linhas": 52,
+      "regioes-administrativas.csv": "sha256:39aa98dc6429dfd501619e9b672441359278b7476d8216b2b4206204df6fe5ec",
+      "regioes-administrativas.xlsx": "sha256:5cd5ee37bcea4f436b53a4b1ea3c08dbfc1eb912b7d7049a7548c4af73d6cce6",
+      "regra": "Uma linha por grafia distinta de região administrativa: a da API (`regiaoAdministrativaNome`, um campo `#`-delimitado nas proposições — cada átomo é uma linha) e a do orçamento (`nome_localizacao`, em `creditos-adicionais-por-emenda.csv` e `leis-orcamentarias-dotacao.csv`). `codigo_ra` é o numeral romano oficial da RA (`I` a `XXXV`) ou o literal `não-geográfica` para uma localização orçamentária que não é uma RA numerada (o Distrito Federal inteiro, uma macrorregião orçamentária, `ENTORNO`, `OUTROS ESTADOS`, `EXTERIOR`). `nome_canonico` é a grafia escolhida por este projeto como referência — a da API quando ela cobre a localização (é a grafia voltada ao cidadão), a do orçamento quando não cobre. `grafia_api` e `grafia_orcamento` ficam vazias na linha que não tem correspondente do outro lado: a RA XXXV (`ÁGUA QUENTE`, criada em 2022) não tem código orçamentário ainda, e é a única linha nessa situação — feito assim de propósito, o achado é a lacuna e não algo a esconder. Tabela hand-written, não harvested: mão-escrita e citada em `data/norms/PROVENANCE.md`, com o sha256 do arquivo. **Nenhum join é executado aqui** — esta tabela apenas nomeia a correspondência."
     },
     "repasse-duodecimo-por-mes": {
       "formatos": [

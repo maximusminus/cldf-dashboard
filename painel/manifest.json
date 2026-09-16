@@ -113,7 +113,7 @@
       "titulo": "Frequência dos deputados em plenário"
     }
   ],
-  "contagem_tabelas": 105,
+  "contagem_tabelas": 106,
   "explorador": {
     "arquivo": "explorador.html",
     "linha_limite": 200000,
@@ -1037,7 +1037,7 @@
     },
     "colunas-publicadas": {
       "arquivo": "colunas-publicadas.csv",
-      "bytes": 1884748,
+      "bytes": 1886383,
       "cabecalho": [
         "tabela",
         "coluna",
@@ -1081,11 +1081,11 @@
         "csv",
         "xlsx"
       ],
-      "linhas": 1287,
+      "linhas": 1292,
       "paginas": [],
       "sha256": {
-        "csv": "sha256:4a7f0b32a1b41d14da8f68a7bfba38dc373834464e5a07e47c05fe2ad3d672aa",
-        "xlsx": "sha256:ed935e34e8845f1f355cc9908c4f40c262bf7dd0fc3d251709252a634ca8f2b0"
+        "csv": "sha256:f5b14b3dc19a5b20d9f4d83849da65b2b75444ff85216221fc227ef03131ac47",
+        "xlsx": "sha256:0c9e36df4af010ed1af6ece785d076b0b41b94a1719dc4fa7fe956b7f4045f5e"
       }
     },
     "comissoes-parlamentares-de-inquerito": {
@@ -11776,6 +11776,73 @@
       "sha256": {
         "csv": "sha256:526a3729fb4561564c5ce622503e908e9880b3aa94a6f5d676191c354e7711a5",
         "xlsx": "sha256:882f5ca9e1127c1ce2a3003c980c04ad73410559db7c479742d4789594147961"
+      }
+    },
+    "regioes-administrativas": {
+      "arquivo": "regioes-administrativas.csv",
+      "bytes": 4282,
+      "cabecalho": [
+        "codigo_ra",
+        "nome_canonico",
+        "grafia_api",
+        "codigo_localizacao",
+        "grafia_orcamento"
+      ],
+      "campos": {
+        "codigo_localizacao": {
+          "campo_normalizado": "n/d",
+          "campo_original": "n/d",
+          "descricao_original": "n/d",
+          "natureza": "derivada",
+          "origem_arquivo": "n/d"
+        },
+        "codigo_ra": {
+          "campo_normalizado": "n/d",
+          "campo_original": "n/d",
+          "descricao_original": "n/d",
+          "natureza": "derivada",
+          "origem_arquivo": "n/d"
+        },
+        "grafia_api": {
+          "campo_normalizado": "n/d",
+          "campo_original": "n/d",
+          "descricao_original": "n/d",
+          "natureza": "derivada",
+          "origem_arquivo": "n/d"
+        },
+        "grafia_orcamento": {
+          "campo_normalizado": "n/d",
+          "campo_original": "n/d",
+          "descricao_original": "n/d",
+          "natureza": "derivada",
+          "origem_arquivo": "n/d"
+        },
+        "nome_canonico": {
+          "campo_normalizado": "n/d",
+          "campo_original": "n/d",
+          "descricao_original": "n/d",
+          "natureza": "derivada",
+          "origem_arquivo": "n/d"
+        }
+      },
+      "colunas": {
+        "codigo_localizacao": "contagem",
+        "codigo_ra": "texto",
+        "grafia_api": "texto",
+        "grafia_orcamento": "texto",
+        "nome_canonico": "texto"
+      },
+      "consulta_ou_fonte": "Uma linha por grafia distinta de região administrativa: a da API (`regiaoAdministrativaNome`, um campo `#`-delimitado nas proposições — cada átomo é uma linha) e a do orçamento (`nome_localizacao`, em `creditos-adicionais-por-emenda.csv` e `leis-orcamentarias-dotacao.csv`). `codigo_ra` é o numeral romano oficial da RA (`I` a `XXXV`) ou o literal `não-geográfica` para uma localização orçamentária que não é uma RA numerada (o Distrito Federal inteiro, uma macrorregião orçamentária, `ENTORNO`, `OUTROS ESTADOS`, `EXTERIOR`). `nome_canonico` é a grafia escolhida por este projeto como referência — a da API quando ela cobre a localização (é a grafia voltada ao cidadão), a do orçamento quando não cobre. `grafia_api` e `grafia_orcamento` ficam vazias na linha que não tem correspondente do outro lado: a RA XXXV (`ÁGUA QUENTE`, criada em 2022) não tem código orçamentário ainda, e é a única linha nessa situação — feito assim de propósito, o achado é a lacuna e não algo a esconder. Tabela hand-written, não harvested: mão-escrita e citada em `data/norms/PROVENANCE.md`, com o sha256 do arquivo. **Nenhum join é executado aqui** — esta tabela apenas nomeia a correspondência.",
+      "descricao": "`regioes-administrativas` é a primeira tabela **mão-escrita** deste projeto, não colhida: uma",
+      "formatos": [
+        "csv",
+        "xlsx"
+      ],
+      "linhas": 52,
+      "paginas": [],
+      "sha256": {
+        "csv": "sha256:39aa98dc6429dfd501619e9b672441359278b7476d8216b2b4206204df6fe5ec",
+        "xlsx": "sha256:5cd5ee37bcea4f436b53a4b1ea3c08dbfc1eb912b7d7049a7548c4af73d6cce6"
       }
     },
     "repasse-duodecimo-por-mes": {
