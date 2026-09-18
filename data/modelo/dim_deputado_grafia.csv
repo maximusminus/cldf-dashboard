@@ -1,0 +1,107 @@
+grafia_norm,fonte,campo,grafia,chave_deputado,regra
+agaciel_maia,painel_votacao,nm_parlamentar,AGACIEL MAIA,13,co_autor
+arlete_sampaio,painel_votacao,nm_parlamentar,ARLETE SAMPAIO,14,co_autor
+chico_vigilante,painel_votacao,nm_parlamentar,CHICO VIGILANTE,15,co_autor
+claudio_abrantes,painel_votacao,nm_parlamentar,CLAUDIO ABRANTES,16,co_autor
+comissao_de_assuntos_fundiarios,api_i5,nome,Comissão de Assuntos Fundiários,43,autor_id
+comissao_de_constituicao_e_justica,api_i5,nome,Comissão de Constituição e Justiça,8,autor_id
+comissao_de_defesa_dos_direitos_da_mulher,api_i5,nome,Comissão de Defesa dos Direitos da Mulher,238,autor_id
+"comissao_de_defesa_dos_direitos_humanos,_cidadania_e_legislacao_participativa",api_i5,nome,"Comissão de Defesa dos Direitos Humanos, Cidadania e Legislação Participativa",46,autor_id
+comissao_de_desenvolvimento_economico_sustentavel_ciencia_tecnologia_meio_ambiente_e_turismo,api_i5,nome,Comissão de Desenvolvimento Econômico Sustentável Ciência Tecnologia Meio Ambiente e Turismo,47,autor_id
+"comissao_de_economia,_orcamento_e_financas",api_i5,nome,"Comissão de Economia, Orçamento e Finanças",9,autor_id
+comissao_de_educacao_e_cultura,api_i5,nome,Comissão de Educação e Cultura,237,autor_id
+comissao_de_educacao_saude_e_cultura,api_i5,nome,Comissão de Educação Saúde e Cultura,48,autor_id
+comissao_de_fiscalizacao_governanca_transparencia_controle,api_i5,nome,Comissão de Fiscalização Governança Transparência Controle,49,autor_id
+comissao_de_producao_rural_e_abastecimento,api_i5,nome,Comissão de Produção Rural e Abastecimento,69,autor_id
+comissao_de_saude,api_i5,nome,Comissão de Saúde,236,autor_id
+comissao_de_transporte_e_mobilidade_urbana,api_i5,nome,Comissão de Transporte e Mobilidade Urbana,51,autor_id
+comissao_parlamentar_de_inquerito_do_rio_melchior,api_i5,nome,Comissão Parlamentar de Inquérito do Rio Melchior,239,autor_id
+daniel_donizet,painel_votacao,nm_parlamentar,DANIEL DONIZET,17,co_autor
+daniel_donizete,alias,alias,daniel_donizete,17,alias
+dayse_amarilio,painel_votacao,nm_parlamentar,DAYSE AMARILIO,60,co_autor
+defensoria_publica_do_distrito_federal,api_i5,nome,Defensoria Pública do Distrito Federal,42,autor_id
+del._fernando_fernandes,painel_votacao,nm_parlamentar,DEL. FERNANDO FERNANDES,21,co_autor
+delmasso,painel_votacao,nm_parlamentar,DELMASSO,18,co_autor
+deputada_arlete_sampaio,api_i5,nome,Deputada Arlete Sampaio,14,autor_id
+deputada_dayse_amarilio,api_i5,nome,Deputada Dayse Amarilio,60,autor_id
+deputada_doutora_jane,api_i5,nome,Deputada Doutora Jane,61,autor_id
+deputada_jaqueline_silva,api_i5,nome,Deputada Jaqueline Silva,24,autor_id
+deputada_julia_lucy,api_i5,nome,Deputada Júlia Lucy,28,autor_id
+deputada_maria_antonia_rodrigues_magalhaes_(professora_maria_antonia),api_i5,nome,Deputada Maria Antônia Rodrigues Magalhães (Professora Maria Antônia),54,autor_id
+deputada_paula_belmonte,api_i5,nome,Deputada Paula Belmonte,64,autor_id
+deputado_agaciel_maia,api_i5,nome,Deputado Agaciel Maia,13,autor_id
+deputado_carlos_alberto_rodrigues_tabanez,api_i5,nome,Deputado Carlos Alberto Rodrigues Tabanez,55,autor_id
+deputado_chico_vigilante,api_i5,nome,Deputado Chico Vigilante,15,autor_id
+deputado_claudio_abrantes,api_i5,nome,Deputado Claudio Abrantes,16,autor_id
+deputado_daniel_donizet,api_i5,nome,Deputado Daniel Donizet,17,autor_id
+deputado_delegado_fernando_fernandes,api_i5,nome,Deputado Delegado Fernando Fernandes,21,autor_id
+deputado_delmasso,api_i5,nome,Deputado Delmasso,18,autor_id
+deputado_eduardo_pedrosa,api_i5,nome,Deputado Eduardo Pedrosa,19,autor_id
+deputado_fabio_felix,api_i5,nome,Deputado Fábio Felix,20,autor_id
+deputado_gabriel_magno,api_i5,nome,Deputado Gabriel Magno,68,autor_id
+deputado_hermeto,api_i5,nome,Deputado Hermeto,22,autor_id
+deputado_iolando,api_i5,nome,Deputado Iolando,23,autor_id
+deputado_janio_farias_marques_(guarda_janio),api_i5,nome,Deputado Janio Farias Marques (Guarda Janio),53,autor_id
+deputado_joao_cardoso_,api_i5,nome,Deputado João Cardoso ,25,autor_id
+deputado_joaquim_roriz_neto,api_i5,nome,Deputado Joaquim Roriz Neto,62,autor_id
+deputado_jorge_vianna,api_i5,nome,Deputado Jorge Vianna,26,autor_id
+deputado_jose_gomes,api_i5,nome,Deputado José Gomes,27,autor_id
+deputado_leandro_grass,api_i5,nome,Deputado Leandro Grass,29,autor_id
+deputado_martins_machado,api_i5,nome,Deputado Martins Machado,30,autor_id
+deputado_max_maciel,api_i5,nome,Deputado Max Maciel,63,autor_id
+deputado_pastor_daniel_de_castro,api_i5,nome,Deputado Pastor Daniel de Castro,59,autor_id
+deputado_pepa,api_i5,nome,Deputado Pepa,65,autor_id
+deputado_professor_reginaldo_veras,api_i5,nome,Deputado Professor Reginaldo Veras,32,autor_id
+deputado_rafael_prudente,api_i5,nome,Deputado Rafael Prudente,31,autor_id
+deputado_reginaldo_sardinha,api_i5,nome,Deputado Reginaldo Sardinha,35,autor_id
+deputado_ricardo_vale,api_i5,nome,Deputado Ricardo Vale,57,autor_id
+deputado_roberio_negreiros,api_i5,nome,Deputado Robério Negreiros,33,autor_id
+deputado_rogerio_morro_da_cruz,api_i5,nome,Deputado Rogério Morro da Cruz,67,autor_id
+deputado_roosevelt_vilela,api_i5,nome,Deputado Roosevelt Vilela,34,autor_id
+deputado_thiago_manzoni,api_i5,nome,Deputado Thiago Manzoni,66,autor_id
+deputado_valdelino_barcelos,api_i5,nome,Deputado Valdelino Barcelos,36,autor_id
+deputado_wellington_luiz,api_i5,nome,Deputado Wellington Luiz,58,autor_id
+doutora_jane,painel_votacao,nm_parlamentar,DOUTORA JANE,61,co_autor
+dra._jane,alias,alias,dra._jane,61,alias
+dra_jane,alias,alias,dra_jane,61,alias
+eduardo_pedrosa,painel_votacao,nm_parlamentar,EDUARDO PEDROSA,19,co_autor
+fabio_felix,painel_votacao,nm_parlamentar,FÁBIO FELIX,20,co_autor
+fernando_fernandes,alias,alias,fernando_fernandes,21,alias
+gabriel_magno,painel_votacao,nm_parlamentar,GABRIEL MAGNO,68,co_autor
+guarda_janio,painel_votacao,nm_parlamentar,GUARDA JANIO,53,co_autor
+hermeto,painel_votacao,nm_parlamentar,HERMETO,22,co_autor
+iolando,painel_votacao,nm_parlamentar,IOLANDO,23,co_autor
+jane_klebia_do_nascimento_da_silva,alias,alias,jane_klebia_do_nascimento_da_silva,61,alias
+jane_klebia_reis,alias,alias,jane_klebia_reis,61,alias
+jaqueline_silva,painel_votacao,nm_parlamentar,JAQUELINE SILVA,24,co_autor
+joao_cardoso,painel_votacao,nm_parlamentar,JOÃO CARDOSO,25,co_autor
+joaquim_roriz_neto,painel_votacao,nm_parlamentar,JOAQUIM RORIZ NETO,62,co_autor
+jorge_vianna,painel_votacao,nm_parlamentar,JORGE VIANNA,26,co_autor
+jose_gomes,painel_votacao,nm_parlamentar,JOSÉ GOMES,27,co_autor
+julia_lucy,painel_votacao,nm_parlamentar,JÚLIA LUCY,28,co_autor
+leandro_grass,painel_votacao,nm_parlamentar,LEANDRO GRASS,29,co_autor
+luzia_de_paula,painel_votacao,nm_parlamentar,LUZIA DE PAULA,190,co_autor
+martins_machado,painel_votacao,nm_parlamentar,MARTINS MACHADO,30,co_autor
+max_maciel,painel_votacao,nm_parlamentar,MAX MACIEL,63,co_autor
+max_maciel_cavalcante,alias,alias,max_maciel_cavalcante,63,alias
+mesa_diretora,api_i5,nome,Mesa Diretora,56,autor_id
+pastor_daniel_de_castro,painel_votacao,nm_parlamentar,PASTOR DANIEL DE CASTRO,59,co_autor
+paula_belmonte,painel_votacao,nm_parlamentar,PAULA BELMONTE,64,co_autor
+pepa,painel_votacao,nm_parlamentar,PEPA,65,co_autor
+poder_executivo,api_i5,nome,Poder Executivo,6,autor_id
+prof._maria_antonia,painel_votacao,nm_parlamentar,PROF. MARIA ANTONIA,54,co_autor
+prof._reginaldo_veras,painel_votacao,nm_parlamentar,PROF. REGINALDO VERAS,32,co_autor
+rafael_prudente,painel_votacao,nm_parlamentar,RAFAEL PRUDENTE,31,co_autor
+reginaldo_sardinha,painel_votacao,nm_parlamentar,REGINALDO SARDINHA,35,co_autor
+reginaldo_veras,alias,alias,reginaldo_veras,32,alias
+ricardo_vale,painel_votacao,nm_parlamentar,RICARDO VALE,57,co_autor
+roberio_negreiros,painel_votacao,nm_parlamentar,ROBÉRIO NEGREIROS,33,co_autor
+rodrigo_delmasso,alias,alias,rodrigo_delmasso,18,alias
+rogerio_morro_da_cruz,painel_votacao,nm_parlamentar,ROGERIO MORRO DA CRUZ,67,co_autor
+roosevelt_vilela,painel_votacao,nm_parlamentar,ROOSEVELT VILELA,34,co_autor
+sugestao_legislativa,api_i5,nome,Sugestão Legislativa,240,autor_id
+tabanez,painel_votacao,nm_parlamentar,TABANEZ,55,co_autor
+thiago_manzoni,painel_votacao,nm_parlamentar,THIAGO MANZONI,66,co_autor
+tribunal_de_contas_do_distrito_federal,api_i5,nome,Tribunal de Contas do Distrito Federal,7,autor_id
+valdelino_barcelos,painel_votacao,nm_parlamentar,VALDELINO BARCELOS,36,co_autor
+wellington_luiz,painel_votacao,nm_parlamentar,WELLINGTON LUIZ,58,co_autor

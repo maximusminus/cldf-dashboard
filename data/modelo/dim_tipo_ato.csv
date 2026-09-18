@@ -1,0 +1,12 @@
+tipo_ato,nome,tem_dinheiro,regra_ano,fonte,cobertura,taxa_resolucao
+1,apresentou uma proposição,0,numero,api_i5,"proposicao_autor, 28,689 rows / 28,688 attributed, 22,748 proposições, 57 ids","100% by construction — the id is the key. 22,747 of 22,748 proposições attributed; QO 3/2025 (id 151393) returns no author from I5"
+2,assinou um documento,0,numero,documento_ativas,"data/raw/documento-ativas/, 155,981 documents, 22,748 proposições (all 22,748 files read)","25 of 25 gabinetes resolve = 100.00% (78 distinct unit ids; 39 gabinetes, 39 non-gabinetes in dim_contraparte); 47,580 act rows over 34,699 docs"
+3,relatou (parecer),0,numero,documento_ativas + Designação de Relator,"documento_ativas (5,902 Pareceres, 4,427 Designações, union 3,264 proposições)","1,872 of 3,264 proposições = 57.35% with attributable relator (2,824 act rows over 24 deputados); Designações contribute 0 at 0 requests. Supersedes 1,302/1,557 (83.6%)"
+4,votou,0,evento,painel_votacao + documento_ativas,"voto_deputado 11,956 rows (479 matérias) + folha_votacao 3,527 documentos",plenário 100.00% / comissão 93.3%
+5,esteve presente,0,evento,painel_presenca,"presenca_sessao 15,819 rows, 961 sessões, 40 names, 2020–2026","39 of 40 spellings, 15,814 of 15,819 = 99.97%"
+6,emendou o orçamento,1,evento,painel_emendas + ckan_creditos + json_loa,"emenda_orcamentaria 3,286 rows (2023–2026); credito_emenda 25,443 rows (2012–2026), 3,834 in window",100.00% and 89.38%
+7,gastou verba indenizatória,1,evento,ckan_verba,"verba_comprovante 2,226 rows (2023–2026); verba_quadro 2,090 rows (2019–2026)",100.00% and 99.43%
+8,recebeu diária,1,evento,ckan_diarias,diaria 185 rows; 49 rows / 24 spellings whose cargo names a deputado,100.00%
+9,custeou o gabinete,1,evento,ckan_folha,"folha_pagamento 739,391 rows, 2012–2026; 120,332 in-window rows under shapes A+B",100.00% in window (base 96.8%); 99.99% all years
+10,integra comissão / CPI,0,evento,orgao-reuniao,"orgao-reuniao, 61 requests (27 órgãos, 33 reuniões, 165 membros)",23 of 23 autor.ids resolve = 100.00%
+11,obteve resultado,0,numero,api_historico + norma_buscar,"aprovacao 22,748 rows; norma_vinculo 978",100% by construction (inherits act 1)

@@ -1,0 +1,73 @@
+dominio,codigo,sigla,nome,quorum_aprovacao,quorum_presenca,relator_parecer
+especie,10,IND,Indicação,,,0
+especie,11,MO,Moção,,,0
+especie,12,PR,Projeto de Resolução,,,1
+especie,13,REQ,Requerimento,,,0
+especie,15,REC,Recurso,,,0
+especie,17,PROC,Proc,,,1
+especie,18,QO,Questão de Ordem,,,0
+especie,19,IRF,Impugnação à Redação Final,,,0
+especie,20,SUG,Sugestão Legislativa,,,1
+especie,6,PL,Projeto de Lei,,,1
+especie,7,PLC,Projeto de Lei Complementar,,,1
+especie,8,PELO,Proposta de Emenda à Lei Orgânica,,,1
+especie,9,PDL,Projeto de Decreto Legislativo,,,1
+tipo_documento,101,,Consulta,,,
+tipo_documento,102,,Ata,,,
+tipo_documento,103,,Estatuto,,,
+tipo_documento,104,,Subemenda,,,
+tipo_documento,105,,Folha de votação - Indicação,,,
+tipo_documento,106,,Edital,,,
+tipo_documento,107,,Mensagem - Poder Executivo,,,
+tipo_documento,108,,Manifestação,,,
+tipo_documento,109,,Voto em Separado,,,
+tipo_documento,110,,Estudo,,,
+tipo_documento,111,,Exposição de Motivos,,,
+tipo_documento,112,,Notas Taquigráficas,,,
+tipo_documento,113,,Questão de Ordem,,,
+tipo_documento,115,,Folha de Votação - Destaque,,,
+tipo_documento,117,,Resultado de Pauta,,,
+tipo_documento,118,,Relatório Prévio,,,
+tipo_documento,120,,Sugestão Legislativa,,,
+tipo_documento,25,,Projeto de Lei,,,
+tipo_documento,66,,Projeto de Lei Complementar,,,
+tipo_documento,67,,Despacho,,,
+tipo_documento,68,,Parecer,,,
+tipo_documento,69,,Emenda,,,
+tipo_documento,70,,Relatório de Veto,,,
+tipo_documento,75,,Proposta de Emenda à Lei Orgânica,,,
+tipo_documento,76,,Projeto de Resolução,,,
+tipo_documento,77,,Projeto de Decreto Legislativo,,,
+tipo_documento,78,,Indicação,,,
+tipo_documento,79,,Moção,,,
+tipo_documento,80,,Requerimento,,,
+tipo_documento,81,,Proc,,,
+tipo_documento,82,,Recurso,,,
+tipo_documento,83,,Ofício,,,
+tipo_documento,84,,Folha de Votação,,,
+tipo_documento,85,,Anexo,,,
+tipo_documento,86,,Portaria GMD,,,
+tipo_documento,87,,Mensagem,,,
+tipo_documento,88,,Nota Técnica,,,
+tipo_documento,89,,Redação Final,,,
+tipo_documento,90,,Publicação,,,
+tipo_documento,91,,Lei,,,
+tipo_documento,92,,Emenda à Lei Orgânica,,,
+tipo_documento,93,,Lei Complementar,,,
+tipo_documento,94,,Decreto Legislativo,,,
+tipo_documento,95,,Resolução,,,
+tipo_documento,96,,Decreto,,,
+tipo_documento,97,,Oitiva,,,
+tipo_documento,98,,Designação de Relator,,,
+tipo_documento,99,,Memorando,,,
+tipo_sessao,CODIGO 4,,CODIGO 4,,,
+tipo_sessao,EXTRAORDINARIA,,EXTRAORDINARIA,,,
+tipo_sessao,INVALIDO,,INVALIDO,,,
+tipo_sessao,NAO INFORMADO,,NAO INFORMADO,,,
+tipo_sessao,NAO SE APLICA,,NAO SE APLICA,,,
+tipo_sessao,ORDINARIA,,ORDINARIA,,,
+tipo_sessao,SOLENE,,SOLENE,,,
+tipo_voto,ABSTENCAO,,ABSTENCAO,,,
+tipo_voto,NAO,,NAO,,,
+tipo_voto,NAO INFORMADO,,NAO INFORMADO,,,
+tipo_voto,SIM,,SIM,,,

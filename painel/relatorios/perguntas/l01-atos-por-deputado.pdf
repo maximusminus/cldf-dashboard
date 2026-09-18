@@ -1,0 +1,103 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 5285 >>
+stream
+BT /F2 17 Tf 1 0 0 1 56 769 Tm (Ledger de atos: quem fez o quê, por autor\(a\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 748 Tm (o modelo dimensional do ledger de atos — quem fez o quê, quando, amarrado ao autor do ato tal como a) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 735 Tm (própria API o nomeia, deputado ou não, na tabela publicada especificamente para este cruzamento) Tj ET
+1.5 w 56 717 m 56 729 l S
+BT /F1 10 Tf 1 0 0 1 66 717 Tm (Janela: a 9ª legislatura, 2023–2026. Todo número desta página é contado só sobre esses quatro anos.) Tj ET
+1.5 w 56 704 m 56 716 l S
+BT /F1 10 Tf 1 0 0 1 66 704 Tm (2022 — o último ano da legislatura anterior — aparece ao lado como linha de base, rotulado, e nunca é) Tj ET
+1.5 w 56 691 m 56 703 l S
+BT /F1 10 Tf 1 0 0 1 66 691 Tm (somado a um total de 2023–2026.) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 674 Tm (número-chave — 2023–2026) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 658 Tm (72.286  atos publicados no ledger \(3 de 11 tipos carregados\)) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 640 Tm (linha de base — 2022, último ano da legislatura anterior \(não somado acima\)) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 624 Tm (6.774  atos publicados no ledger \(3 de 11 tipos carregados\)) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 595 Tm (Atos por tipo de ato) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 579 Tm (rótulo) Tj ET
+BT /F2 10 Tf 1 0 0 1 346.19 579 Tm (valor) Tj ET
+0.8 w 56 579 m 539 579 l S
+BT /F1 10 Tf 1 0 0 1 58 563 Tm (assinou um documento) Tj ET
+BT /F1 10 Tf 1 0 0 1 346.19 563 Tm (45.058) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 550 Tm (apresentou uma proposição) Tj ET
+BT /F1 10 Tf 1 0 0 1 346.19 550 Tm (24.486) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 537 Tm (relatou \(parecer\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 346.19 537 Tm (2.742) Tj ET
+0.4 w 56 538 m 539 538 l S
+BT /F2 12 Tf 1 0 0 1 56 506 Tm (Também informa) Tj ET
+1.5 w 56 490 m 56 502 l S
+BT /F1 10 Tf 1 0 0 1 66 490 Tm (OS-128 publica a primeira fatia do modelo dimensional \(o ledger de atos\), não o modelo inteiro: dos 11) Tj ET
+1.5 w 56 477 m 56 489 l S
+BT /F1 10 Tf 1 0 0 1 66 477 Tm (tipos de ato que a classificação distingue, apenas 3 estão carregados hoje — apresentou uma proposição,) Tj ET
+1.5 w 56 464 m 56 476 l S
+BT /F1 10 Tf 1 0 0 1 66 464 Tm (assinou um documento e relatou \(parecer\) — e é só sobre esses 3 que esta tela e esta tabela falam; os) Tj ET
+1.5 w 56 451 m 56 463 l S
+BT /F1 10 Tf 1 0 0 1 66 451 Tm (outros 8 aguardam a sua própria OS. Nenhum dos 3 tipos carregados movimenta dinheiro, então a coluna) Tj ET
+1.5 w 56 438 m 56 450 l S
+BT /F1 10 Tf 1 0 0 1 66 438 Tm (valor_centavos está vazia em toda linha publicada aqui — ela existe na tabela porque outros tipos de ato,) Tj ET
+1.5 w 56 425 m 56 437 l S
+BT /F1 10 Tf 1 0 0 1 66 425 Tm (ainda não carregados \(por exemplo emendou o orçamento e gastou verba indenizatória\), a preenchem. O) Tj ET
+1.5 w 56 412 m 56 424 l S
+BT /F1 10 Tf 1 0 0 1 66 412 Tm (KPI "Valor" mostra R$ 0,00 por essa razão, não por um erro de soma. A dimensão nome_na_api nomeia o) Tj ET
+1.5 w 56 399 m 56 411 l S
+BT /F1 10 Tf 1 0 0 1 66 399 Tm (AUTOR do ato exatamente como a própria API o publica, e nem todo autor é um deputado: de 57 nomes) Tj ET
+1.5 w 56 386 m 56 398 l S
+BT /F1 10 Tf 1 0 0 1 66 386 Tm (distintos, 33 têm partido_ultimo vazio nesta tabela, porque nomeiam um autor que a Casa não filia a) Tj ET
+1.5 w 56 373 m 56 385 l S
+BT /F1 10 Tf 1 0 0 1 66 373 Tm (partido algum — o Poder Executivo e as comissões entre eles. partido_ultimo vazio numa linha é essa) Tj ET
+1.5 w 56 360 m 56 372 l S
+BT /F1 10 Tf 1 0 0 1 66 360 Tm (resposta, não um dado ausente.) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 332 Tm (Fonte, janela e data) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 316 Tm (tabela publicada) Tj ET
+BT /F2 10 Tf 1 0 0 1 251.98 316 Tm (linhas) Tj ET
+BT /F2 10 Tf 1 0 0 1 383.7 316 Tm (sha256 \(16\)) Tj ET
+0.8 w 56 316 m 539 316 l S
+BT /F1 10 Tf 1 0 0 1 58 300 Tm (vw_ato_rotulado.csv) Tj ET
+BT /F1 10 Tf 1 0 0 1 251.98 300 Tm (0) Tj ET
+BT /F1 10 Tf 1 0 0 1 383.7 300 Tm () Tj ET
+0.4 w 56 301 m 539 301 l S
+BT /F1 8.5 Tf 1 0 0 1 56 280.5 Tm (Coleta das proposições realizada a partir de 21 de agosto de 2026; das votações, em 26–28 de agosto de 2026. Fontes: a API) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 269.5 Tm (pública da Câmara Legislativa do Distrito Federal e o Painel de Votação do seu Portal da Transparência. Licença dos dados:) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 258.5 Tm (CC BY-SA 4.0 \([../../LICENSE-data]\(../../LICENSE-data\)\) — re-escolhida na OS-083 para seguir a mesma licença que a maioria) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 247.5 Tm (dos pacotes de dados.cl.df.gov.br já declara.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 231.5 Tm (Dados: CC BY-SA 4.0. Código e interface: PolyForm Noncommercial 1.0.0. Você pode redistribuir e transformar estes números,) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 220.5 Tm (citando a fonte e mantendo a mesma licença.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 204.5 Tm (Esta página no site: https://maximusminus.github.io/cldf-dashboard/painel/perguntas/l01-atos-por-deputado.html — o número) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 193.5 Tm (desta página é reproduzível: a tabela acima está publicada inteira, com o seu sha256, e qualquer pessoa pode re-somá-la.) Tj ET
+0.4 w 56 70 m 539 70 l S
+BT /F1 8 Tf 1 0 0 1 56 60 Tm (Ledger de atos: quem fez o quê, por autor\(a\)) Tj ET
+BT /F1 8 Tf 1 0 0 1 490.52 60 Tm (página 1 de 1) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+5793
+%%EOF

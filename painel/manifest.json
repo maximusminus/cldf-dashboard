@@ -199,6 +199,14 @@
       "titulo": "Eixo: sigilo — informações classificadas"
     },
     {
+      "arquivo": "perguntas/l01-atos-por-deputado.html",
+      "slug": "l01-atos-por-deputado",
+      "tabelas": [
+        "vw_ato_rotulado"
+      ],
+      "titulo": "Ledger de atos: quem fez o quê, por autor(a)"
+    },
+    {
       "arquivo": "perguntas/q01-proposicoes-apresentadas-aprovadas.html",
       "slug": "q01-proposicoes-apresentadas-aprovadas",
       "tabelas": [
