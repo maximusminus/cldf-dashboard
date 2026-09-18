@@ -1,0 +1,131 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 6220 >>
+stream
+BT /F2 17 Tf 1 0 0 1 56 769 Tm (Ledger de atos: pareceres relatados, por relator\(a\),) Tj ET
+BT /F2 17 Tf 1 0 0 1 56 747 Tm (resultado estrutural e ano) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 726 Tm (os pareceres que cada relator\(a\) relatou, por resultado estrutural, unidade e ano, na tabela publicada) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 713 Tm (especificamente para este cruzamento) Tj ET
+1.5 w 56 695 m 56 707 l S
+BT /F1 10 Tf 1 0 0 1 66 695 Tm (Janela: a 9ª legislatura, 2023–2026. Todo número desta página é contado só sobre esses quatro anos.) Tj ET
+1.5 w 56 682 m 56 694 l S
+BT /F1 10 Tf 1 0 0 1 66 682 Tm (2022 — o último ano da legislatura anterior — aparece ao lado como linha de base, rotulado, e nunca é) Tj ET
+1.5 w 56 669 m 56 681 l S
+BT /F1 10 Tf 1 0 0 1 66 669 Tm (somado a um total de 2023–2026.) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 652 Tm (número-chave — 2023–2026) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 636 Tm (2.742  pareceres relatados no ledger \(ato 3 de 11\)) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 618 Tm (linha de base — 2022, último ano da legislatura anterior \(não somado acima\)) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 602 Tm (82  pareceres relatados no ledger \(ato 3 de 11\)) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 573 Tm (Pareceres por resultado estrutural) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 557 Tm (rótulo) Tj ET
+BT /F2 10 Tf 1 0 0 1 325.12 557 Tm (valor) Tj ET
+0.8 w 56 557 m 539 557 l S
+BT /F1 10 Tf 1 0 0 1 58 541 Tm (Aprovado\(a\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 325.12 541 Tm (1.572) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 528 Tm (Não apreciado\(a\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 325.12 528 Tm (1.091) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 515 Tm (\(vazio\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 325.12 515 Tm (74) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 502 Tm (Retirado\(a\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 325.12 502 Tm (3) Tj ET
+BT /F1 10 Tf 1 0 0 1 58 489 Tm (Rejeitado\(a\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 325.12 489 Tm (2) Tj ET
+0.4 w 56 490 m 539 490 l S
+BT /F2 12 Tf 1 0 0 1 56 458 Tm (Também informa) Tj ET
+1.5 w 56 442 m 56 454 l S
+BT /F1 10 Tf 1 0 0 1 66 442 Tm (Dois achados desta tabela, registrados na OS-130 e não corrigidos por ela. \(1\) A coluna comissao_sigla) Tj ET
+1.5 w 56 429 m 56 441 l S
+BT /F1 10 Tf 1 0 0 1 66 429 Tm (NÃO guarda, na maior parte das linhas, uma comissão: em 2.715 de 2.824 pareceres ela carrega a) Tj ET
+1.5 w 56 416 m 56 428 l S
+BT /F1 10 Tf 1 0 0 1 66 416 Tm (unidade do\(a\) próprio\(a\) relator\(a\) — 24 gabinetes — e só em 109 uma comissão \(CEOF 96, CAF 8,) Tj ET
+1.5 w 56 403 m 56 415 l S
+BT /F1 10 Tf 1 0 0 1 66 403 Tm (CDESCTMAT 3, GPVP 2, CAS 1\). A tela a expõe com o nome que tem na fonte; renomeá-la é decisão da) Tj ET
+1.5 w 56 390 m 56 402 l S
+BT /F1 10 Tf 1 0 0 1 66 390 Tm (OS de ingestão. \(2\) verdict_estrutural — o resultado lido da estrutura do registro \(Aprovado\(a\), Não) Tj ET
+1.5 w 56 377 m 56 389 l S
+BT /F1 10 Tf 1 0 0 1 66 377 Tm (apreciado\(a\), Retirado\(a\), Rejeitado\(a\)\) — está em branco em 156 de 2.824 pareceres; o branco é um) Tj ET
+1.5 w 56 364 m 56 376 l S
+BT /F1 10 Tf 1 0 0 1 66 364 Tm (valor desta dimensão, não uma linha perdida. A coluna verdict_prosa, a leitura em prosa do parecer, está) Tj ET
+1.5 w 56 351 m 56 363 l S
+BT /F1 10 Tf 1 0 0 1 66 351 Tm (na tabela publicada como célula conferível ao lado da cláusula em que se apoia \(clausula\) e NÃO é) Tj ET
+1.5 w 56 338 m 56 350 l S
+BT /F1 10 Tf 1 0 0 1 66 338 Tm (dimensão deste cubo, por decisão do operador em 2026-09-18: uma proporção sobre uma leitura em) Tj ET
+1.5 w 56 325 m 56 337 l S
+BT /F1 10 Tf 1 0 0 1 66 325 Tm (prosa não sai de um arquivo legível por máquina. A coluna via tem um só valor \(parecer_autor\). As três) Tj ET
+1.5 w 56 312 m 56 324 l S
+BT /F1 10 Tf 1 0 0 1 66 312 Tm (telas l02, l03 e l04 \(OS-130\) são a segunda, terceira e quarta fatias do ledger de atos, uma por tipo de ato) Tj ET
+1.5 w 56 299 m 56 311 l S
+BT /F1 10 Tf 1 0 0 1 66 299 Tm (carregado — apresentou uma proposição, assinou um documento e relatou \(parecer\) —, cada uma sobre) Tj ET
+1.5 w 56 286 m 56 298 l S
+BT /F1 10 Tf 1 0 0 1 66 286 Tm (uma tabela publicada que junta a linha rotulada do ato \(vw_ato_rotulado\) às colunas próprias daquele) Tj ET
+1.5 w 56 273 m 56 285 l S
+BT /F1 10 Tf 1 0 0 1 66 273 Tm (tipo. Nenhum dos três tipos movimenta dinheiro, por isso esta tela só conta e não soma. A dimensão) Tj ET
+1.5 w 56 260 m 56 272 l S
+BT /F1 10 Tf 1 0 0 1 66 260 Tm (nome_na_api nomeia o AUTOR do ato exatamente como a própria API o publica, e nem todo autor é um) Tj ET
+1.5 w 56 247 m 56 259 l S
+BT /F1 10 Tf 1 0 0 1 66 247 Tm (deputado: o Poder Executivo e as comissões aparecem com o próprio nome.) Tj ET
+BT /F2 12 Tf 1 0 0 1 56 219 Tm (Fonte, janela e data) Tj ET
+BT /F2 10 Tf 1 0 0 1 58 203 Tm (tabela publicada) Tj ET
+BT /F2 10 Tf 1 0 0 1 276.06 203 Tm (linhas) Tj ET
+BT /F2 10 Tf 1 0 0 1 395.75 203 Tm (sha256 \(16\)) Tj ET
+0.8 w 56 203 m 539 203 l S
+BT /F1 10 Tf 1 0 0 1 58 187 Tm (vw_ato_relatou_rotulado.csv) Tj ET
+BT /F1 10 Tf 1 0 0 1 276.06 187 Tm (0) Tj ET
+BT /F1 10 Tf 1 0 0 1 395.75 187 Tm () Tj ET
+0.4 w 56 188 m 539 188 l S
+BT /F1 8.5 Tf 1 0 0 1 56 167.5 Tm (Coleta das proposições realizada a partir de 21 de agosto de 2026; das votações, em 26–28 de agosto de 2026. Fontes: a API) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 156.5 Tm (pública da Câmara Legislativa do Distrito Federal e o Painel de Votação do seu Portal da Transparência. Licença dos dados:) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 145.5 Tm (CC BY-SA 4.0 \([../../LICENSE-data]\(../../LICENSE-data\)\) — re-escolhida na OS-083 para seguir a mesma licença que a maioria) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 134.5 Tm (dos pacotes de dados.cl.df.gov.br já declara.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 118.5 Tm (Dados: CC BY-SA 4.0. Código e interface: PolyForm Noncommercial 1.0.0. Você pode redistribuir e transformar estes números,) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 107.5 Tm (citando a fonte e mantendo a mesma licença.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 56 91.5 Tm (Esta página no site: https://maximusminus.github.io/cldf-dashboard/painel/perguntas/l04-pareceres-relatados.html — o número) Tj ET
+0.4 w 56 70 m 539 70 l S
+BT /F1 8 Tf 1 0 0 1 56 60 Tm (Ledger de atos: pareceres relatados, por relator\(a\), resultado estrutural e ano) Tj ET
+BT /F1 8 Tf 1 0 0 1 490.52 60 Tm (página 1 de 2) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 361 >>
+stream
+BT /F1 8.5 Tf 1 0 0 1 56 777.5 Tm (desta página é reproduzível: a tabela acima está publicada inteira, com o seu sha256, e qualquer pessoa pode re-somá-la.) Tj ET
+0.4 w 56 70 m 539 70 l S
+BT /F1 8 Tf 1 0 0 1 56 60 Tm (Ledger de atos: pareceres relatados, por relator\(a\), resultado estrutural e ano) Tj ET
+BT /F1 8 Tf 1 0 0 1 490.52 60 Tm (página 2 de 2) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000224 00000 n 
+0000000326 00000 n 
+0000000462 00000 n 
+0000006734 00000 n 
+0000006870 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+7282
+%%EOF

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledger de atos: pareceres relatados, por relator(a), resultado estrutural e ano — o painel (cldf)</title>
+<style>
+:root { color-scheme: light; }
+/* OS-099 — the link between a question page and its canvas, and back; it is in
+   BASE_CSS and not in CANVAS_CSS because both ends of that link use it. */
+.drill { font-size: 13px; margin: 16px 0 0; }
+.baixar { font-size: 13px; margin: 0 0 16px; padding: 10px 12px;
+  border: 1px solid #d9d9d9; border-left: 4px solid #c1121f; background: #fafafa; }
+.baixar a { font-weight: 600; }
+body { margin: 0; padding: 0; background: #f6f4ef; color: #1a1a1a;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+header.topo { background: #1a3a52; color: #fff; padding: 16px 24px; }
+header.topo a { color: #cfe0ee; text-decoration: none; font-size: 13px; }
+header.topo nav.nav-topo a + a { margin-left: 12px; }
+header.topo h1 { margin: 4px 0 0 0; font-size: 20px; }
+main { max-width: 920px; margin: 0 auto; padding: 20px 24px 60px 24px; }
+.cartao { background: #fff; border: 1px solid #ddd6c8; border-radius: 6px;
+  padding: 16px 20px; margin: 16px 0; }
+.pergunta-origem { font-style: italic; color: #555; border-left: 3px solid #c7752f;
+  padding-left: 12px; margin: 12px 0; }
+.taxa, .numero { font-size: 28px; font-weight: 700; color: #1a3a52; display: inline-block; }
+.rotulo-cabecalho { font-size: 13px; color: #666; text-transform: uppercase;
+  letter-spacing: .04em; }
+.limite { background: #fdf3e7; border: 1px solid #e6c99a; border-radius: 6px;
+  padding: 12px 16px; margin: 16px 0; font-size: 14px; }
+.limite b { color: #a3612f; }
+.janela { background: #eaf1f6; border: 1px solid #b7cbd9; border-radius: 6px;
+  padding: 10px 16px; margin: 16px 0; font-size: 14px; color: #1a3a52; }
+.cartao.linha-de-base { background: #f4f1ea; border-style: dashed; }
+.cartao.linha-de-base .taxa, .cartao.linha-de-base .numero { color: #6b6257; font-size: 22px; }
+.cartao.arquivo { background: #f4f1ea; border-style: dashed; }
+.fonte { font-size: 12px; color: #777; margin-top: 8px; }
+table.tabela-simples { border-collapse: collapse; width: 100%; font-size: 13px; }
+table.tabela-simples th, table.tabela-simples td { border: 1px solid #ddd6c8;
+  padding: 4px 8px; text-align: left; }
+table.tabela-simples th { background: #efe9dc; }
+nav.indice ul { columns: 2; list-style: none; padding: 0; }
+nav.indice li { margin: 4px 0; }
+a { color: #1a3a52; }
+.rodape { font-size: 12px; color: #888; margin-top: 40px; border-top: 1px solid #ddd6c8;
+  padding-top: 12px; }
+.reportar { border: 1px solid #ddd6c8; border-radius: 6px; background: #fbf9f4;
+  padding: 16px; margin: 32px 0 8px; }
+.reportar h2 { font-size: 16px; margin: 0 0 8px; }
+.reportar p { font-size: 13px; color: #555; margin: 0 0 12px; }
+.reportar label { display: block; font-size: 12px; color: #444; margin: 10px 0 2px; }
+.reportar input, .reportar textarea { width: 100%; box-sizing: border-box; font: inherit;
+  font-size: 13px; padding: 6px 8px; border: 1px solid #ccc4b4; border-radius: 4px;
+  background: #fff; }
+.reportar button { margin-top: 12px; font: inherit; font-size: 13px; padding: 7px 14px;
+  border: 1px solid #1a3a52; border-radius: 4px; background: #1a3a52; color: #fff;
+  cursor: pointer; }
+.aviso-reportar { color: #a3612f; font-size: 12px; margin: 8px 0 0; }
+a.reportar-link { font-weight: 600; }
+header.topo nav.nav-topo { display: flex; align-items: center; flex-wrap: wrap; }
+header.topo a.reportar-link.destaque { margin-left: auto; background: #fff; color: #c1121f;
+  font-weight: 700; font-size: 17px; padding: 8px 16px; border: 2px solid #c1121f;
+  border-radius: 4px; }
+header.topo nav.nav-topo { position: relative; }
+a.icone-home { font-size: 19px; line-height: 1; text-decoration: none; margin-right: 10px; }
+input.menu-alterna { position: absolute; width: 1px; height: 1px; opacity: 0;
+  pointer-events: none; }
+label.menu-hamburguer { cursor: pointer; font-size: 19px; line-height: 1;
+  margin-right: 12px; user-select: none; }
+nav.menu-principal { display: none; flex-direction: column; position: absolute;
+  top: 100%; left: 0; background: #14293a; border: 1px solid #2d5a7a; border-radius: 4px;
+  min-width: 210px; padding: 4px 0; z-index: 30; }
+nav.menu-principal a { display: block; padding: 8px 16px; white-space: nowrap; }
+input.menu-alterna:checked ~ nav.menu-principal { display: flex; }
+</style>
+</head>
+<body>
+<header class="topo">
+<nav class="nav-topo"><a class="icone-home" href="../../index.html" aria-label="Página inicial">&#8962;</a><input type="checkbox" id="menu-alterna" class="menu-alterna"><label for="menu-alterna" class="menu-hamburguer" aria-label="Abrir menu">&#9776;</label><nav class="menu-principal" aria-label="Menu principal"><a href="../../index.html">Página inicial</a><a href="../index.html">O painel</a><a href="../explorador.html">O explorador</a><a href="../fontes-e-metodologia.html">Fontes e metodologia</a></nav><a href="../index.html">&larr; o painel</a><a class="reportar-link destaque" href="#reportar">reportar um problema</a></nav>
+<h1>Ledger de atos: pareceres relatados, por relator(a), resultado estrutural e ano</h1>
+</header>
+<main>
+<div class="baixar" data-relatorio="../relatorios/perguntas/l04-pareceres-relatados"><b>Levar esta página inteira</b> — o mesmo conteúdo nos dois formatos, com a pergunta, a janela, cada número com o seu numerador e o seu denominador, a tabela de origem com o seu sha256 e a data da coleta, dentro do arquivo: <a href="../relatorios/perguntas/l04-pareceres-relatados.pdf" download>PDF</a> &middot; <a href="../relatorios/perguntas/l04-pareceres-relatados.docx" download>Word</a></div>
+<div class="pergunta-origem">os pareceres que cada relator(a) relatou, por resultado estrutural, unidade e ano, na tabela publicada especificamente para este cruzamento</div>
+<div class="janela" data-janela="legislatura">Janela: a 9ª legislatura, 2023–2026. Todo número desta página é contado só sobre esses quatro anos. 2022 — o último ano da legislatura anterior — aparece ao lado como linha de base, rotulado, e nunca é somado a um total de 2023–2026.</div>
+<p class="drill">Os mesmos números, para filtrar: <a href="../paineis/l04-pareceres-relatados.html">o painel interativo desta pergunta</a> — uma tela em que um clique refaz todos os quadros ao mesmo tempo. Esta página aqui não muda: os números dela foram calculados na construção e continuam os mesmos para todo leitor.</p>
+<div class="cartao">
+<div class="rotulo-cabecalho">número-chave — 2023–2026</div>
+<span class="numero" data-n="2742">2.742  pareceres relatados no ledger (ato 3 de 11)</span>
+</div>
+<div class="cartao linha-de-base">
+<div class="rotulo-cabecalho">linha de base — 2022, último ano da legislatura anterior (não somado acima)</div>
+<span class="numero" data-n="82">82  pareceres relatados no ledger (ato 3 de 11)</span>
+</div>
+<div class="cartao"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 162" width="640" height="162" role="img" aria-label="Pareceres por resultado estrutural" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+<rect x="0" y="0" width="640" height="162" fill="#ffffff" />
+<text x="12" y="20" font-size="13" font-weight="600" fill="#1a1a1a">Pareceres por resultado estrutural</text>
+<text x="212" y="55" font-size="12" fill="#1a1a1a" text-anchor="end">Aprovado(a)</text>
+<rect x="220" y="43" width="350.0" height="14" fill="#2b5f8a" />
+<text x="576.0" y="55" font-size="12" fill="#1a1a1a">1.572</text>
+<text x="212" y="77" font-size="12" fill="#1a1a1a" text-anchor="end">Não apreciado(a)</text>
+<rect x="220" y="65" width="242.9" height="14" fill="#2b5f8a" />
+<text x="468.9" y="77" font-size="12" fill="#1a1a1a">1.091</text>
+<text x="212" y="99" font-size="12" fill="#1a1a1a" text-anchor="end"></text>
+<rect x="220" y="87" width="16.5" height="14" fill="#2b5f8a" />
+<text x="242.5" y="99" font-size="12" fill="#1a1a1a">74</text>
+<text x="212" y="121" font-size="12" fill="#1a1a1a" text-anchor="end">Retirado(a)</text>
+<rect x="220" y="109" width="0.7" height="14" fill="#2b5f8a" />
+<text x="226.7" y="121" font-size="12" fill="#1a1a1a">3</text>
+<text x="212" y="143" font-size="12" fill="#1a1a1a" text-anchor="end">Rejeitado(a)</text>
+<rect x="220" y="131" width="0.4" height="14" fill="#2b5f8a" />
+<text x="226.4" y="143" font-size="12" fill="#1a1a1a">2</text>
+</svg></div>
+<div class="limite"><b>Também informa</b> — Dois achados desta tabela, registrados na OS-130 e não corrigidos por ela. (1) A coluna comissao_sigla NÃO guarda, na maior parte das linhas, uma comissão: em 2.715 de 2.824 pareceres ela carrega a unidade do(a) próprio(a) relator(a) — 24 gabinetes — e só em 109 uma comissão (CEOF 96, CAF 8, CDESCTMAT 3, GPVP 2, CAS 1). A tela a expõe com o nome que tem na fonte; renomeá-la é decisão da OS de ingestão. (2) verdict_estrutural — o resultado lido da estrutura do registro (Aprovado(a), Não apreciado(a), Retirado(a), Rejeitado(a)) — está em branco em 156 de 2.824 pareceres; o branco é um valor desta dimensão, não uma linha perdida. A coluna verdict_prosa, a leitura em prosa do parecer, está na tabela publicada como célula conferível ao lado da cláusula em que se apoia (clausula) e NÃO é dimensão deste cubo, por decisão do operador em 2026-09-18: uma proporção sobre uma leitura em prosa não sai de um arquivo legível por máquina. A coluna via tem um só valor (parecer_autor). As três telas l02, l03 e l04 (OS-130) são a segunda, terceira e quarta fatias do ledger de atos, uma por tipo de ato carregado — apresentou uma proposição, assinou um documento e relatou (parecer) —, cada uma sobre uma tabela publicada que junta a linha rotulada do ato (vw_ato_rotulado) às colunas próprias daquele tipo. Nenhum dos três tipos movimenta dinheiro, por isso esta tela só conta e não soma. A dimensão nome_na_api nomeia o AUTOR do ato exatamente como a própria API o publica, e nem todo autor é um deputado: o Poder Executivo e as comissões aparecem com o próprio nome.</div>
+<div class="fonte">Tabela(s) lida(s): <code>vw_ato_relatou_rotulado.csv</code></div>
+<section id="reportar" class="reportar">
+<h2>Reportar um problema ou enviar sugestões de melhorias</h2>
+<p>Achou um número errado, um link quebrado, ou algo que não bate com a fonte? Escreva
+abaixo. Este é também o canal para <strong>enviar sugestões de melhorias</strong>. Ao enviar,
+o texto abre uma issue no repositório público do painel — para publicá-la é preciso ter uma
+conta no GitHub.</p>
+<form id="form-reportar" method="get" action="https://github.com/maximusminus/cldf-painel/issues/new" target="_blank" rel="noopener" data-acao="https://github.com/maximusminus/cldf-painel/issues/new" data-limite="6000">
+<label for="reportar-titulo">Título</label>
+<input id="reportar-titulo" name="title" type="text" maxlength="180" required>
+<label for="reportar-corpo">O que aconteceu</label>
+<textarea id="reportar-corpo" name="body" rows="6" maxlength="6000" required></textarea>
+<label for="reportar-pagina">URL relacionada</label>
+<input id="reportar-pagina" name="pagina" type="url" value="https://maximusminus.github.io/cldf-painel/painel/perguntas/l04-pareceres-relatados.html">
+<p class="aviso-reportar" id="reportar-aviso"></p>
+<button type="submit">Abrir a issue no GitHub</button>
+</form>
+</section>
+
+<p class="rodape" data-versao-painel="b2.3">Código-fonte e dados publicados:
+<a href="https://github.com/maximusminus/cldf-painel">github.com/maximusminus/cldf-painel</a> &middot; <a class="reportar-link" href="#reportar">reportar um problema</a> &middot; baixar esta página: <a href="../relatorios/perguntas/l04-pareceres-relatados.pdf" download>PDF</a> &middot; <a href="../relatorios/perguntas/l04-pareceres-relatados.docx" download>Word</a> &middot; painel b2.3</p>
+</main>
+<script src="../static/reportar.js"></script>
+</body>
+</html>

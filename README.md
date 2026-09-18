@@ -1,6 +1,6 @@
 # cldf — dados abertos de accountability legislativo do Distrito Federal
 
-Versão 0.49.0 · 106 tabelas · 256 arquivos de painel
+Versão 0.50.0 · 106 tabelas · 277 arquivos de painel
 
 Os dados consolidados de accountability legislativo do Distrito Federal que a Câmara
 Legislativa declarou formalmente não possuir consolidados, montados a partir da API
@@ -27,7 +27,7 @@ silenciosa, publica o silêncio como contagem em vez de preencher.
 
 ## O modelo dimensional
 
-`data/modelo/` traz 27 arquivos `.csv`: o ledger de atos — quem fez o quê, quando —
+`data/modelo/` traz 30 arquivos `.csv`: o ledger de atos — quem fez o quê, quando —
 como uma tabela por dimensão em vez de uma tabela por pergunta. Comece por
 `data/modelo/vw_ato_rotulado.csv`, a visão publicada que já nomeia o autor de cada ato.
 

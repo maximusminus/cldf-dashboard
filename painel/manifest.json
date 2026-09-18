@@ -207,6 +207,30 @@
       "titulo": "Ledger de atos: quem fez o quê, por autor(a)"
     },
     {
+      "arquivo": "perguntas/l02-proposicoes-apresentadas.html",
+      "slug": "l02-proposicoes-apresentadas",
+      "tabelas": [
+        "vw_ato_apresentou_rotulado"
+      ],
+      "titulo": "Ledger de atos: proposições apresentadas, por autor(a), espécie e ano"
+    },
+    {
+      "arquivo": "perguntas/l03-documentos-assinados.html",
+      "slug": "l03-documentos-assinados",
+      "tabelas": [
+        "vw_ato_assinou_rotulado"
+      ],
+      "titulo": "Ledger de atos: documentos assinados, por autor(a), tipo de documento e ano"
+    },
+    {
+      "arquivo": "perguntas/l04-pareceres-relatados.html",
+      "slug": "l04-pareceres-relatados",
+      "tabelas": [
+        "vw_ato_relatou_rotulado"
+      ],
+      "titulo": "Ledger de atos: pareceres relatados, por relator(a), resultado estrutural e ano"
+    },
+    {
       "arquivo": "perguntas/q01-proposicoes-apresentadas-aprovadas.html",
       "slug": "q01-proposicoes-apresentadas-aprovadas",
       "tabelas": [
