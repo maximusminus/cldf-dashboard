@@ -86,26 +86,38 @@ input.menu-alterna:checked ~ nav.menu-principal { display: flex; }
 <p class="drill">Os mesmos números, para filtrar: <a href="../paineis/l01-atos-por-deputado.html">o painel interativo desta pergunta</a> — uma tela em que um clique refaz todos os quadros ao mesmo tempo. Esta página aqui não muda: os números dela foram calculados na construção e continuam os mesmos para todo leitor.</p>
 <div class="cartao">
 <div class="rotulo-cabecalho">número-chave — 2023–2026</div>
-<span class="numero" data-n="72286">72.286  atos publicados no ledger (3 de 11 tipos carregados)</span>
+<span class="numero" data-n="128103">128.103  atos publicados no ledger (7 de 11 tipos carregados)</span>
 </div>
 <div class="cartao linha-de-base">
 <div class="rotulo-cabecalho">linha de base — 2022, último ano da legislatura anterior (não somado acima)</div>
-<span class="numero" data-n="6774">6.774  atos publicados no ledger (3 de 11 tipos carregados)</span>
+<span class="numero" data-n="9933">9.933  atos publicados no ledger (7 de 11 tipos carregados)</span>
 </div>
-<div class="cartao"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 118" width="640" height="118" role="img" aria-label="Atos por tipo de ato" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
-<rect x="0" y="0" width="640" height="118" fill="#ffffff" />
+<div class="cartao"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 206" width="640" height="206" role="img" aria-label="Atos por tipo de ato" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+<rect x="0" y="0" width="640" height="206" fill="#ffffff" />
 <text x="12" y="20" font-size="13" font-weight="600" fill="#1a1a1a">Atos por tipo de ato</text>
 <text x="212" y="55" font-size="12" fill="#1a1a1a" text-anchor="end">assinou um documento</text>
 <rect x="220" y="43" width="350.0" height="14" fill="#2b5f8a" />
 <text x="576.0" y="55" font-size="12" fill="#1a1a1a">45.058</text>
-<text x="212" y="77" font-size="12" fill="#1a1a1a" text-anchor="end">apresentou uma proposição</text>
-<rect x="220" y="65" width="190.2" height="14" fill="#2b5f8a" />
-<text x="416.2" y="77" font-size="12" fill="#1a1a1a">24.486</text>
-<text x="212" y="99" font-size="12" fill="#1a1a1a" text-anchor="end">relatou (parecer)</text>
-<rect x="220" y="87" width="21.3" height="14" fill="#2b5f8a" />
-<text x="247.3" y="99" font-size="12" fill="#1a1a1a">2.742</text>
+<text x="212" y="77" font-size="12" fill="#1a1a1a" text-anchor="end">votou</text>
+<rect x="220" y="65" width="325.8" height="14" fill="#2b5f8a" />
+<text x="551.8" y="77" font-size="12" fill="#1a1a1a">41.939</text>
+<text x="212" y="99" font-size="12" fill="#1a1a1a" text-anchor="end">apresentou uma proposição</text>
+<rect x="220" y="87" width="190.2" height="14" fill="#2b5f8a" />
+<text x="416.2" y="99" font-size="12" fill="#1a1a1a">24.486</text>
+<text x="212" y="121" font-size="12" fill="#1a1a1a" text-anchor="end">esteve presente</text>
+<rect x="220" y="109" width="67.9" height="14" fill="#2b5f8a" />
+<text x="293.9" y="121" font-size="12" fill="#1a1a1a">8.746</text>
+<text x="212" y="143" font-size="12" fill="#1a1a1a" text-anchor="end">emendou o orçamento</text>
+<rect x="220" y="131" width="37.3" height="14" fill="#2b5f8a" />
+<text x="263.3" y="143" font-size="12" fill="#1a1a1a">4.803</text>
+<text x="212" y="165" font-size="12" fill="#1a1a1a" text-anchor="end">relatou (parecer)</text>
+<rect x="220" y="153" width="21.3" height="14" fill="#2b5f8a" />
+<text x="247.3" y="165" font-size="12" fill="#1a1a1a">2.742</text>
+<text x="212" y="187" font-size="12" fill="#1a1a1a" text-anchor="end">integra comissão / CPI</text>
+<rect x="220" y="175" width="2.6" height="14" fill="#2b5f8a" />
+<text x="228.6" y="187" font-size="12" fill="#1a1a1a">329</text>
 </svg></div>
-<div class="limite"><b>Também informa</b> — OS-128 publica a primeira fatia do modelo dimensional (o ledger de atos), não o modelo inteiro: dos 11 tipos de ato que a classificação distingue, apenas 3 estão carregados hoje — apresentou uma proposição, assinou um documento e relatou (parecer) — e é só sobre esses 3 que esta tela e esta tabela falam; os outros 8 aguardam a sua própria OS. Nenhum dos 3 tipos carregados movimenta dinheiro, então a coluna valor_centavos está vazia em toda linha publicada aqui — ela existe na tabela porque outros tipos de ato, ainda não carregados (por exemplo emendou o orçamento e gastou verba indenizatória), a preenchem. O KPI &quot;Valor&quot; mostra R$ 0,00 por essa razão, não por um erro de soma. A dimensão nome_na_api nomeia o AUTOR do ato exatamente como a própria API o publica, e nem todo autor é um deputado: de 57 nomes distintos, 33 têm partido_ultimo vazio nesta tabela, porque nomeiam um autor que a Casa não filia a partido algum — o Poder Executivo e as comissões entre eles. partido_ultimo vazio numa linha é essa resposta, não um dado ausente.</div>
+<div class="limite"><b>Também informa</b> — Esta tela publica o ledger de atos do modelo dimensional, não o modelo inteiro: dos 11 tipos de ato que a classificação distingue, 7 estão carregados — apresentou uma proposição, assinou um documento, relatou (parecer), votou (em plenário e em comissão), esteve presente, emendou o orçamento e integra comissão — e é só sobre esses 7 que esta tela e esta tabela falam; os outros 4 (gastou verba indenizatória, recebeu diária, custeou gabinete e obteve resultado) aguardam a sua própria OS. Até a OS-130 eram 3 tipos e a coluna valor_centavos estava vazia em toda linha; desde a OS-131 ela é preenchida por um único tipo, emendou o orçamento — o valor da emenda em centavos inteiros, tal como o Painel de Emendas e a planilha de créditos adicionais o publicam — e continua vazia nos outros 6, que não movimentam dinheiro. O KPI &quot;Valor&quot; soma, portanto, só emendas. Votou em comissão conta a lista de membros de cada folha de votação, votantes ou não (a marca vazia é quem não votou, e é o que a fonte registra); esteve presente conta só presenças, porque o painel só publica presenças — a falta é derivada, nunca armazenada. A dimensão nome_na_api nomeia o AUTOR do ato exatamente como a própria API o publica, e nem todo autor é um deputado: entre os nomes distintos, os que têm partido_ultimo vazio nomeiam um autor que a Casa não filia a partido algum — o Poder Executivo e as comissões entre eles. partido_ultimo vazio numa linha é essa resposta, não um dado ausente.</div>
 <div class="fonte">Tabela(s) lida(s): <code>vw_ato_rotulado.csv</code></div>
 <section id="reportar" class="reportar">
 <h2>Reportar um problema ou enviar sugestões de melhorias</h2>
